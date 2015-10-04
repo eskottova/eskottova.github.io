@@ -1,10 +1,7 @@
-<svg height="650" width="1000">
- 
- 
+<svg>
 <rect id="rect1" fill="black" fill-opacity="1" x="0" y="1" height="650" width="1000" />
  
 <animate
- 
    xlink:href="#rect1"
    attributeName="fill-opacity"
    from="1"
