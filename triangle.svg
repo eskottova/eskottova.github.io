@@ -1,0 +1,103 @@
+<svg height="650" width="1000">
+ 
+ 
+<rect id="rect1" fill="black" fill-opacity="1" x="0" y="1" height="650" width="1000" />
+ 
+<animate
+ 
+   xlink:href="#rect1"
+   attributeName="fill-opacity"
+   from="1"
+   to="0"
+   dur="3s"
+   begin="5s"
+   repeatCount="1"
+   fill="freeze"
+   id="opar1-anim" />
+ 
+ 
+  <polygon id="polyb" points="500,275 600,225 500,50 400,225"
+style="fill:blue;fill-opacity:0;stroke:blue;stroke-width:5" />
+ 
+<animate
+ 
+   xlink:href="#polyb"
+   attributeName="points"
+   from="500,275 600,225 500,50 400,225"
+   to="500,275 600,450 500,500 400,450"
+   dur="5s"
+   begin="0s"
+   repeatCount="1"
+   fill="freeze"
+   id="polyb-anim" />
+ 
+<animate
+ 
+   xlink:href="#polyb"
+   attributeName="fill-opacity"
+   from="0"
+   to="0.5"
+   dur="2s"
+   begin="3s"
+   repeatCount="1"
+   fill="freeze"
+   id="opab-anim" />
+ 
+ 
+  <polygon id="polyg"points="150,450 50,625 250,625 250,500" style="fill:green;fill-opacity:0;stroke:green;stroke-width:5" />
+ 
+<animate
+ 
+   xlink:href="#polyg"
+   attributeName="points"
+   from="150,450 50,625 250,625 250,500"
+   to="397.5,455 497.5,505 497.5,630 297.5,630"
+   dur="5s"
+   begin="0s"
+   repeatCount="1"
+   fill="freeze"
+   id="polyg-anim" />
+ 
+<animate
+ 
+   xlink:href="#polyg"
+   attributeName="fill-opacity"
+   from="0"
+   to="0.5"
+   dur="2s"
+   begin="3s"
+   repeatCount="1"
+   fill="freeze"
+   id="opag-anim" />
+ 
+ 
+  <polygon id="polyo" points=" 850,450 950,625 750,625 750,500" style="fill:orange;fill-opacity:0;stroke:orange;stroke-width:5" />
+ 
+<animate
+ 
+   xlink:href="#polyo"
+   attributeName="points"
+   from="850,450 750,500 750,625 950,625"
+   to="602.5,455 702.5,630 502.5,630 502.5,505"
+   dur="5s"
+   begin="0s"
+   repeatCount="1"
+   fill="freeze"
+   id="polyo-anim" />
+ 
+<animate
+ 
+   xlink:href="#polyo"
+   attributeName="fill-opacity"
+   from="0"
+   to="0.5"
+   dur="2s"
+   begin="3s"
+   repeatCount="1"
+   fill="freeze"
+   id="opao-anim" />
+ 
+ 
+ 
+  Sorry, your browser does not support inline SVG.
+</svg>
