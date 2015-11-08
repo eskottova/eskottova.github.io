@@ -2,7 +2,9 @@
 <html>
 <body>
 <svg height="1000" width="1000">
+ 
 <rect x="0" y="0" width="1000" height="1000"/>
+
 <polygon id="polygon_D" points="450,100 500,500 333,400" style="fill:saddlebrown;stroke:none;fill-opacity:0.2" />
  <animate
   xlink:href="#polygon_D"
@@ -14,11 +16,77 @@
   repeatCount="1"
   fill="freeze"
   id="polygon_D.animation" />
-<polygon id="polygon_a" points="333,400 500,500 150,700" style="fill:firebrick;stroke:none;fill-opacity:1" />
-<polygon id="polygon_m" points="500,500 500,700 150,750" style="fill:green;stroke:none;fill-opacity:1" />
-<polygon id="polygon_i" points="500,500 850,700 500,700" style="fill:saddlebrown;stroke:none;fill-opacity:0.8" />
-<polygon id="polygon_a2" points="666,400 850,650 500,500" style="fill:firebrick;stroke:none;fill-opacity:1" />
-<polygon id="polygon_n" points="500,100 666,400 500,500" style="fill:green;stroke:none;fill-opacity:1" />
+<text id="text_D" x="400" y="400" font-size="40px" fill="black">D</text>
+ <animate
+  xlink:href="#text_D"
+  attributeName="fill-opacity"
+  from="0"
+  to="1"
+  dur="3s"
+  begin="5s"
+  repeatCount="1"
+  fill="freeze"
+  id="text_D.animation"
+  
+<polygon id="polygon_a" points="333,400 500,500 150,700" style="fill:firebrick;stroke:none;fill-opacity:0.2" />
+ <animate
+  xlink:href="#polygon_a"
+  attributeName="fill-opacity"
+  from="0.2"
+  to="1"
+  dur="3s"
+  begin="text_D.animation + 1s"
+  repeatCount="1"
+  fill="freeze"
+  id="polygon_a.animation" />
+  
+<polygon id="polygon_m" points="500,500 500,700 150,750" style="fill:green;stroke:none;fill-opacity:0.2" /> <animate
+  xlink:href="#polygon_m"
+  attributeName="fill-opacity"
+  from="0.2"
+  to="1"
+  dur="3s"
+  begin="text_a.animation + 1s"
+  repeatCount="1"
+  fill="freeze"
+  id="polygon_m.animation" />
+  
+<polygon id="polygon_i" points="500,500 850,700 500,700" style="fill:saddlebrown;stroke:none;fill-opacity:0.2" />
+ <animate
+  xlink:href="#polygon_i"
+  attributeName="fill-opacity"
+  from="0.2"
+  to="0.8"
+  dur="3s"
+  begin="text_m.animation + 1ss"
+  repeatCount="1"
+  fill="freeze"
+  id="polygon_i.animation" />
+  
+<polygon id="polygon_a2" points="666,400 850,650 500,500" style="fill:firebrick;stroke:none;fill-opacity:0.2" />
+ <animate
+  xlink:href="#polygon_a2"
+  attributeName="fill-opacity"
+  from="0.2"
+  to="1"
+  dur="3s"
+  begin="text_i.animation + 1s"
+  repeatCount="1"
+  fill="freeze"
+  id="polygon_a2.animation" />
+  
+<polygon id="polygon_n" points="500,100 666,400 500,500" style="fill:green;stroke:none;fill-opacity:0.2" />
+ <animate
+  xlink:href="#polygon_n"
+  attributeName="fill-opacity"
+  from="0.2"
+  to="1"
+  dur="3s"
+  begin="text_a2.animation + 1s"
+  repeatCount="1"
+  fill="freeze"
+  id="polygon_n.animation" />
+  
 <\svg>
 <\body>
 <\html>
