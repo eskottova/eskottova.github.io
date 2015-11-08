@@ -39,17 +39,17 @@
   repeatCount="1"
   fill="freeze"
   id="polygona-animation" />
-  <text id="texta" x="600" y="200" font-size="80px" fill="black" fill-opacity="0">a</text>
+  <text id="texta" x="200" y="600" font-size="80px" fill="black" fill-opacity="0">a</text>
  <animate
   xlink:href="#texta"
   attributeName="fill-opacity"
   from="0"
   to="1"
   dur="3s"
-  begin="5s"
+  begin="polygona-animation.begin + 3s"
   repeatCount="1"
   fill="freeze"
-  id="textD-animation" />
+  id="texta-animation" />
   
 <polygon id="polygonm" points="500,500 500,700 150,750" style="fill:green;stroke:none;fill-opacity:0.2" /> <animate
   xlink:href="#polygonm"
@@ -61,6 +61,17 @@
   repeatCount="1"
   fill="freeze"
   id="polygonm-animation" />
+    <text id="textm" x="400" y="650" font-size="80px" fill="black" fill-opacity="0">m</text>
+ <animate
+  xlink:href="#textm"
+  attributeName="fill-opacity"
+  from="0"
+  to="1"
+  dur="3s"
+  begin="polygonm-animation.begin + 3s"
+  repeatCount="1"
+  fill="freeze"
+  id="textm-animation" />
   
 <polygon id="polygoni" points="500,500 850,700 500,700" style="fill:saddlebrown;stroke:none;fill-opacity:0.2" />
  <animate
@@ -73,6 +84,17 @@
   repeatCount="1"
   fill="freeze"
   id="polygoni-animation" />
+<text id="texti" x="550" y="650" font-size="80px" fill="black" fill-opacity="0">i</text>
+ <animate
+  xlink:href="#texti"
+  attributeName="fill-opacity"
+  from="0"
+  to="1"
+  dur="3s"
+  begin="polygoni-animation.begin + 3s"
+  repeatCount="1"
+  fill="freeze"
+  id="texti-animation" />
   
 <polygon id="polygona2" points="666,400 850,650 500,500" style="fill:firebrick;stroke:none;fill-opacity:0.2" />
  <animate
@@ -85,6 +107,17 @@
   repeatCount="1"
   fill="freeze"
   id="polygona2-animation" />
+    <text id="texta2" x="600" y="600" font-size="80px" fill="black" fill-opacity="0">a</text>
+ <animate
+  xlink:href="#texta2"
+  attributeName="fill-opacity"
+  from="0"
+  to="1"
+  dur="3s"
+  begin="polygona2-animation.begin + 3s"
+  repeatCount="1"
+  fill="freeze"
+  id="texta2-animation" />
  
 <polygon id="polygonn" points="500,100 666,400 500,500" style="fill:green;stroke:none;fill-opacity:0.2" />
  <animate
@@ -97,6 +130,17 @@
   repeatCount="1"
   fill="freeze"
   id="polygonn-animation" />
+    <text id="textn" x="550" y="400" font-size="80px" fill="black" fill-opacity="0">n</text>
+ <animate
+  xlink:href="#textn"
+  attributeName="fill-opacity"
+  from="0"
+  to="1"
+  dur="3s"
+  begin="polygonn-animation.begin + 3s"
+  repeatCount="1"
+  fill="freeze"
+  id="textn-animation" />
   
 <\svg>
 <\body>
