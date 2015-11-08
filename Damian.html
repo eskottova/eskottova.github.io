@@ -35,10 +35,21 @@
   from="0.2"
   to="1"
   dur="3s"
-  begin="text_D.animation + 1s"
+  begin="text_D.animation.begin + 4s"
   repeatCount="1"
   fill="freeze"
   id="polygon_a.animation" />
+  <text id="text_a" x="600" y="200" font-size="80px" fill="black" fill-opacity="0">a</text>
+ <animate
+  xlink:href="#text_a"
+  attributeName="fill-opacity"
+  from="0"
+  to="1"
+  dur="3s"
+  begin="5s"
+  repeatCount="1"
+  fill="freeze"
+  id="text_D.animation" />
   
 <polygon id="polygon_m" points="500,500 500,700 150,750" style="fill:green;stroke:none;fill-opacity:0.2" /> <animate
   xlink:href="#polygon_m"
@@ -46,7 +57,7 @@
   from="0.2"
   to="1"
   dur="3s"
-  begin="text_a.animation + 1s"
+  begin="text_a.animation.begin + 4s"
   repeatCount="1"
   fill="freeze"
   id="polygon_m.animation" />
@@ -58,7 +69,7 @@
   from="0.2"
   to="0.8"
   dur="3s"
-  begin="text_m.animation + 1ss"
+  begin="text_m.animation.begin + 4s"
   repeatCount="1"
   fill="freeze"
   id="polygon_i.animation" />
@@ -70,7 +81,7 @@
   from="0.2"
   to="1"
   dur="3s"
-  begin="text_i.animation + 1s"
+  begin="text_i.animation.begin + 4s"
   repeatCount="1"
   fill="freeze"
   id="polygon_a2.animation" />
@@ -82,7 +93,7 @@
   from="0.2"
   to="1"
   dur="3s"
-  begin="text_a2.animation + 1s"
+  begin="text_a2.animation.begin + 4s"
   repeatCount="1"
   fill="freeze"
   id="polygon_n.animation" />
