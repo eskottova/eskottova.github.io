@@ -4,6 +4,16 @@
   
 <circle id="ctxt1" cx="50" cy="50" r="30" fill="blue" />
 
+<animte
+
+ xlink:href="ctxt1"
+ attributeName="x"
+ from="50"
+ to="50"
+ dur="0s"
+ begin="click"
+ id="c1-anim" /> 
+
 
 <text id="txt" x="200" y="200" font-size="40px">Eisengasse</text>
 
@@ -14,7 +24,7 @@
  from="200"
  to="500"
  dur="3s"
- begin="ctxt1.click"
+ begin="c1-anim. + 0s"
  id="txtX-anim" /> 
 
 </svg>
