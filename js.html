@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script>
+function testEma() {
+  document.getElementById('demo').innerHTML ='';
+  
+  mreza = '';
+
+ for (i = 0; i<600; i=i + 50) {
+   if ((i % 2) == 0) {
+     mreza = mreza + '<line x1="' + i + '" y1="0" x2="' + i + '" y2="200" style="stroke:rgb(225,225,0);stroke-width:2;"/>';
+    } else {
+      mreza = mreza + '<line x1="' + i + '" y1="0" x2="' + i + '" y2="200" style="stroke:rgb(0,225,225);stroke-width:2;"/>';
+    }
+  }
+
+for (i = 0; i<600; i=i + 50) {
+   if ((i % 2) == 0) {
+     mreza = mreza + '<line x1="0" y1="' + i + '" x2="200" y2="' + i + '" style="stroke:rgb(225,0,0);stroke-width:2;"/>';
+    } else {
+      mreza = mreza + '<line x1="' + i + '" y1="0" x2="' + i + '" y2="200" style="stroke:rgb(0,225,0);stroke-width:2;"/>';
+    }
+   }
+  document.getElementById('ema_svg').innerHTML = mreza;
+alert("Preco sa nemenia farby? Prosim zmen tento text a napis sem odpoved.                      Emka");
+}
+</script>
+
+<body>
+<p id="demo">JavaScript can change HTML content.</p>
+<svg id="ema_svg" height="210" width="205">
+ <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(170,0,0);stroke-width:2"/>
+</svg>
+</br>
+
+<button type="button"
+onclick="testEma()">
+Click Me To See The Result</button>
+
+</body>
+</html>
