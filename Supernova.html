@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<body>
+<script>
+
+var yPos = 20;                                                     //some variables
+var xPos = 20;
+var Red = 255;
+var Green = 255;
+var Blue = 0;
+var starSize = 40;
+var blasted = false;
+var Starsize = 10;
+var rEd = 255;
+var gReen = 255;
+var bLue = 255;
+
+//Supernova
+
+draw = function() {
+    background(0,0,0);
+    fill(Red,Green,Blue);
+    ellipse(xPos, yPos, starSize, starSize);                        // star
+    if (xPos <200) { 
+        xPos += 0.25;                                               //move ->
+        yPos += 0.25;                                               //move ^
+        Green -= 0.125;                                             //get orange
+        starSize -= 0.02;                                           //shrink
+    }
+    else if (xPos > 199.75 && !blasted){                            //explosion
+         starSize += 3;                                             //grow (fast)
+         Green -= 3;                                                //get red (fast)
+    }
+    
+    if (starSize > 150) {
+        blasted = true;
+    }
+    if (starSize > 5 && blasted){
+        starSize -= 5;                                              //shrink
+        Red -= 5;                                                   //disappear
+    }
+    
+    //white dwarf
+    
+    if(starSize < 5){
+        fill(rEd, gReen, bLue);                               
+        ellipse(200, 200, Starsize, Starsize);                      //white dwarf
+    }
+    if(Starsize < 30){
+        Starsize += 0.01;                                           //grow (very slowly)
+    }
+
+};
+
+</script>
+</body>
+</html>
