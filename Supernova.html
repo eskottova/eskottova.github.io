@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <body>
+    
+    <canvas id="canvas" width="400" height="400"
+style="background-color:#333">
+</canvas>
+
 <script>
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
 
 var yPos = 20;                                                     //some variables
 var xPos = 20;
@@ -17,7 +26,8 @@ var bLue = 255;
 //Supernova
 
 draw = function() {
-    background(0,0,0);
+    fill(0,0,0);
+    rect(0,0,400,400);
     fill(Red,Green,Blue);
     ellipse(xPos, yPos, starSize, starSize);                        // star
     if (xPos <200) { 
@@ -51,6 +61,23 @@ draw = function() {
 
 };
 
+function rect(x,y,x2,y2) {
+   ctx.fillRect(x,y,x2,y2);
+}
+
+function ellipse(x,y,r,r2) {
+   ctx.beginPath();
+   ctx.arc(x,y,r,0,2*Math.PI)
+   ctx.fill();
+};
+
+function fill(r,g,b) {
+   ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+
+setInterval(draw, 10);
+
 </script>
+
 </body>
 </html>
