@@ -3,13 +3,26 @@
 <head>
  <style>
  
+ 
+ /*
+  style="fill:none;stroke:blue;stroke-width:3"
+ */
 body{
 background-color:rgb(100,150,255);
 }
 
+polyline{
+ position:relative;
+ fill:none;
+ stroke:blue;
+ stroke-width:5;
+ z-index:1;
+ 
+}
+
 p{
 color:rgb(0,0,200);
-position:absolute;
+position:relative;
 left:5%;
 font-size:2em;
 }
@@ -17,6 +30,7 @@ font-size:2em;
 a{
  font-size:60em;
  text-decoration:none;
+ z-index:2;
 }
 
 a:link {
@@ -45,7 +59,7 @@ a:active {
 <a href="DamianSVG.html">SVG</a> 
 
 <svg>
-  <polyline points="20,20 300,300 450,350 500,450" style="fill:none;stroke:blue;stroke-width:3" />
+  <polyline points="20,20 300,300 450,350 500,450" />
 </svg>
  <p>Damian</p>
  
