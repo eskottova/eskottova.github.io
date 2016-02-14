@@ -7,13 +7,17 @@ body{
 background-color:rgb(100,150,255);
 }
 
-polyline{
+svg{
  position:absolute;
+ z-index:1;
+ background:transparent;
+}
+
+polyline{
  fill:none;
  stroke:blue;
  stroke-width:25;
  z-index:1;
- 
 }
 
 p{
@@ -54,7 +58,9 @@ a:active {
 <body>
 <a href="DamianSVG.html">SVG</a> 
 
+<svg>
   <polyline points="20,20 300,300 450,350 500,450" />
+</svg>
 
  <p>Damian</p>
  
