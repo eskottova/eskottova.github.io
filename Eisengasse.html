@@ -1,5 +1,71 @@
 <!DOCTYPE html>
 
+<head>
+  
+  <style>
+      body{
+        font-size:2em;
+        background-color:rgb(78,78,171);
+        font-family:monospace;
+        color:rgb(255,255,255);
+      }
+      
+      .timeDay{
+        color:rgb(150,150,150);
+      }
+      
+      .test{
+        color:red;
+      }
+      
+      table, td, th{
+        border:1px solid rgb(150,150,150);
+      }
+      
+      .CS{
+        color:rgb(200,230,30);
+        background:rgb(28,28,121);
+      }
+      
+      .TG, .BG{
+        background:rgb(0,200,100);
+      }
+      
+      .TG{
+        color:rgb(150,75,0);
+      }
+      
+      .De, .Ge, .Eng, .Fr, .RL{
+        background:rgb(0,0,255);
+      } 
+      
+      .Mu{
+        background:rgb(0,255,0);
+        color:rgb(0,0,0);
+      }
+      
+      .S {
+        background:rgb(50,50,255);
+      }
+      
+      .Mth, .GTZ{
+        background:rgb(255,255,70);
+        color:rgb(0,0,0);
+      }
+      
+      .Geo {
+        background:rgb(180,0,250)
+      }
+      
+      .Bio {
+        background:rgb(255,155,55);
+        color:rgb(0,0,0);
+      }
+      
+    </style>
+  
+</head>
+
 <body>
   
 <svg width="1000" height="1000">
@@ -523,6 +589,106 @@
 
 
 </svg>
+
+<h1>Stundenplan SA</h1>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="6">Stundenplan Jahr 2015/2016</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="timeDay">
+          <td>Zeit/Tag</td>
+          <td>Montag</td>
+          <td>Dienstag</td>
+          <td>Mittwoch</td>
+          <td>Donnerstag</td>
+          <td>Freitag</td>
+        </tr>
+        <tr>
+          <td class="timeDay">07:25-08:10</td>
+          <td class="TG">TG</td>
+          <td class="Eng">Englisch</td>
+          <td class="Fr">Französisch</td>
+          <td class="GTZ">GTZ</td>
+          <td class="Mth">Mathematik</td>
+        </tr>
+        <tr>
+          <td class="timeDay">08:15-09:00</td>
+          <td class="TG">TG</td>
+          <td class="Fr">Englisch</td>
+          <td class="Bio">Biologie</td>
+          <td class="Bio">Biologie</td>
+          <td class="De">Deutsch</td>
+        </tr>
+        <tr>
+          <td class="timeDay">09:10-09:55</td>
+          <td class="De">Deutsch</td>
+          <td class="Mth">Mathematik</td>
+          <td class="De">Deutsch</td>
+          <td class="Bio">Biologie</td>
+          <td class="De">Deutsch</td>
+        </tr>
+        <tr>  
+          <td class="timeDay">10:15-11:00</td>
+          <td class="Ge">Geschichte</td>
+          <td class="Fr">Französisch</td>
+          <td class="Ge">Geschichte</td>
+          <td class="Mth">Mathematik</td>
+          <td class="RL">RL</td>
+        </tr>
+        <tr>
+          <td class="timeDay">11:05-11:50</td>
+          <td class="Mu">Musik</td>
+          <td class="Fr">Französisch</td>
+          <td class="Mu">Musik</td>
+          <td class="Mth">Mathematik</td>
+          <td class="Eng">Englisch</td>
+        </tr>
+        <tr>
+          <td class="timeDay">12:05-12:50</td>
+          <td class="S">Sport</td>
+          <td class="frei"></td>
+          <td class="frei"></td>
+          <td class="frei"></td>
+          <td class="frei"></td>
+        </tr>
+        <tr>
+          <td class= "timeDay">12:55-13:40</td>
+          <td class="frei"></td>
+          <td class="frei"></td>
+          <td class="frei"></td>
+          <td class="frei"></td>
+          <td class="frei"></td>
+        </tr>
+        <tr>
+          <td class="timeDay">13:45-14:30</td>
+          <td class="frei"></td>
+          <td class="Geo">Geographie</td>
+          <td class="frei"></td>
+          <td class="S">Sport</td>
+          <td class="CS">Informatik</td>
+        </tr>
+        <tr>
+          <td class="timeDay">14:35-15:20</td>
+          <td class="frei"></td>
+          <td class="BG">BG</td>
+          <td class="frei"></td>
+          <td class="S">Sport</td>
+          <td class="CS">Informatik</td>
+        </tr>
+        <tr>
+          <td class="timeDay">15:30-16:15</td>
+          <td class="frei"></td>
+          <td class="BG">BG</td>
+          <td class="frei"></td>
+          <td class="Geo">Geographie</td>
+          <td class="frei"></td>
+        </tr>
+      </tbody>
+    </table>
+
 </body>
 
 </html>
