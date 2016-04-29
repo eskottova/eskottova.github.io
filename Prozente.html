@@ -3,7 +3,10 @@
   <body>
     <script>
       var prozente = function(){
-        alert("prozente");
+        var a = prompt("Wieviele Franken?(z.B."5400")Gib nur die Zahl an!Achtung: z.B. 5 Franken und 70 Rappen = 5.70!!");
+        var b = prompt("Von wievielen Franken?(z.B."5400")Gib nur die Zahl an!Achtung: z.B. 5 Franken und 70 Rappen = 5.70!!");
+        var result = a/b*100;
+        return result;
       }
       var franken = function(){
         alert("franken");
@@ -18,7 +21,7 @@
       <h1>Ich suche...</h1>
       <button onclick="prozente()">Prozente</button>
       <button onclick="franken()">Franken</button>
-      <button onclick="dasGanze()">Das Ganze</button><br>
+      <button onclick="dasGanze()">Das Ganze</button><br><br>
       <button onclick="erstesMal()">Ich bin zum Ersten Mal da</button>
   </body>
 </html>
