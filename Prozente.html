@@ -25,13 +25,26 @@
         alert("Willkommen. Ich arbeite gerade an dieser Webseite. Wenn du Ideen hast wie ich was verbessern sollte, kannst du mir dies mitteilen. Lies am besten die allgemeinen Infos durch.");
       }
       var infos = function(){
+        var button = document.getElementById("bu");
         var paragraph = document.getElementById("p");
-        paragraph.innerHTML = "Wenn du Franken angeben musst, musst du es als normale Zahl schreiben.<br>(z.B. 5 Franken und 50 Rappen = '5.50')";
-      }
+        if(button.class === "1"){
+          button.innerHTML = "Allgemeine Infos";
+          button.class = "2";
+          paragraph.innerHTML = "";
+        }else{
+          button.innerHTML = "OK";
+          button.class = "1";
+          paragraph.innerHTML = "Wenn du Franken angeben musst, musst du es als normale Zahl schreiben.<br>" + 
+                                "(z.B. 5 Franken und 50 Rappen = '5.50')<br><br>" +
+                                "Wenn du Prozente angeben musst gibst du diese auch nur als Zahl an.<br>" +
+                                "(z.B. 50 Prozent = '50')" +
+                                "Bei Prozente gibt es ein Problem : Brüche!<br>";
+        }
+        }
     </script>
       <h1>Prozentrechnungen</h1>
       <button onclick="erstesMal()">Ich bin zum ersten Mal hier</button><br>
-      <button onclick="infos()">Allgemeine Infos</button>
+      <button id="bu" onclick="infos()">Allgemeine Infos</button>
       <p id="p"></p>
       <h3>Ich suche...</h3>
       <button onclick="prozentsatz()">Prozentsatz</button>
