@@ -2,34 +2,41 @@
 <html>
   <body>
     <script>
-      var prozente = function(){
-        var a = prompt("Wie viele Franken?(z.B.'5400')Gib nur die Zahl an!Achtung: z.B. 5 Franken und 70 Rappen = '5.70'!!");
-        var b = prompt("Von wie vielen Franken?(z.B.'5400')Gib nur die Zahl an!Achtung: z.B. 5 Franken und 70 Rappen = '5.70'!!");
+      var prozentsatz = function(){
+        alert("Beim Prozentsatz hat man zwei Zahlen: 1. Wie viele Franken und 2. von wie vielen Franken. Der Computer rechnet nachher aus, wie viele Prozent das sind.");
+        var a = prompt("Wie viele Franken?");
+        var b = prompt("Von wie vielen Franken?");
         var result = a/b*100;
-        alert(a + " von " + b + " sind " + result +"%");
+        alert(a + " von " + b + " sind " + result +"%.");
       }
-      var franken = function(){
-        var a = prompt("Wie viele Prozent?(z.b.'40')Gib nur die Zahl an!Achtung:Ich muss noch herausfinden wie man 33.33333 angeben muss");
-        var b = prompt("Von wie vielen Franken?(z.B.'5400')Gib nur die Zahl an!Achtung: z.B. 5 Franken und 70 Rappen = '5.70'!!");
+      var prozentwert = function(){
+        var a = prompt("Wie viele Prozent?");
+        var b = prompt("Von wie vielen Franken?");
         var result = b/100*a;
         alert(a + " Prozent von " + b + " sind " + result + " Franken");
       }
-      var dasGanze = function(){
-        var a = prompt("Wie viele Prozent?(z.b.'40')Gib nur die Zahl an!Achtung: Ich muss noch herausfinden wie man 33.33333 angeben muss");
-        var b = prompt("Wie viele Franken?Gib nur die Zahl an!Achtung: z.B. 5 Franken und 70 Rappen = '5.70'!!");
+      var gesamtwert = function(){
+        var a = prompt("Wie viele Prozent?");
+        var b = prompt("Wie viele Franken?");
         var result = b/a*100;
         alert("Wenn " + a + " Prozent " + b + " Franken sind, ist das Ganze: " + result + " Franken.");
       }
-      /*var erstesMal = function(){
-        alert("Willkommen.  Wenn du Ideen hast wie ich was verbessern sollte, kannst du mir dies mitteilen")
-      }*/
+      var erstesMal = function(){
+        alert("Willkommen. Ich arbeite gerade an dieser Webseite. Wenn du Ideen hast wie ich was verbessern sollte, kannst du mir dies mitteilen. Lies am besten die allgemeinen Infos durch.");
+      }
+      var infos = function(){
+        var paragraph = document.getElementById("p");
+        paragraph.innerHTML = "Wenn du Franken angeben musst, musst du es als normale Zahl schreiben.<br>(z.B. 5 Franken und 50 Rappen = '5.50')";
+      }
     </script>
       <h1>Prozentrechnungen</h1>
-      <!--<button onclick="erstesMal()">Ich bin zum ersten Mal hier</button>-->
+      <button onclick="erstesMal()">Ich bin zum ersten Mal hier</button><br>
+      <button onclick="infos()">Allgemeine Infos</button>
+      <p id="p"></p>
       <h3>Ich suche...</h3>
-      <button onclick="prozente()">Prozentsatz</button>
-      <button onclick="franken()">Prozentwert</button>
-      <button onclick="dasGanze()">Grundwert</button><br><br>
+      <button onclick="prozentsatz()">Prozentsatz</button>
+      <button onclick="prozentwert()">Prozentwert</button>
+      <button onclick="grundwert()">Grundwert</button><br>
       
   </body>
 </html>
