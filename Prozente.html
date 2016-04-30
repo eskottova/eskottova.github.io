@@ -3,19 +3,24 @@
   <body>
     <script>
       var prozentsatz = function(){
-        alert("Beim Prozentsatz hat man zwei Zahlen: 1. Wie viele Franken und 2. von wie vielen Franken. Der Computer rechnet nachher aus, wie viele Prozent das sind.");
+        alert("Beim Prozentsatz hat man zwei Zahlen: 1. Wie viele Franken und 2. von wie vielen Franken.<br>" +
+              "Der Computer rechnet nachher aus, wie viele Prozent das sind.");
         var a = prompt("Wie viele Franken?");
         var b = prompt("Von wie vielen Franken?");
         var result = a/b*100;
         alert(a + " von " + b + " sind " + result +"%.");
       }
       var prozentwert = function(){
+        alert("Beim Prozentwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. von wie vielen Franken.<br>" +
+              "Der Computer rechnet nachher aus, wie viele Franken das sind.");
         var a = prompt("Wie viele Prozent?");
         var b = prompt("Von wie vielen Franken?");
         var result = b/100*a;
         alert(a + " Prozent von " + b + " sind " + result + " Franken");
       }
       var gesamtwert = function(){
+        alert("Beim Gesamtwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. wie viele Franken.<br>" +
+              "Der Computer rechnet nachher aus, wie viele Franken das sind.");
         var a = prompt("Wie viele Prozent?");
         var b = prompt("Wie viele Franken?");
         var result = b/a*100;
@@ -37,10 +42,12 @@
           paragraph.innerHTML = "Wenn du Franken angeben musst, musst du es als normale Zahl schreiben.<br>" + 
                                 "(z.B. 5 Franken und 50 Rappen = '5.50')<br><br>" +
                                 "Wenn du Prozente angeben musst gibst du diese auch nur als Zahl an.<br>" +
-                                "(z.B. 50 Prozent = '50')" +
-                                "Bei Prozente gibt es ein Problem : Brüche!<br>";
+                                "(z.B. 50 Prozent = '50')<br>" +
+                                "Bei Prozenten gibt es ein Problem : Brüche!<br>" +
+                                "Deswegen wirst du zuerst gefragt ob du Brüche verwenden willst oder nicht.<br><br>"+
+                                "Sollte das Resultat ein Mal 'NaN' entsprechen, hast du eine ungültige oder gar keine Zahl eingegeben.";
         }
-        }
+      }
     </script>
       <h1>Prozentrechnungen</h1>
       <button onclick="erstesMal()">Ich bin zum ersten Mal hier</button><br>
