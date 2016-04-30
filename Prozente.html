@@ -13,7 +13,7 @@
       var prozentwert = function(){
         alert("Beim Prozentwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. von wie vielen Franken." +
               "Der Computer rechnet nachher aus, wie viele Franken das sind.");
-        var bruch = confirm("Brauchst du einen Bruch bei den Prozenten?('OK' = Ja, 'Cancel' = Nein)");
+        /*var bruch = confirm("Brauchst du einen Bruch bei den Prozenten?('OK' = Ja, 'Cancel' = Nein)");
         if(bruch == true){
           alert("Zuerst musst du eingeben wie viele Prozent es sind." +
                 "Danach gibst du den Bruch ein. Zum Schluss schreibst du noch von wie vielen Franken." +
@@ -24,17 +24,17 @@
           var b = prompt("Von wie vielen Franken?");
           var result = b/100*(a + (a2/a3));
           alert(a + (a2/a3) + " Prozent von " + b + " sind " + result + " Franken");
-        }else{
+        }else{*/
           var a = prompt("Wie viele Prozent?");
           var b = prompt("Von wie vielen Franken?");
           var result = b/100*a;
           alert(a + " Prozent von " + b + " sind " + result + " Franken");
-        }  
+        //}  
       }
       var gesamtwert = function(){
         alert("Beim Gesamtwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. wie viele Franken." +
               "Der Computer rechnet nachher aus, wie viele Franken das sind.");
-        var bruch = confirm("Brauchst du einen Bruch bei den Prozenten?('OK' = Ja, 'Cancel' = Nein)");
+        /*var bruch = confirm("Brauchst du einen Bruch bei den Prozenten?('OK' = Ja, 'Cancel' = Nein)");
         if(bruch){
           alert("Zuerst musst du eingeben wie viele Prozent es sind." +
                 "Danach gibst du den Bruch ein. Zum Schluss schreibst du noch von wie vielen Franken." +
@@ -45,12 +45,12 @@
           var b = prompt("= wie viele Franken?");
           var result = b/(a + (a2/a3))*100;
           alert("Wenn " + a + (a2/a3) + " Prozent von " + b + " Franken sind, sind 100%" + result + " Franken");
-        }else{
+        }else{*/
           var a = prompt("Wie viele Prozent?");
           var b = prompt("= Wie viele Franken?");
           var result = b/a*100;
           alert(a + " Prozent von " + b + " sind " + result + " Franken");
-        }  
+        //}  
       }
       var erstesMal = function(){
         alert("Willkommen. Ich arbeite gerade an dieser Webseite. Wenn du Ideen hast wie ich was verbessern sollte, kannst du mir dies mitteilen. Lies am besten die allgemeinen Infos durch.");
@@ -74,6 +74,7 @@
                                 "Sollte das Resultat ein Mal 'NaN' entsprechen, hast du eine ungültige oder gar keine Zahl eingegeben.";
         }
       }
+      alert("Die Brüche gehen noch nicht");
     </script>
       <h1>Prozentrechnungen</h1>
       <button onclick="erstesMal()">Ich bin zum ersten Mal hier</button><br>
