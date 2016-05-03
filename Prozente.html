@@ -22,8 +22,8 @@
           var a2 = prompt("+ Welcher Bruch?(z.B. 33.66666...='2/3')");
           var a3 = prompt("a3");
           var b = prompt("Von wie vielen Franken?");
-          var result = b/100*(a + (a2/a3));
-          alert(a + (a2/a3) + " Prozent von " + b + " sind " + result + " Franken");
+          var result = b/100*(a + a2/a3);
+          alert(a + a2/a3 + " Prozent von " + b + " sind " + result + " Franken");
         }else{
           var a = prompt("Wie viele Prozent?");
           var b = prompt("Von wie vielen Franken?");
@@ -43,8 +43,8 @@
           var a2 = prompt("+ Welcher Bruch?(z.B. 33.66666...='2/3')");
           var a3 = prompt("a3");
           var b = prompt("= wie viele Franken?");
-          var result = b/(a + (a2/a3))*100;
-          alert("Wenn " + a + (a2/a3) + " Prozent von " + b + " Franken sind, sind 100%" + result + " Franken");
+          var result = b/(a + a2/a3)*100;
+          alert("Wenn " + a + a2/a3 + " Prozent von " + b + " Franken sind, sind 100% " + result + " Franken");
         }else{
           var a = prompt("Wie viele Prozent?");
           var b = prompt("= Wie viele Franken?");
@@ -69,12 +69,14 @@
                                 "(z.B. 5 Franken und 50 Rappen = '5.50')<br><br>" +
                                 "Wenn du Prozente angeben musst gibst du diese auch nur als Zahl an.<br>" +
                                 "(z.B. 50 Prozent = '50')<br>" +
-                                "Bei Prozenten gibt es ein Problem : Brüche!<br>" +
+                                "Bei den Prozenten gibt es ein Problem : Brüche!<br>" +
                                 "Deswegen wirst du zuerst gefragt ob du Brüche verwenden willst oder nicht.<br><br>"+
-                                "Sollte das Resultat ein Mal 'NaN' entsprechen, hast du eine ungültige oder gar keine Zahl eingegeben.";
+                                "Sollte das Resultat ein Mal 'NaN' entsprechen, hast du eine ungültige<br>" +
+                                "oder gar keine Zahl eingegeben.";
+          alert("Die Brüche gehen noch nicht!!(Das Resultat stimmt noch nicht, aber theoretisch könnte man es ausprobieren.)");
+          
         }
       }
-      alert("Die Brüche gehen noch nicht");
     </script>
       <h1>Prozentrechnungen</h1>
       <button onclick="erstesMal()">Ich bin zum ersten Mal hier</button><br>
