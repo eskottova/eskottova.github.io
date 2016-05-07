@@ -4,9 +4,21 @@
     <style>
       body{
         background:rgb(28,28,121);
+        font-size:2em;
       }
       h1, h2, h3, p{
         color:rgb(255,255,255);
+      }
+      .prozentsatz{
+        float:left;
+        width:30%;
+      }
+      .prozentwert{
+        width:30%;
+      }
+      .grundwert{
+        float:right;
+        width:30%;
       }
     </style>
   </head>
@@ -85,9 +97,8 @@
                                 "Bei den Prozenten gibt es ein Problem : Brüche!<br>" +
                                 "Deswegen wirst du zuerst gefragt ob du Brüche verwenden willst oder nicht.<br><br>"+
                                 "Sollte das Resultat ein Mal 'NaN' entsprechen, hast du eine ungültige<br>" +
-                                "oder gar keine Zahl eingegeben.";
-          alert("Die Brüche gehen noch nicht!!(Das Resultat stimmt noch nicht, aber theoretisch könnte man es ausprobieren.)");
-          
+                                "oder gar keine Zahl eingegeben.<br>" +
+                                "Falls du Brüche verwendest musst du das Resultat im Moment noch runden.";
         }
       }
     </script>
@@ -96,9 +107,9 @@
       <button id="bu" onclick="infos()">Allgemeine Infos</button>
       <p id="p"></p>
       <h3>Ich suche...</h3>
-      <button onclick="prozentsatz()">Prozentsatz</button>
-      <button onclick="prozentwert()">Prozentwert</button>
-      <button onclick="grundwert()">Grundwert</button><br>
+      <button class="prozentsatz" onclick="prozentsatz()">Prozentsatz</button>
+      <button class="prozentwert" onclick="prozentwert()">Prozentwert</button>
+      <button class="grundwert" onclick="grundwert()">Grundwert</button><br>
       
   </body>
   <script>
