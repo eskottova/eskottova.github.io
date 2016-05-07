@@ -1,5 +1,12 @@
 <!Doctype HTML>
 <html>
+  <head>
+    <style>
+      body{
+        background:rgb(28,28,121);
+      }
+    </style>
+  </head>
   <body>
     <script>
       var prozentsatz = function(){
@@ -46,12 +53,12 @@
           var a4 = a + a2/a3;
           var b = prompt("= wie viele Franken?");
           var result = b/a4*100;
-          alert("Wenn " + a4 + " Prozent von " + b + " Franken sind, sind 100% " + result + " Franken");
+          alert("Wenn " + a4 + " Prozent " + b + " Franken sind, sind 100% " + result + " Franken");
         }else{
           var a = prompt("Wie viele Prozent?");
           var b = prompt("= Wie viele Franken?");
           var result = b/a*100;
-          alert(a + " Prozent von " + b + " sind, sind 100% " + result + " Franken");
+          alert(a + " Prozent " + b + " Franken sind, sind 100% " + result + " Franken");
         }  
       }
       var erstesMal = function(){
