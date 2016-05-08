@@ -34,13 +34,25 @@
   <body>
     <script>
       var prozentsatz = function(){
-        alert("Beim Prozentsatz hat man zwei Zahlen: 1. Wie viele Franken und 2. von wie vielen Franken." +
-              "Der Computer rechnet nachher aus, wie viele Prozent das sind.");
-        var a = prompt("Wie viele Franken?");
-        var b = prompt("Von wie vielen Franken?");
-        var result = a/b*100;
-        alert(a + " von " + b + " sind " + result +"%.");
+        var p1 = document.getElementById("prozentsatz1");
+        var p2 = document.getElementById("prozentsatz2");
+        var p3 = document.getElementById("prozentsatz3");
+        p1.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'" + 
+                        " oder 'a von b sind c %'";
+        p2.innerHTML = "In das nächste Eingabefeld schreibst du die erste Zahl also z.B. '40'.<br><input id="a1"><br><br>"
+        p3.innerHTML = "In das nächste Eingabefeld schreibst du die zweite  Zahl also z.B. '50'.<br><input id="b1"><br><br>" + 
+                        "<button onclick="ausrechnen1()">Ausrechnen</button>"
       }
+        var ausrechnen1 = function(){
+          var a = document.getElementById("a1").value;
+          var b = document.getElementById("b1").value;
+          var result = a/b*100;
+          var message = a + " von " + b + " sind " + result + " %.";
+          var p4 = document.getElementById("prozentsatz4");
+          p4.innerHTML = message;
+        }
+        
+      
       var prozentwert = function(){
         alert("Beim Prozentwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. von wie vielen Franken." +
               "Der Computer rechnet nachher aus, wie viele Franken das sind.");
@@ -117,8 +129,20 @@
       <p id="p"></p>
       <h2>Ich suche...</h2>
       <button class="prozentsatz" onclick="prozentsatz()">Prozentsatz</button>
+        <p class="prozentsatz" id="prozentsatz1"></p>
+        <p class="prozentsatz" id="prozentsatz2"></p>
+        <p class="prozentsatz" id="prozentsatz3"></p>
+        <p class="prozentsatz" id="prozentsatz4"></p>
       <button class="prozentwert" onclick="prozentwert()">Prozentwert</button>
+        <p class="prozentwert" id="prozentwert1"></p>
+        <p class="prozentwert" id="prozentwert2"></p>
+        <p class="prozentwert" id="prozentwert3"></p>
+        <p class="prozentwert" id="prozentwert4"></p>
       <button class="grundwert" onclick="grundwert()">Grundwert</button><br>
+        <p class="grundwert" id="grundwert1"></p>
+        <p class="grundwert" id="grundwert2"></p>
+        <p class="grundwert"id="grundwert3"></p>
+        <p class="grundwert" id="grundwert4"></p>
       
   </body>
   <script>
