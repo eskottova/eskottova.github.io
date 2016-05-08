@@ -15,7 +15,6 @@
         width:33%;
       }
       .prozentwert{
-        position:absolute;
         width:34%;
         margin:auto;
       }
@@ -39,9 +38,9 @@
         var p3 = document.getElementById("prozentsatz3");
         p1.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'" + 
                         " oder 'a von b sind c %'";
-        p2.innerHTML = "In das nächste Eingabefeld schreibst du die erste Zahl also z.B. '40'.<br><input id="a1"><br><br>"
+        p2.innerHTML = "In das nächste Eingabefeld schreibst du die erste Zahl also z.B. '40'.<br><input id="a1"><br><br>";
         p3.innerHTML = "In das nächste Eingabefeld schreibst du die zweite  Zahl also z.B. '50'.<br><input id="b1"><br><br>" + 
-                        "<button onclick="ausrechnen1()">Ausrechnen</button>"
+                        "<button onclick="ausrechnen1()">Ausrechnen</button>";
       }
         var ausrechnen1 = function(){
           var a = document.getElementById("a1").value;
