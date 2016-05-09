@@ -78,10 +78,10 @@
             var c = Number(document.getElementById("c2").value);
             var d = Number(document.getElementById("d2").value);
             var p6 = document.getElementById("prozentwert6");
-          if(a === "nein"){
+          if(a.value === "nein"){
             var result = d/100*b;
             var message = b + " % von " + d + " sind " + result + " .";
-          }else if(a === "ja"){ 
+          }else if(a.value === "ja"){ 
             var result = d/c*b;
             var message = b + "/" + c + " % von " + d + " sind " + result +" .";
           }else{
@@ -115,10 +115,10 @@
             var c = Number(document.getElementById("c3").value);
             var d = Number(document.getElementById("d3").value);
             var p6 = document.getElementById("grundwert6");
-          if(a === "nein"){
+          if(a.value === "nein"){
             var result = d/b*100;
             var message = "Wenn " + b + c +" % sind, sind 100% "  + result + " .";
-          }else if(a === "ja"){ 
+          }else if(a.value === "ja"){ 
             var result = d/(b/c)*100;
             var message = "Wenn " + b + c +" % sind, sind 100% "  + result + " .";
           }else{
