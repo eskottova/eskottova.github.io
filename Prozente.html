@@ -25,11 +25,10 @@
         margin:auto;
       }
       #container3{
-        position:absolute;
         float:right;
         width:33%;
       }
-      #prozentsatz4{
+      .resultate{
         color:white;
       }
     </style>
@@ -90,32 +89,47 @@
           }else{
             alert("Du hast 'ja' oder 'nein' beim ersten Eingabefeld vergessen oder falsch geschrieben.");
           }
-          
+            p6.innerHTML = message;
+        }
+        
+      var grundwert = function(){
+        var p1 = document.getElementById("grundwert1");
+        var p2 = document.getElementById("grundwert2");
+        var p3 = document.getElementById("grundwert3");
+        var p4 = document.getElementById("grundwert4");
+        var p5 = document.getElementById("grundwert5");
+        var p6 = document.getElementById("grundwert6");
+        p1.innerHTML = "Beim Grundwert muss man herausfinden, wie viel 100 Prozent sind, wenn a% b sind." +
+        "Beispiel: 'Wenn 60% 180 sind, sind 100% 300' oder 'Wenn a% b sind, sind 100% c'";
+        p2.innerHTML = "Hier gibt es das Problem mit den Brüchen. Falls du eine Prozentzahl mit einem Bruch brauchst" +
+                       "(z.B. 33.333...%) schreibst du 'ja' in dieses Feld.Wenn nicht schreibe 'nein' " +
+                       "(achte in beiden Fällen darauf, dass das Wort kleingeschrieben wird!).<br><input id='a3'><br><br>";
+        p3.innerHTML = "In das nächste Eingabefeld schreibst du die Prozentzahl. Also z.B. '60'. " +
+                       "Falls du einen Bruch brauchst, gib nur den Zähler an. "+
+                       "z.B.33.33333...=1/3='1'<br><input id='b3'><br><br>";
+        p4.innerHTML = "Das nächste Eingabefeld ist nur für den Fall, dass man einen Bruch braucht.  " +
+                       "Gib den Nenner an. z.B.33.33333... = 1/3 = '3'<br><input id='c3'><br>";
+        p5.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '180'." + 
+                       "<br><input id='d3'><br><br><button onclick='ausrechnen3()'>Ausrechnen</button><br>";               
+      }
+        var ausrechnen3 = function(){
+            var a = Number(document.getElementById("a3").value);
+            var b = Number(document.getElementById("b3").value);
+            var c = Number(document.getElementById("c3").value);
+            var d = Number(document.getElementById("d3").value);
+            var p6 = document.getElementById("grundwert6");
+          if(a2 === "nein"){
+            var result = d/b*100;
+            var message = "Wenn " + b + c +" % sind, sind 100% "  + result + " .";
+          }else if(a2 === "nein"){ 
+            var result = d/(b/c)*100;
+            var message = "Wenn " + b + c +" % sind, sind 100% "  + result + " .";
+          }else{
+            alert("Du hast 'ja' oder 'nein' beim ersten Eingabefeld vergessen oder falsch geschrieben.");
+          }
             p6.innerHTML = message;
         }
       
-      var grundwert = function(){
-        alert("Beim Gesamtwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. wie viele Franken." +
-              "Der Computer rechnet nachher aus, wie viele Franken das sind.");
-        var bruch = confirm("Brauchst du einen Bruch bei den Prozenten?('OK' = Ja, 'Cancel' = Nein)");
-        if(bruch){
-          alert("Zuerst musst du eingeben wie viele Prozent es sind." +
-                "Danach gibst du den Bruch ein. Zum Schluss schreibst du noch von wie vielen Franken." +
-                "(z.B. 33.33333....% = 90Franken = 1. : '33', 2. : '1/3', 3. : '90')");
-          var a = Number(prompt("Wie viele Prozent?Gib nur die Zahn ein!(z.B. 33.66666...='33')"));
-          var a2 = Number(prompt("+ Welcher Bruch?(z.B. 33.66666...='2/3')"));
-          var a3 = Number(prompt("a3"));
-          var a4 = a + a2/a3;
-          var b = prompt("= wie viele Franken?");
-          var result = b/a4*100;
-          alert("Wenn " + a4 + " Prozent " + b + " Franken sind, sind 100% " + result + " Franken");
-        }else{
-          var a = prompt("Wie viele Prozent?");
-          var b = prompt("= Wie viele Franken?");
-          var result = b/a*100;
-          alert(a + " Prozent " + b + " Franken sind, sind 100% " + result + " Franken");
-        }  
-      }
       var erstesMal = function(){
         alert("Willkommen. Ich arbeite gerade an dieser Webseite. Wenn du Ideen hast wie ich was verbessern sollte, " +
               "kannst du mir dies mitteilen. Lies am besten die allgemeinen Infos durch.");
@@ -152,7 +166,7 @@
           <p class="prozentsatz" id="prozentsatz1"></p>
           <p class="prozentsatz" id="prozentsatz2"></p>
           <p class="prozentsatz" id="prozentsatz3"></p>
-          <p class="prozentsatz" id="prozentsatz4"></p>
+          <p class="prozentsatz, resultate" id="prozentsatz4"></p>
       </div>
       <div id="container2">
         <button class="prozentwert" onclick="prozentwert()">Prozentwert</button>
@@ -160,13 +174,18 @@
           <p class="prozentwert" id="prozentwert2"></p>
           <p class="prozentwert" id="prozentwert3"></p>
           <p class="prozentwert" id="prozentwert4"></p>
+          <p class="prozentwert" id="prozentwert5"></p>
+          <p class="prozentwert, resultate" id="prozentwert6"></p>
       </div>
       <div id="container3">
         <button class="grundwert" onclick="grundwert()">Grundwert</button><br>
           <p class="grundwert" id="grundwert1"></p>
           <p class="grundwert" id="grundwert2"></p>
-          <p class="grundwert"id="grundwert3"></p>
+          <p class="grundwert" id="grundwert3"></p>
           <p class="grundwert" id="grundwert4"></p>
+          <p class="grundwert" id="grundwert5"></p>
+          <p class="grundwert, resultate" id="grundwert6"></p>
+          
       </div>
   </body>
   <script>
