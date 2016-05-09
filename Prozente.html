@@ -30,15 +30,16 @@
       #container2{
         width:34%;
         float:left;
-        clear:left;
       }
       #container3{
-        clear:left;
         float:left;
         width:33%;
       }
       .resultate{
         color:white;
+      }
+      br{
+        clear:left;
       }
     </style>
   </head>
@@ -110,7 +111,7 @@
             var p5 = document.getElementById("grundwert6");
            
             var result = c/(a/b)*100;
-            var message = "Wenn " + a + "/" + c + "" + b +" % sind, sind 100% "  + result + " .";
+            var message = "Wenn " + a + "/" + c + " " + b +" % sind, sind 100% "  + result + " .";
             p5.innerHTML = message;
         }
       
