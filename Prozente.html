@@ -71,12 +71,11 @@
                        "z.B.33.33333...=1/3='1'<br><input id='b2'><br><br>" + 
                        "<button onclick='ausrechnen1()'>Ausrechnen</button><br>";
         p4.innerHTML = "Das nächste Eingabefeld ist nur für den Fall, dass man einen Bruch braucht.  " +
-                       "Gib den Nenner an. z.B.33.33333... = 1/3 = '3'<br><input id='c2'><br><br>" + 
-                       "<button onclick='ausrechnen1()'>Ausrechnen</button><br>";
+                       "Gib den Nenner an. z.B.33.33333... = 1/3 = '3'<br><input id='c2'><br>";
         p5.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
-                       "<br><input id='d2'><br><br><button onclick='ausrechnen1()'>Ausrechnen</button><br>";               
+                       "<br><input id='d2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";               
       }
-        var ausrechnen1 = function(){
+        var ausrechnen2 = function(){
             var a = Number(document.getElementById("a2").value);
             var b = Number(document.getElementById("b2").value);
             var c = Number(document.getElementById("c2").value);
