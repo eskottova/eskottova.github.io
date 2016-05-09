@@ -39,8 +39,7 @@
         var p1 = document.getElementById("prozentsatz1");
         var p2 = document.getElementById("prozentsatz2");
         var p3 = document.getElementById("prozentsatz3");
-        p1.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'" + 
-                       " oder 'a von b sind c %'";
+        p1.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'";
         p2.innerHTML = "In das nächste Eingabefeld schreibst du die erste Zahl also z.B. '40'.<br><input id='a1'><br><br>";
         p3.innerHTML = "In das nächste Eingabefeld schreibst du die zweite  Zahl also z.B. '50'.<br><input id='b1'><br><br>" + 
                        "<button onclick='ausrechnen1()'>Ausrechnen</button><br>";
@@ -61,8 +60,7 @@
         var p4 = document.getElementById("prozentwert4");
         var p5 = document.getElementById("prozentwert5");
         var p6 = document.getElementById("prozentwert6");
-        p1.innerHTML = "Beim Prozentwert muss man herausfinden, wie viel a Prozent von b sind. Beispiel: '60% von 50 sind 30'" + 
-                       " oder 'a% von b sind c'";
+        p1.innerHTML = "Beim Prozentwert muss man herausfinden, wie viel a Prozent von b sind. Beispiel: '60% von 50 sind 30'";
         p2.innerHTML = "Hier gibt es das Problem mit den Brüchen. Falls du eine Prozentzahl mit einem Bruch brauchst" +
                        "(z.B. 33.333...%) schreibst du 'ja' in dieses Feld.Wenn nicht schreibe 'nein' " +
                        "(achte in beiden Fällen darauf, dass das Wort kleingeschrieben wird!).<br><input id='a2'><br><br>";
@@ -83,7 +81,7 @@
           if(a2 === "nein"){
             var result = d/100*b;
             var message = b + " % von " + d + " sind " + result + " .";
-          }else if(a2 === "nein"){ 
+          }else if(a2 === "ja"){ 
             var result = d/c*b;
             var message = b + "/" + c + " % von " + d + " sind " + result +" .";
           }else{
@@ -99,8 +97,7 @@
         var p4 = document.getElementById("grundwert4");
         var p5 = document.getElementById("grundwert5");
         var p6 = document.getElementById("grundwert6");
-        p1.innerHTML = "Beim Grundwert muss man herausfinden, wie viel 100 Prozent sind, wenn a% b sind." +
-        "Beispiel: 'Wenn 60% 180 sind, sind 100% 300' oder 'Wenn a% b sind, sind 100% c'";
+        p1.innerHTML = "Beim Grundwert muss man herausfinden, wie viel 100 Prozent sind, wenn a% b sind.Beispiel: 'Wenn 60% 180 sind, sind 100% 300'";
         p2.innerHTML = "Hier gibt es das Problem mit den Brüchen. Falls du eine Prozentzahl mit einem Bruch brauchst" +
                        "(z.B. 33.333...%) schreibst du 'ja' in dieses Feld.Wenn nicht schreibe 'nein' " +
                        "(achte in beiden Fällen darauf, dass das Wort kleingeschrieben wird!).<br><input id='a3'><br><br>";
@@ -121,7 +118,7 @@
           if(a2 === "nein"){
             var result = d/b*100;
             var message = "Wenn " + b + c +" % sind, sind 100% "  + result + " .";
-          }else if(a2 === "nein"){ 
+          }else if(a2 === "ja"){ 
             var result = d/(b/c)*100;
             var message = "Wenn " + b + c +" % sind, sind 100% "  + result + " .";
           }else{
