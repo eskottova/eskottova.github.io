@@ -54,29 +54,47 @@
           p4.innerHTML = message;
         }
         
-      
       var prozentwert = function(){
-        alert("Beim Prozentwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. von wie vielen Franken." +
-              "Der Computer rechnet nachher aus, wie viele Franken das sind.");
-        var bruch = confirm("Brauchst du einen Bruch bei den Prozenten?('OK' = Ja, 'Cancel' = Nein)");
-        if(bruch == true){
-          alert("Zuerst musst du eingeben wie viele Prozent es sind." +
-                "Danach gibst du den Bruch ein. Zum Schluss schreibst du noch von wie vielen Franken." +
-                "(z.B. 33.33333....% von 90Franken = 1. : '33', 2. : '1/3', 3. : '90')");
-          var a = Number(prompt("Wie viele Prozent?Gib nur die Zahn ein!(z.B. 33.66666...='33')"));
-          var a2 = Number(prompt("+ Welcher Bruch?(z.B. 33.66666...='2/3')"));
-          var a3 = Number(prompt("a3"));
-          var a4 = a + a2/a3;
-          var b = prompt("Von wie vielen Franken?");
-          var result = b/100*a4;
-          alert(a4 + " Prozent von " + b + " sind " + result + " Franken");
-        }else{
-          var a = prompt("Wie viele Prozent?");
-          var b = prompt("Von wie vielen Franken?");
-          var result = b/100*a;
-          alert(a + " Prozent von " + b + " sind " + result + " Franken");
-        }  
+        var p1 = document.getElementById("prozentwert1");
+        var p2 = document.getElementById("prozentwert2");
+        var p3 = document.getElementById("prozentwert3");
+        var p4 = document.getElementById("prozentwert4");
+        var p5 = document.getElementById("prozentwert5");
+        var p6 = document.getElementById("prozentwert6");
+        p1.innerHTML = "Beim Prozentwert muss man herausfinden, wie viel a Prozent von b sind. Beispiel: '60% von 50 sind 30'" + 
+                       " oder 'a% von b sind c'";
+        p2.innerHTML = "Hier gibt es das Problem mit den Brüchen. Falls du eine Prozentzahl mit einem Bruch brauchst" +
+                       "(z.B. 33.333...%) schreibst du 'ja' in dieses Feld.Wenn nicht schreibe 'nein' " +
+                       "(achte in beiden Fällen darauf, dass das Wort kleingeschrieben wird!).<br><input id='a2'><br><br>";
+        p3.innerHTML = "In das nächste Eingabefeld schreibst du die Prozentzahl. Also z.B. '60'. " +
+                       "Falls du einen Bruch brauchst, gib nur den Zähler an. "+
+                       "z.B.33.33333...=1/3='1'<br><input id='b2'><br><br>" + 
+                       "<button onclick='ausrechnen1()'>Ausrechnen</button><br>";
+        p4.innerHTML = "Das nächste Eingabefeld ist nur für den Fall, dass man einen Bruch braucht.  " +
+                       "Gib den Nenner an. z.B.33.33333... = 1/3 = '3'<br><input id='c2'><br><br>" + 
+                       "<button onclick='ausrechnen1()'>Ausrechnen</button><br>";
+        p5.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
+                       "<br><input id='d2'><br><br><button onclick='ausrechnen1()'>Ausrechnen</button><br>";               
       }
+        var ausrechnen1 = function(){
+            var a = Number(document.getElementById("a2").value);
+            var b = Number(document.getElementById("b2").value);
+            var c = Number(document.getElementById("c2").value);
+            var d = Number(document.getElementById("d2").value);
+            var p6 = document.getElementById("prozentwert6");
+          if(a2 === "nein")
+            var result = d/100*b;
+            var message = b + " % von " + d + " sind " + result + " .";
+          }else if(a2 === "nein"){ 
+            var result = d/c*b;
+            var message = b + "/" + c + " % von " + d + " sind " + result +" .";
+          }else{
+            alert("Du hast 'ja' oder 'nein' beim ersten Eingabefeld vergessen oder falsch geschrieben.");
+          }
+          
+            p6.innerHTML = message;
+        }
+      
       var grundwert = function(){
         alert("Beim Gesamtwert hat man zwei Zahlen: 1. Wie viele Prozent und 2. wie viele Franken." +
               "Der Computer rechnet nachher aus, wie viele Franken das sind.");
