@@ -91,12 +91,11 @@
         var p2 = document.getElementById("prozentwert2");
         var p3 = document.getElementById("prozentwert3");
         var p4 = document.getElementById("prozentwert4");
-        var p5 = document.getElementById("prozentwert5");
         p1.innerHTML = "Beim Prozentwert muss man herausfinden, wie viel a Prozent von b sind. Beispiel: '60% von 50 sind 30'";
-        p2.innerHTML = "Falls du eigentlich keinen Bruch brauchst schreibst du hier einfach '100' hin." +
-                       "Sonst gibst du den Nenner ein.z.B.33.33333...=1/3='1'<br><input id='a2'><br><br>";
-        p3.innerHTML = "Das nächste Eingabefeld ist nur für den Fall, dass man einen Bruch braucht.  " +
-                       "Gib den Nenner an. z.B.33.33333... = 1/3 = '3'<br><input id='b2'><br>";
+        p2.innerHTML = "Hier gibst du den Zähler ein. z.B. 33.33333... = 1/3 = '1' Falls du eigentlich " +
+                       "keinen Bruch brauchst, schreibst du hier einfach die Prozente hin.<br><input id='a2'><br><br>";
+        p3.innerHTML = "Gib den Nenner an. z.B.33.33333... = 1/3 = '3' Falls du eigentlich keinen Bruch" +
+                       "brauchst, schreibst du hier einfach '100' hin.";
         p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
                        "<br><input id='c2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";               
       }
@@ -104,7 +103,7 @@
             var a = Number(document.getElementById("a2").value);
             var b = Number(document.getElementById("b2").value);
             var c = Number(document.getElementById("c2").value);
-            var p5 = document.getElementById("prozentwert6");
+            var p5 = document.getElementById("prozentwert5");
            
             var result = c/b*a;
             var message = a + "/" + b + " von " + c + " sind " + result +" .";
@@ -117,13 +116,12 @@
         var p2 = document.getElementById("grundwert2");
         var p3 = document.getElementById("grundwert3");
         var p4 = document.getElementById("grundwert4");
-        var p5 = document.getElementById("grundwert5");
         p1.innerHTML = "Beim Grundwert muss man herausfinden, wie viel 100 Prozent sind, wenn a% b sind.Beispiel: 'Wenn 60% 180 sind, sind 100% 300'";
         p2.innerHTML = "In das nächste Eingabefeld schreibst du die Prozentzahl. Also z.B. '60'. " +
                        "Falls du einen Bruch brauchst, gib nur den Zähler an. "+
-                       "z.B.33.33333...=1/3='1'<br><input id='a3'><br><br>";
+                       "z.B. 33.33333... = 1/3 = '1'<br><input id='a3'><br><br>";
         p3.innerHTML = "Falls du eigentlich keinen Bruch brauchst schreibst du hier einfach '100' hin." +
-                       "Sonst gibst du den Nenner ein. z.B.33.33333... = 1/3 = '3'<br><input id='b3'><br>";
+                       "Wenn du einen brauchst, gibst du den Nenner ein. z.B.33.33333... = 1/3 = '3'<br><input id='b3'><br>";
         p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '180'." + 
                        "<br><input id='c3'><br><br><button onclick='ausrechnen3()'>Ausrechnen</button><br>";               
       }
@@ -131,10 +129,10 @@
             var a = Number(document.getElementById("a3").value);
             var b = Number(document.getElementById("b3").value);
             var c = Number(document.getElementById("c3").value);
-            var p5 = document.getElementById("grundwert6");
+           var p5 = document.getElementById("grundwert5");
            
-            var result = c/(a/b)*100;
-            var message = "Wenn " + a + "/" + c + " " + b +" % sind, sind 100% "  + result + " .";
+            var result = c*(a/b)*100;
+            var message = "Wenn " + a + "/" + b + " " + c +" % sind, sind 100% "  + result + " .";
             p5.innerHTML = message;
         }
       
@@ -183,8 +181,7 @@
             <p class="prozentwert" id="prozentwert2"></p>
             <p class="prozentwert" id="prozentwert3"></p>
             <p class="prozentwert" id="prozentwert4"></p>
-            <p class="prozentwert" id="prozentwert5"></p>
-            <p class="prozentwert, resultate" id="prozentwert6"></p>
+            <p class="prozentwert, resultate" id="prozentwert5"></p>
         </div>
         <div id="container3">
           <button class="grundwert" onclick="grundwert()">Grundwert</button><br>
@@ -192,8 +189,7 @@
             <p class="grundwert" id="grundwert2"></p>
             <p class="grundwert" id="grundwert3"></p>
             <p class="grundwert" id="grundwert4"></p>
-            <p class="grundwert" id="grundwert5"></p>
-            <p class="grundwert, resultate" id="grundwert6"></p>
+            <p class="grundwert, resultate" id="grundwert5"></p>
         </div>
       </div>
   </body>
