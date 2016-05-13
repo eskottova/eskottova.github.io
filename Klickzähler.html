@@ -1,2 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      body{
+       font-family:monospace; 
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var h = document.getElementById("heading");
+      var number = 0;
+      var count = function(){
+        number ++;
+        h.innerhtml("Du hast " + i + "x auf den Knopf geklickt!");
+      }
+    </script>
+    <h1 id="heading"></h1>
+    <button onclick="count()">Klicken</button>
+  </body>
+</html>
