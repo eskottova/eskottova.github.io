@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      var h = document.getElementById("heading");
-      var i = 0;
-      var count = function(){
-        i ++;
-        h.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'";
-      }
-    </script>
     <style>
       body{
        font-family:monospace; 
@@ -19,5 +11,13 @@
     
     <h1 id="heading"></h1>
     <button onclick="count()">Klicken</button>
+    <script>
+      var h = document.getElementById("heading");
+      var i = 0;
+      var count = function(){
+        i ++;
+        h.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'";
+      }
+    </script>
   </body>
 </html>
