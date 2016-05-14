@@ -16,7 +16,10 @@
       var i = 0;
       var count = function(){
         i ++;
-        h.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'";
+        if(i%100===0){
+          alert("Gratuliere, du hast " + i + "x auf den Knopf geklickt!")
+        }
+        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!";
       }
     </script>
   </body>
