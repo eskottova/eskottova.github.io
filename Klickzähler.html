@@ -8,18 +8,17 @@
     </style>
   </head>
   <body>
-    
-    <h1 id="heading"></h1>
     <button onclick="count()">Klicken</button>
+    <h1 id="heading"></h1>
     <script>
       var h = document.getElementById("heading");
       var i = 0;
       var count = function(){
         i ++;
+        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!";
         if(i%100===0){
           alert("Gratuliere, du hast " + i + "x auf den Knopf geklickt!")
         }
-        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!";
       }
     </script>
   </body>
