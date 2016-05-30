@@ -25,7 +25,13 @@
       li{
         float:left;
       }
-      li a:hover{
+      li a.active{
+        background:rgb(150,150,250);
+      }
+      li a:hover:active{
+        background:rgb(170,170,255);
+      }
+      li a:hover:not(.active){
         background:rgb(170,170,170);
       }
     </style>
