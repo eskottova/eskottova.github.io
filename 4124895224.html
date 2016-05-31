@@ -37,12 +37,26 @@
     </style>
   </head>
   <body>
-    <ul>
-      <li><a href="">1</a></li>
-      <li><a href="">2</a></li>
-      <li><a href="">3</a></li>
-      <li><a href="">4</a></li>
-      <li><a href="">5</a></li>
-    </ul>
+    <form onsubmit="check">
+      Username:<input type="text" id="urn">Username</input><br>
+      Password:<input type="text" id="pwd">Password</input><br>
+      <input type="submit">OK</input>
+    </form>
+    <script>
+      var u = "admin";
+      var p = "password";
+      var check=function(){
+        if(u === urn && p === pwd){
+          body.innerHTML=   "<ul>";
+                            "<li><a href=''>1</a></li>";
+                            "<li><a href=''>2</a></li>";
+                            "<li><a href='>3</a></li>";
+                            "<li><a href=''>4</a></li>";
+                            "<li><a href=''>5</a></li>";
+                            "</ul>";
+        }
+        else{}
+      }
+    </script>
   </body>
 </html>
