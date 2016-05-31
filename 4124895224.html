@@ -38,11 +38,13 @@
   </head>
   <body>
     <form onsubmit="check">
-      Username:<input type="text" id="urn">Username</input><br>
-      Password:<input type="text" id="pwd">Password</input><br>
-      <input type="submit">OK</input>
+      Username:<input type="text" id="urn" value="username"></input><br>
+      Password:<input type="text" id="pwd" value="password"></input><br>
+      <input type="submit" value="OK"></input>
     </form>
     <script>
+      var urn = document.getElementById("urn").value;
+      var pwd = document.getElementById("pwd").value;
       var u = "admin";
       var p = "password";
       var check=function(){
