@@ -43,11 +43,11 @@
       <input type="submit" value="OK"></input>
     </form>
     <script>
-      var urn = document.getElementById("urn").value;
-      var pwd = document.getElementById("pwd").value;
       var u = "admin";
       var p = "password";
       var check=function(){
+        var urn = document.getElementById("urn").value;
+        var pwd = document.getElementById("pwd").value;
         if(u === urn && p === pwd){
           body.innerHTML=   "<ul>";
                             "<li><a href=''>1</a></li>"+
@@ -57,7 +57,7 @@
                             "<li><a href=''>5</a></li>"+
                             "</ul>";
         }
-        else{alert("Problem")}
+        else{alert("Problem");}
       }
     </script>
   </body>
