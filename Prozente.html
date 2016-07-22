@@ -2,24 +2,29 @@
 <html>
   <head>
     <style>
-      body{
+      body
+      {
         background:rgb(28,28,121);
         font-size:2em;
         font-family:sans-serif;
       }
-      h1, h2, p{
+      h1, h2, p
+      {
         color:rgb(163,206,38);
       }
-      input{
+      input
+      {
         width:5em;
       }
-      button, input{
+      button, input
+      {
         background:rgb(163,206,38);
         border:rgb(163,206,38);
         font-size:1.2em;
         color:rgb(28,28,121);
       }
-      #container1 button,#container1 input{
+      #container1 button,#container1 input
+      {
         background:rgb(200,200,0);
         border:1px solid rgb(200,200,0);
       }
@@ -33,35 +38,42 @@
         margin:10px;
         padding:10px;
       }
-      #container2 button,#container2 input{
+      #container2 button,#container2 input
+      {
         background:rgb(200,120,50);
         border:1px solid rgb(200,120,50);
       }
-      #container2 p{
+      #container2 p
+      {
         color:rgb(200,120,50);
       }
-      #container2{
+      #container2
+      {
         float:left;
         width:28%;
         border:3px solid rgb(200,120,50);
         margin:10px;
         padding:10px;
       }
-      #container3 button,#container3 input{
+      #container3 button,#container3 input
+      {
         background:rgb(255,0,0);
         border:1px solid rgb(255,0,0);
       }
-      #container3 p{
+      #container3 p
+      {
         color:rgb(255,0,0);
       }
-      #container3{
+      #container3
+      {
         float:left;
         width:28%;
         border:3px solid rgb(255,0,0);
         margin:10px;
         padding:10px;
       }
-      .resultate{
+      .resultate
+      {
         color:white;
       }
     </style>
@@ -69,36 +81,43 @@
   <body>
     <script>
       var v1 = 0;
-      var prozentsatz = function(){
+      var prozentsatz = function()
+      {
         var p1 = document.getElementById("prozentsatz1");
         var p2 = document.getElementById("prozentsatz2");
         var p3 = document.getElementById("prozentsatz3");
         var button = document.getElementById("b1");
-        if(v1 === 1){
+        if(v1 === 1)
+        {
           button.innerHTML = "Prozentsatz";
           p1.innerHTML = "";
           p2.innerHTML = "";
           p3.innerHTML = "";
           p4.innerHTML = "";
           v1 ++;
-        }else{
+        }
+        else
+        {
           p1.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'";
           p2.innerHTML = "In das nächste Eingabefeld schreibst du die erste Zahl also z.B. '40'.<br><input id='a1'><br><br>";
           p3.innerHTML = "In das nächste Eingabefeld schreibst du die zweite  Zahl also z.B. '50'.<br><input id='b1'><br><br>" + 
                          "<button onclick='ausrechnen1()'>Ausrechnen</button><br>"; 
           button.innerHTML = "OK";
           v1 = 1;
-        var ausrechnen1 = function(){
-          var a = Number(document.getElementById("a1").value);
-          var b = Number(document.getElementById("b1").value);
-          var result = a/b*100;
-          var message = a + " von " + b + " sind " + result + " %.";
-          var p4 = document.getElementById("prozentsatz4");
-          p4.innerHTML = message;
+          var ausrechnen1 = function()
+          {
+            var a = Number(document.getElementById("a1").value);
+            var b = Number(document.getElementById("b1").value);
+            var result = a/b*100;
+            var message = a + " von " + b + " sind " + result + " %.";
+            var p4 = document.getElementById("prozentsatz4");
+            p4.innerHTML = message;
+          }
         }
       }
       var v2 = 0;
-      var prozentwert = function(){
+      var prozentwert = function()
+      {
         var p1 = document.getElementById("prozentwert1");
         var p2 = document.getElementById("prozentwert2");
         var p3 = document.getElementById("prozentwert3");
@@ -111,7 +130,8 @@
         p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
                        "<br><input id='c2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";               
       }
-        var ausrechnen2 = function(){
+        var ausrechnen2 = function()
+        {
             var a = Number(document.getElementById("a2").value);
             var b = Number(document.getElementById("b2").value);
             var c = Number(document.getElementById("c2").value);
@@ -123,7 +143,8 @@
             p5.innerHTML = message;
         }
       var v3 = 0;
-      var grundwert = function(){
+      var grundwert = function()
+      {
         var p1 = document.getElementById("grundwert1");
         var p2 = document.getElementById("grundwert2");
         var p3 = document.getElementById("grundwert3");
@@ -137,7 +158,8 @@
         p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '180'." + 
                        "<br><input id='c3'><br><br><button onclick='ausrechnen3()'>Ausrechnen</button><br>";               
       }
-        var ausrechnen3 = function(){
+        var ausrechnen3 = function()
+        {
             var a = Number(document.getElementById("a3").value);
             var b = Number(document.getElementById("b3").value);
             var c = Number(document.getElementById("c3").value);
@@ -148,14 +170,18 @@
             p5.innerHTML = message;
         }
       
-      var infos = function(){
+      var infos = function()
+      {
         var button = document.getElementById("bu");
         var paragraph = document.getElementById("p");
-        if(button.class === "1"){
+        if(button.class === "1")
+        {
           button.innerHTML = "Allgemeine Infos";
           button.class = "2";
           paragraph.innerHTML = "";
-        }else{
+        }
+        else
+        {
           button.innerHTML = "OK";
           button.class = "1";
           paragraph.innerHTML = "Wenn du Prozente angeben musst gibst du diese nur als Zahl an.<br>" +
