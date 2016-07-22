@@ -105,6 +105,7 @@
                          "<button onclick='ausrechnen1()'>Ausrechnen</button><br>"; 
           button.innerHTML = "OK";
           v1 = 1;
+        }    
           var ausrechnen1 = function()
           {
             var a = Number(document.getElementById("a1").value);
@@ -115,7 +116,6 @@
             p4.innerHTML = message;
           }
         }
-      }
       var v2 = 0;
       var prozentwert = function()
       {
@@ -130,18 +130,18 @@
                        "brauchst, schreibst du hier einfach '100' hin.<br><input id='b2'><br><br>";
         p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
                        "<br><input id='c2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";
-        var ausrechnen2 = function()
-        {
-            var a = Number(document.getElementById("a2").value);
-            var b = Number(document.getElementById("b2").value);
-            var c = Number(document.getElementById("c2").value);
-            var p5 = document.getElementById("prozentwert5");
-           
-            var result = c*a/b;
-            var message = a + " / " + b + " von " + c + " sind " + result +" .";
-          
-            p5.innerHTML = message;
-        }
+      }                 
+      var ausrechnen2 = function()
+      {
+          var a = Number(document.getElementById("a2").value);
+          var b = Number(document.getElementById("b2").value);
+          var c = Number(document.getElementById("c2").value);
+          var p5 = document.getElementById("prozentwert5");
+         
+          var result = c*a/b;
+          var message = a + " / " + b + " von " + c + " sind " + result +" .";
+        
+          p5.innerHTML = message;
       }  
       var v3 = 0;
       var grundwert = function()
@@ -158,6 +158,7 @@
                        "Wenn du einen brauchst, gibst du den Nenner ein. z.B.33.33333... = 1/3 = '3'<br><input id='b3'><br>";
         p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '180'." + 
                        "<br><input id='c3'><br><br><button onclick='ausrechnen3()'>Ausrechnen</button><br>";
+      }                 
         var ausrechnen3 = function()
         {
             var a = Number(document.getElementById("a3").value);
@@ -169,7 +170,6 @@
             var message = "Wenn " + a + "/" + b + " " + c +" sind, sind 100% "  + result + " .";
             p5.innerHTML = message;
         }
-      } 
       var infos = function()
       {
         var button = document.getElementById("bu");
