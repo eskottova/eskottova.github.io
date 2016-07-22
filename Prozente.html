@@ -105,17 +105,17 @@
                          "<button onclick='ausrechnen1()'>Ausrechnen</button><br>"; 
           button.innerHTML = "OK";
           v1 = 1;
-        }    
-          var ausrechnen1 = function()
-          {
-            var a = Number(document.getElementById("a1").value);
-            var b = Number(document.getElementById("b1").value);
-            var result = a/b*100;
-            var message = a + " von " + b + " sind " + result + " %.";
-            var p4 = document.getElementById("prozentsatz4");
-            p4.innerHTML = message;
-          }
-        }
+        }  
+      }
+      var ausrechnen1 = function()
+      {
+        var a = Number(document.getElementById("a1").value);
+        var b = Number(document.getElementById("b1").value);
+        var result = a/b*100;
+        var message = a + " von " + b + " sind " + result + " %.";
+        var p4 = document.getElementById("prozentsatz4");
+        p4.innerHTML = message;
+      }
       var v2 = 0;
       var prozentwert = function()
       {
@@ -159,17 +159,17 @@
         p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '180'." + 
                        "<br><input id='c3'><br><br><button onclick='ausrechnen3()'>Ausrechnen</button><br>";
       }                 
-        var ausrechnen3 = function()
-        {
-            var a = Number(document.getElementById("a3").value);
-            var b = Number(document.getElementById("b3").value);
-            var c = Number(document.getElementById("c3").value);
-           var p5 = document.getElementById("grundwert5");
-           
-            var result = c/a*b;
-            var message = "Wenn " + a + "/" + b + " " + c +" sind, sind 100% "  + result + " .";
-            p5.innerHTML = message;
-        }
+      var ausrechnen3 = function()
+      {
+          var a = Number(document.getElementById("a3").value);
+          var b = Number(document.getElementById("b3").value);
+          var c = Number(document.getElementById("c3").value);
+         var p5 = document.getElementById("grundwert5");
+         
+          var result = c/a*b;
+          var message = "Wenn " + a + "/" + b + " " + c +" sind, sind 100% "  + result + " .";
+          p5.innerHTML = message;
+      }
       var infos = function()
       {
         var button = document.getElementById("bu");
