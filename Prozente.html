@@ -123,26 +123,40 @@
         var p2 = document.getElementById("prozentwert2");
         var p3 = document.getElementById("prozentwert3");
         var p4 = document.getElementById("prozentwert4");
-        p1.innerHTML = "Beim Prozentwert muss man herausfinden, wie viel a Prozent von b sind. Beispiel: '60% von 50 sind 30'";
-        p2.innerHTML = "Hier gibst du den Zähler ein. z.B. 33.33333... = 1/3 = '1' Falls du eigentlich " +
-                       "keinen Bruch brauchst, schreibst du hier einfach die Prozente hin.<br><input id='a2'><br><br>";
-        p3.innerHTML = "Gib den Nenner an. z.B.33.33333... = 1/3 = '3' Falls du eigentlich keinen Bruch" +
-                       "brauchst, schreibst du hier einfach '100' hin.<br><input id='b2'><br><br>";
-        p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
-                       "<br><input id='c2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";
-      }                 
-      var ausrechnen2 = function()
-      {
-          var a = Number(document.getElementById("a2").value);
-          var b = Number(document.getElementById("b2").value);
-          var c = Number(document.getElementById("c2").value);
-          var p5 = document.getElementById("prozentwert5");
-         
-          var result = c*a/b;
-          var message = a + " / " + b + " von " + c + " sind " + result +" .";
-        
-          p5.innerHTML = message;
-      }  
+        var button = document.getElementById("bu2");
+        if(v2 === 1)
+        {
+          button.innerHTML = "Prozentwert";
+          p1.innerHTML = "";
+          p2.innerHTML = "";
+          p3.innerHTML = "";
+          p4.innerHTML = "";
+          p5.innerHTML = "";
+          v2 ++;
+        }
+        else
+        {
+          p1.innerHTML = "Beim Prozentwert muss man herausfinden, wie viel a Prozent von b sind. Beispiel: '60% von 50 sind 30'";
+          p2.innerHTML = "Hier gibst du den Zähler ein. z.B. 33.33333... = 1/3 = '1' Falls du eigentlich " +
+                         "keinen Bruch brauchst, schreibst du hier einfach die Prozente hin.<br><input id='a2'><br><br>";
+          p3.innerHTML = "Gib den Nenner an. z.B.33.33333... = 1/3 = '3' Falls du eigentlich keinen Bruch" +
+                         "brauchst, schreibst du hier einfach '100' hin.<br><input id='b2'><br><br>";
+          p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
+                         "<br><input id='c2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";
+          v2 = 1;               
+        }                 
+        var ausrechnen2 = function()
+        {
+            var a = Number(document.getElementById("a2").value);
+            var b = Number(document.getElementById("b2").value);
+            var c = Number(document.getElementById("c2").value);
+            var p5 = document.getElementById("prozentwert5");
+           
+            var result = c*a/b;
+            var message = a + " / " + b + " von " + c + " sind " + result +" .";
+          
+            p5.innerHTML = message;
+        }
       var v3 = 0;
       var grundwert = function()
       {
