@@ -143,8 +143,10 @@
                          "brauchst, schreibst du hier einfach '100' hin.<br><input id='b2'><br><br>";
           p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
                          "<br><input id='c2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";
-          v2 = 1;               
-        }                 
+          v2 = 1;   
+          button.innerHTML = "OK";
+        } 
+      }  
         var ausrechnen2 = function()
         {
             var a = Number(document.getElementById("a2").value);
