@@ -6,7 +6,8 @@
     </style>
   </head>
   <body>
-    <svg>
+    <svg height="2000" width="2000">
+      <circle />
     </svg>
   </body>
 </html>
