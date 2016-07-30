@@ -6,7 +6,7 @@
   </head>
   <body>
     <svg height="2000" width="2000">
-      <circle height="200" width="200" cx="0" cy="0"/>
+      <circle id="circle1" r="100" cx="0" cy="0"/>
     </svg>
   </body>
 </html>
