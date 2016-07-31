@@ -32,7 +32,7 @@
       <circle id="circle7" cx="955"/>
       <circle id="circle8" cx="1105"/>
     </svg>
-    <button onclick="lightOn(light1);" >Click to start</button>
+    <button onclick="countInBinary();" >Click to start</button>
     <script>
       var light1 = document.getElementById("circle1");
       var light2 = document.getElementById("circle2");
@@ -48,40 +48,16 @@
       var lightOff = function(light) {
         light.style.fill = "rgb(0, 0, 0)";
       }
-      
-      /*
         var lights = [light1, light2, light3, light4, light5, light6, light7, light8];
         
-        void ledOn(light)
-        {
-            digitalWrite(led, HIGH);
-        }
+        var x = 0;//final number
+        var y = 0;//value of the pin
+        var z = -1;//pin number
+        var w = 0;//every number that´s smaller than y
         
-        void ledOff(int led)
+        var countInBinary = function()
         {
-            digitalWrite(led, LOW);
-        }
-        
-        void setup() 
-        {
-            pinMode(D2, OUTPUT);//1
-            pinMode(D3, OUTPUT);//2
-            pinMode(D4, OUTPUT);//4
-            pinMode(D5, OUTPUT);//8
-            pinMode(D6, OUTPUT);//16
-            pinMode(D7, OUTPUT);//32
-            pinMode(A3, OUTPUT);//64
-            pinMode(A4, OUTPUT);//128
-        }
-        
-        int x = 0;//final number
-        int y = 0;//value of the pin
-        int z = -1;//pin number
-        int w = 0;//every number that´s smaller than y
-        
-        void loop()
-        {
-            for(x = 0; x < 255; x ++) //count to 255
+          for(x = 0; x < 255; x ++) //count to 255
             {
                 for(y = 1; y < 256; y *= 2) //cycle through pins by using multiples of 2 (binary!)
                     z ++;
@@ -89,17 +65,17 @@
                     for(w= 0; w < y; w ++)
                     if((x - w) % y == 0 && (x - w) % (y * 2) != 0) 
                     {
-                        ledOn(myPins[z]);  
+                        lightOn(lights[z]);  
                     }
                     else
                     {
-                        ledOff(myPins[z];
+                        lightOff(lights[z];
                     }    
                 }
-                delay(1000);    
+
+                setTimeout(1000);    
             }
         }
-      */
     </script>
   </body>
 </html>
