@@ -63,14 +63,16 @@
                     z ++;
                 {    
                     for(w= 0; w < y; w ++)
-                    if((x - w) % y == 0 && (x - w) % (y * 2) != 0) 
                     {
-                        lightOn(lights[z]);  
-                    }
-                    else
-                    {
-                        lightOff(lights[z]);
-                    }    
+                      if((x - w) % y == 0 && (x - w) % (y * 2) != 0) 
+                      {
+                          lightOn(lights[z]);  
+                      }
+                      else
+                      {
+                          lightOff(lights[z]);
+                      }
+                    }  
                 }
 
                 setTimeout(countInBinary, 1000);    
