@@ -45,6 +45,61 @@
       var lightOn = function(light) {
         light.style.fill = "rgb(255, 255, 0)";
       }
+      var lightOff = function(light) {
+        light.style.fill = "rgb(0, 0, 0)";
+      }
+      
+      /*
+        var lights = [light1, light2, light3, light4, light5, light6, light7, light8];
+        
+        void ledOn(light)
+        {
+            digitalWrite(led, HIGH);
+        }
+        
+        void ledOff(int led)
+        {
+            digitalWrite(led, LOW);
+        }
+        
+        void setup() 
+        {
+            pinMode(D2, OUTPUT);//1
+            pinMode(D3, OUTPUT);//2
+            pinMode(D4, OUTPUT);//4
+            pinMode(D5, OUTPUT);//8
+            pinMode(D6, OUTPUT);//16
+            pinMode(D7, OUTPUT);//32
+            pinMode(A3, OUTPUT);//64
+            pinMode(A4, OUTPUT);//128
+        }
+        
+        int x = 0;//final number
+        int y = 0;//value of the pin
+        int z = -1;//pin number
+        int w = 0;//every number that´s smaller than y
+        
+        void loop()
+        {
+            for(x = 0; x < 255; x ++) //count to 255
+            {
+                for(y = 1; y < 256; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+                    z ++;
+                {    
+                    for(w= 0; w < y; w ++)
+                    if((x - w) % y == 0 && (x - w) % (y * 2) != 0) 
+                    {
+                        ledOn(myPins[z]);  
+                    }
+                    else
+                    {
+                        ledOff(myPins[z];
+                    }    
+                }
+                delay(1000);    
+            }
+        }
+      */
     </script>
   </body>
 </html>
