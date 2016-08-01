@@ -3,17 +3,20 @@
   <head>
     <title>BINARY_255</title>
     <style>
-      circle	{
+      circle	
+      {
         cy:55;
         r:50;
         fill:none;
         stroke:rgb(255,255,0);
         stroke-width:5;
       }
-      body {
+      body 
+      {
         background:rgb(0,0,0);
       }
-      button {
+      button 
+      {
         background:rgb(0, 0, 0);
         border:1px solid rgb(255, 255, 0);
         color:rgb(255, 255, 0);
@@ -42,10 +45,12 @@
       var light6 = document.getElementById("circle6");
       var light7 = document.getElementById("circle7");
       var light8 = document.getElementById("circle8");
-      var lightOn = function(onLight) {
+      var lightOn = function(onLight) 
+      {
         onLight.style.fill = "rgb(255, 255, 0)";
       }
-      var lightOff = function(offLight) {
+      var lightOff = function(offLight) 
+      {
         offLight.style.fill = "rgb(0, 0, 0)";
       }
         var lights = [light1, light2, light3, light4, light5, light6, light7, light8];
@@ -59,27 +64,26 @@
         var countInBinary = function()
         {
           for(x = 0; x < 255; x ++) //count to 255
+          {
+            for(y = 1; y < 256; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
-                for(y = 1; y < 256; y *= 2) //cycle through pins by using multiples of 2 (binary!)
-                    z ++;
-                    on = false;
-                {    
-                    for(w= 0; w < y; w ++)
-                    {
-                      if((x - w) % y == 0 && (x - w) % (y * 2) != 0) 
-                      {
-                          lightOn(lights[z]); 
-                          on = true;
-                      }
-                      else if(!on)
-                      {
-                          lightOff(lights[z]);
-                      }
-                    }  
+              z ++;
+              on = false;
+              for(w= 0; w < y; w ++)
+              {
+                if((x - w) % y == 0 && (x - w) % (y * 2) != 0) 
+                {
+                  lightOn(lights[z]); 
+                  on = true;
                 }
-
-                setTimeout(countInBinary, 1000);    
+                else if(!on)
+                {
+                  lightOff(lights[z]);
+                }
+              }  
             }
+                setTimeout(countInBinary, 1000);    
+          }
         }
     </script>
   </body>
