@@ -54,6 +54,7 @@
         var y = 0;//value of the pin
         var z = 0;//pin number
         var w = 0;//every number that´s smaller than y
+        var on = 0;//says that the light should be on
         
         var countInBinary = function()
         {
@@ -61,14 +62,16 @@
             {
                 for(y = 1; y < 256; y *= 2) //cycle through pins by using multiples of 2 (binary!)
                     z ++;
+                    on = false;
                 {    
                     for(w= 0; w < y; w ++)
                     {
                       if((x - w) % y == 0 && (x - w) % (y * 2) != 0) 
                       {
-                          lightOn(lights[z]);  
+                          lightOn(lights[z]); 
+                          on = true;
                       }
-                      else
+                      else if(!on)
                       {
                           lightOff(lights[z]);
                       }
