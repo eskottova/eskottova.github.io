@@ -64,29 +64,30 @@
         
         var countInBinary = function()
         {
-          for(x = 15; x < 254; x ++) //count to 255
+          /*for(x = 0; x < 255; x ++) //count to 255
+          {  (old code)  */
+          x ++;
+          z = -1; //resetting z 
+          for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
           {
-            z = -1; //resetting z 
-            for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+            w = x % y; //setting w to the remainder of x / y 
+            z ++;
+            on = false; //resetting on
+            /*for(w= 0; w < y; w ++)//a loop for every number, wich is smaller than y
+            {  (old code)  */
+            if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
             {
-              w = x % y; //setting w to the remainder of x / y 
-              z ++;
-              on = false; //resetting on
-              /*for(w= 0; w < y; w ++)//a loop for every number, wich is smaller than y
-              {  (old code)  */
-                if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
-                {
-                  lightOn(lights[z]); 
-                  on = true;
-                }
-                else if(!on)
-                {
-                  lightOff(lights[z]);
-                }
-              //}  (old code)  
+              lightOn(lights[z]); 
+              on = true;
             }
-            setTimeout(countInBinary, 1000);    
-          }
+            else if(!on)
+            {
+              lightOff(lights[z]);
+            }
+            //}  (old code)  
+          }  (old code)
+          setTimeout(countInBinary, 1000);    
+          //}  (old code)
         }
     </script>
   </body>
