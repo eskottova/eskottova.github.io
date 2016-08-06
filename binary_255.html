@@ -86,7 +86,10 @@
             }
             //}  (old code)  
           }
-          setTimeout(countInBinary, 1000);    
+          if(x < 225) //stops the function when x is equal to 255
+          {
+            setTimeout(countInBinary, 1000);
+          }
           //}  (old code)
         }
     </script>
