@@ -25,17 +25,19 @@
     </style>
   </head>
   <body>
+      <h1>BINARY_255</h1><br>
       <svg height="110" width="1160">
-      <circle id="circle1" cx="55"/>
-      <circle id="circle2" cx="205"/>
-      <circle id="circle3" cx="355"/>
-      <circle id="circle4" cx="505"/>
-      <circle id="circle5" cx="655"/>
-      <circle id="circle6" cx="805"/>
-      <circle id="circle7" cx="955"/>
-      <circle id="circle8" cx="1105"/>
+        <circle id="circle1" cx="55"/>
+        <circle id="circle2" cx="205"/>
+        <circle id="circle3" cx="355"/>
+        <circle id="circle4" cx="505"/>
+        <circle id="circle5" cx="655"/>
+        <circle id="circle6" cx="805"/>
+        <circle id="circle7" cx="955"/>
+        <circle id="circle8" cx="1105"/><br>
     </svg>
-    <button onclick="countInBinary();" >Click to start</button>
+    <button onclick="countInBinary();" >Click to start</button><h2 id="xHeading1"></h2>
+    
     <script>
       var light1 = document.getElementById("circle1");
       var light2 = document.getElementById("circle2");
@@ -62,11 +64,14 @@
         /*var w = 0; //every number that is smaller than y  (old code)  */
         var on = false; //if true, it won't turn off the light for the number that should be dispalyed
         
+        
+        
         var countInBinary = function()
         {
           /*for(x = 0; x < 255; x ++) //count to 255
           {  (old code)  */
           x ++;
+          
           z = -1; //resetting z 
           for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
           {
@@ -92,6 +97,7 @@
           }
           //}  (old code)
         }
+        x = 0; //resetting x
     </script>
   </body>
 </html>
