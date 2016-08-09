@@ -67,14 +67,15 @@
         var w = 0; //checks if x is divisible by y
         /*var w = 0; //every number that is smaller than y  (old code)  */
         var on = false; //if true, it won't turn off the light for the number that should be dispalyed
-        
-        
+        var counting = true; //checks if the program is allowed to count (only needed if the button gets clicked multiple times)
         
         var countInBinary = function()
         {
           /*for(x = 0; x < 255; x ++) //count to 255
           {  (old code)  */
-          x ++; //count 
+          if(count){
+            x ++; //count
+          }
           H2.innerHTML = x; //displays the binary number in decimal
           z = -1; //resetting z 
           for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
@@ -108,6 +109,7 @@
           //}  (old code)
           var stopCounting = function () {
             x = 0; //resetting x
+            counting = true;
           }
         }
     </script>
