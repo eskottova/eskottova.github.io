@@ -97,13 +97,18 @@
           }
           if(x < 255) //runs the function until x is equal to 255
           {
-            setTimeout(countInBinary, 1000);
+            setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
           }
           else
           {
-            x = 0; //resetting x  
+            setTimeout(stopCounting, 1000); /*wait 1000 milliseconds until reset of x
+                                            if someone clicks the button multiple times and
+                                            the program resets x without waiting, it would start from 0*/
           }
           //}  (old code)
+          var stopCounting = function () {
+            x = 0; //resetting x
+          }
         }
     </script>
   </body>
