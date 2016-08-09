@@ -102,9 +102,8 @@
           }
           else
           {
-            setTimeout(stopCounting, 1000); /*wait 1000 milliseconds until reset of x
-                                            if someone clicks the button multiple times and
-                                            the program resets x without waiting, it would start from 0*/
+            counting = false; //the program will stop counting 
+            setTimeout(stopCounting, 1000); /*waits a second before it resets x (only needed if the button gets clicked multiple times)*/
           }
           //}  (old code)
           var stopCounting = function () {
