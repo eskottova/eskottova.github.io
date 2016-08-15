@@ -18,6 +18,10 @@
         font-family:sans-serif;
         font-size:2em;
       }
+      h2
+      {
+        color:rgb(0, 0, 0);
+      }
       button 
       {
         background:rgb(0, 0, 0);
@@ -41,6 +45,8 @@
     </svg><br>
     <h2 id="countInBinaryH2"></h2>
     <button onclick="countInBinary();" >Click to start</button>
+    <button onclick="countInDecimal();" >See decimal number</button>
+    <button onclick="reset();" >Strat from 0</button>
     <script>
       var light1 = document.getElementById("circle1");
       var light2 = document.getElementById("circle2");
@@ -68,10 +74,17 @@
         /*var w = 0; //every number that is smaller than y  (old code)  */
         var on = false; //if true, it won't turn off the light for the number that should be dispalyed
         var counting = true; //checks if the program is allowed to count (only needed if the button gets clicked multiple times)
+        var decimalOk = true;
         
         var reset = function () {
           x = 0; //resetting x
-          counting = true;
+          counting = true; //Allows to count
+          H2.innerHTML = 0; 
+        }
+        
+        
+        var countInDecimal = function (){
+          decimalOk = true; //Allows to count in decimal
         }
         
         var countInBinary = function()
@@ -79,38 +92,41 @@
           /*for(x = 0; x < 255; x ++) //count to 255
           {  (old code)  */
           if(counting){
-            x ++; //count
-          }
-          H2.innerHTML = x; //displays the binary number in decimal
-          z = -1; //resetting z 
-          for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
-          {
-            w = x % y; //setting w to the remainder of x / y 
-            z ++;
-            on = false; //resetting on
-            /*for(w= 0; w < y; w ++)//a loop for every number, wich is smaller than y
-            {  (old code)  */
-            if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
-            {
-              lightOn(lights[z]); 
-              on = true;
+            if(decimalOk) {
+              H2.style.color = "rgb(255,255,0);"
             }
-            else if(!on)
+            x ++; //counts
+            H2.innerHTML = x; //displays the binary number in decimal
+            z = -1; //resetting z 
+            for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
-              lightOff(lights[z]);
+              w = x % y; //setting w to the remainder of x / y 
+              z ++;
+              on = false; //resetting on
+              /*for(w= 0; w < y; w ++)//a loop for every number, wich is smaller than y
+              {  (old code)  */
+              if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
+              {
+                lightOn(lights[z]); 
+                on = true;
+              }
+              else if(!on)
+              {
+                lightOff(lights[z]);
+              }
+              //}  (old code)  
             }
-            //}  (old code)  
+            if(x < 255) //runs the function until x is equal to 255
+            {
+              setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
+            }
+            else
+            {
+              counting = false; //the program will stop counting
+              setTimeout(reset, 2000); /*waits a 2 seconds before it resets x
+                                        (only needed if the button gets clicked multiple times)*/
+            }
           }
-          if(x < 255) //runs the function until x is equal to 255
-          {
-            setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
-          }
-          else
-          {
-            counting = false; //the program will stop counting 
-            setTimeout(reset, 2000); /*waits a 2 seconds before it resets x (only needed if the button gets clicked multiple times)*/
-          }
-          //}  (old code)
         }
     </script>
   </body>
