@@ -45,8 +45,6 @@
     </svg><br>
     <h2 id="countInBinaryH2"></h2>
     <button onclick="countInBinary();" >Click to start</button>
-    <button onclick="countInDecimal();" >See decimal number</button>
-    <button onclick="reset();" >Start from 0</button>
     <script>
       var light1 = document.getElementById("circle1");
       var light2 = document.getElementById("circle2");
@@ -74,26 +72,6 @@
         var z = -1; //pin number
         /*var w = 0; //every number that is smaller than y  (old code)  */
         var on = false; //if true, it won't turn off the light for the number that should be dispalyed
-        var counting = true; //checks if the program is allowed to count (only needed if the button gets clicked multiple times)
-        var decimalOk = true; //checks if the program is allowed to show decimal number
-        
-        var reset = function ()
-        {
-          x = 0; //resetting x
-          counting = true; //Allows to count
-          H2.innerHTML = 0; 
-          for(v = 0; v < 7; v++)
-          {
-            lightOff(lights[v]);
-          }
-          setTimeout(countInBinary,1000); //waits a second before the program starts counting 
-        }
-        
-        
-        var countInDecimal = function ()
-        {
-          decimalOk = true; //Allows to count in decimal
-        }
         
         var countInBinary = function()
         {
@@ -101,10 +79,6 @@
           {  (old code)  */
           if(counting)
           {
-            if(decimalOk) 
-            {
-              H2.style.color = "rgb(255,255,0);"
-            }
             x ++; //counts
             H2.innerHTML = x; //displays the binary number in decimal
             z = -1; //resetting z 
@@ -133,8 +107,8 @@
             else
             {
               counting = false; //the program will stop counting
-              setTimeout(reset, 2000); /*waits a 2 seconds before it resets x
-                                        (only needed if the button gets clicked multiple times)*/
+              setTimeout(countInBinary, 2000); /*waits a 2 seconds before it should start again
+                                              (only needed if the button gets clicked multiple times)*/
             }
           }
         }
