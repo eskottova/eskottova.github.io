@@ -70,13 +70,11 @@
         var x = 0; //number wich should be displayed
         var y = 0; //value of the pin
         var z = -1; //pin number
-        /*var w = 0; //every number that is smaller than y  (old code)  */
+        var counting = true; //checks if the prgram is allowed to count
         var on = false; //if true, it won't turn off the light for the number that should be dispalyed
         
         var countInBinary = function()
         {
-          /*for(x = 0; x < 255; x ++) //count to 255
-          {  (old code)  */
           if(counting)
           {
             x ++; //counts
@@ -87,8 +85,6 @@
               w = x % y; //setting w to the remainder of x / y 
               z ++;
               on = false; //resetting on
-              /*for(w= 0; w < y; w ++)//a loop for every number, wich is smaller than y
-              {  (old code)  */
               if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
               {
                 lightOn(lights[z]); 
@@ -98,7 +94,6 @@
               {
                 lightOff(lights[z]);
               }
-              //}  (old code)  
             }
             if(x < 255) //runs the function until x is equal to 255
             {
@@ -107,10 +102,15 @@
             else
             {
               counting = false; //the program will stop counting
-              setTimeout(countInBinary, 2000); /*waits a 2 seconds before it should start again
+              setTimeout(allowToCount, 2000); /*waits a 2 seconds before it should start again
                                               (only needed if the button gets clicked multiple times)*/
             }
           }
+        }
+        var allowToCount = function()
+        {
+          counting = true;
+          countInBinary();
         }
     </script>
   </body>
