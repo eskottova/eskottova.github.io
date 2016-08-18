@@ -77,18 +77,21 @@
         var counting = true; //checks if the program is allowed to count (only needed if the button gets clicked multiple times)
         var decimalOk = true; //checks if the program is allowed to show decimal number
         
-        var reset = function () {
+        var reset = function ()
+        {
           x = 0; //resetting x
           counting = true; //Allows to count
           H2.innerHTML = 0; 
-          for(v = 0; v < 7; v++){
+          for(v = 0; v < 7; v++)
+          {
             lightOff(lights[v]);
           }
           setTimeout(countInBinary,1000); //waits a second before the program starts counting 
         }
         
         
-        var countInDecimal = function (){
+        var countInDecimal = function ()
+        {
           decimalOk = true; //Allows to count in decimal
         }
         
@@ -96,8 +99,10 @@
         {
           /*for(x = 0; x < 255; x ++) //count to 255
           {  (old code)  */
-          if(counting){
-            if(decimalOk) {
+          if(counting)
+          {
+            if(decimalOk) 
+            {
               H2.style.color = "rgb(255,255,0);"
             }
             x ++; //counts
