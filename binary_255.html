@@ -77,43 +77,45 @@
         {
           if(counting)
           {
-            if(x = 0){
-              for(v = 0; v < 8; v++){
+            if(x = 0)
+            {
+              for(v = 0; v < 8; v++)
+              {
                 lightOff(lights[v]);
               }
             }
             else
             {
-                x ++; //counts
-                H2.innerHTML = x; //displays the binary number in decimal
-                z = -1; //resetting z 
-                for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+              x ++; //counts
+              H2.innerHTML = x; //displays the binary number in decimal
+              z = -1; //resetting z 
+              for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+              {
+                w = x % y; //setting w to the remainder of x / y 
+                z ++;
+                on = false; //resetting on
+                if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
                 {
-                  w = x % y; //setting w to the remainder of x / y 
-                  z ++;
-                  on = false; //resetting on
-                  if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
-                  {
-                    lightOn(lights[z]); 
-                    on = true;
-                  }
-                  else if(!on)
-                  {
-                    lightOff(lights[z]);
-                  }
+                  lightOn(lights[z]); 
+                  on = true;
                 }
-                if(x < 255) //runs the function until x is equal to 255
+                else if(!on)
                 {
-                  setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
+                  lightOff(lights[z]);
                 }
-                else
-                {
-                  counting = false; //the program will stop counting
-                  setTimeout(allowToCount, 2000); /*waits a 2 seconds before it allows to start again*/
-                }
+              }
+              if(x < 255) //runs the function until x is equal to 255
+              {
+                setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
+              }
+              else
+              {
+                counting = false; //the program will stop counting
+                setTimeout(allowToCount, 2000); /*waits a 2 seconds before it allows to start again*/
               }
             }  
           }
+        }  
         var allowToCount = function()
         {
           counting = true;
