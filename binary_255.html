@@ -105,16 +105,16 @@
                   lightOff(lights[z]);
                 }
               }
-              if(x < 255) //runs the function until x is equal to 255
-              {
-                setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
-              }
-              else
-              {
-                counting = false; //the program will stop counting
-                setTimeout(allowToCount, 2000); /*waits a 2 seconds before it allows to start again*/
-              }
             }  
+            if(x < 255) //runs the function until x is equal to 255
+            {
+              setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
+            }
+            else
+            {
+              counting = false; //the program will stop counting
+              setTimeout(allowToCount, 2000); /*waits a 2 seconds before it allows to start again*/
+            }
           }
         }  
         var allowToCount = function()
