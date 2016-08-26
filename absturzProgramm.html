@@ -1,3 +1,23 @@
 <!doctype html>
 <html>
+  <head>
+    <title>absturzzzzzz</title>
+  </head>
+  <body>
+    <button onclick="myFunction();">start the Absturz</button>
+    <button onclick="stopMyFunction();">stop the Absturz</button>
+    <script>
+      var myFunction = function(){
+        x = 0;
+        while(stop === false){
+          console.log(x);
+          x++;
+        }
+      }
+      
+      var stopMyFunction = function(){
+        stop = true;
+      }
+    </script>
+  </body>
 </html>
