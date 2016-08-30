@@ -70,6 +70,7 @@
         var x = 0; //number wich should be displayed
         var y = 0; //value of the pin
         var z = -1; //pin number
+        var reset = true;
         var counting = true; //checks if the prgram is allowed to count
         var on = false; //if true, it won't turn off the light for the number that should be dispalyed
         
@@ -77,13 +78,14 @@
         {
           if(counting)
           {
-            if(x === 0)
+            if(x === 0 && !reset)
             {
               for(v = 0; v < 8; v++)
               {
                 lightOff(lights[v]);
               }
               x = 1;
+              reset = true;
             }
             else
             {
