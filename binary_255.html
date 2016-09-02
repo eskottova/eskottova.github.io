@@ -72,7 +72,7 @@
         var z = -1; //pin number
         var reset = true;
         var counting = true; //checks if the prgram is allowed to count
-        var on = false; //if true, it won't turn off the light for the number that should be dispalyed
+        //var on = false; //if true, it won't turn off the light for the number that should be dispalyed
         
         var countInBinary = function()
         {
@@ -96,11 +96,11 @@
               {
                 w = x % y; //setting w to the remainder of x / y 
                 z ++;
-                on = false; //resetting on
+                //on = false; //resetting on
                 if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
                 {
                   lightOn(lights[z]); 
-                  on = true;
+                  //on = true;
                 }
                 else if(!on)
                 {
