@@ -7,16 +7,18 @@
     <button onclick="myFunction();">start the Absturz</button>
     <button onclick="stopMyFunction();">stop the Absturz</button>
     <script>
-      var myFunction = function(){
-        x = 0;
-        while(stop === false){
+      var ende = false;
+      var myFunction = function(){ 
+        ende = false;
+        var x = 0;
+        while(ende === false){
           console.log(x);
           x++;
         }
       }
-      
+     
       var stopMyFunction = function(){
-        stop = true;
+        ende = true;
       }
     </script>
   </body>
