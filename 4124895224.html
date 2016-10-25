@@ -35,13 +35,6 @@
         background:rgb(170,170,170);
       }
     </style>
-  </head>
-  <body>
-    <form onsubmit="check()">
-      Username:<input type="text" id="urn" value="username"></input><br>
-      Password:<input type="text" id="pwd" value="password"></input><br>
-      <input type="submit" value="OK"></input>
-    </form>
     <script>
       var u = "username";
       var p = "password";
@@ -49,7 +42,7 @@
         var urn = document.getElementById("urn").value;
         var pwd = document.getElementById("pwd").value;
         if(u === urn && p === pwd){
-          body.innerHTML=   "<ul>";
+          document.body.innerHTML=   "<ul>";
                             "<li><p>1</p></li>"+
                             "<li><p>2</p></li>"+
                             "<li><p>3</p></li>"+
@@ -60,5 +53,12 @@
         else{alert("Problem");}
       }
     </script>
+  </head>
+  <body>
+    <form onsubmit="check()">
+      Username:<input type="text" id="urn" value="username"></input><br>
+      Password:<input type="text" id="pwd" value="password"></input><br>
+      <input type="submit" value="OK"></input>
+    </form>
   </body>
 </html>
