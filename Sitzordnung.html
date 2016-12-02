@@ -23,13 +23,16 @@
   </head>
   <body>
     <script>
-      var row1var = Number(document.getElementById("row1").value); //amount of students in 1st row
-      var row2var = Number(document.getElementById("row2").value); //amount of students in 2nd row
-      var row3var = 27 - (row1 + row2); //amount of students in 3rd row
+      var row1var;//amount of students in 1st row
+      var row2var;//amount of students in 2nd row
+      var row3var;//amount of students in 3rd row
       var ready = false;//shows if it knows values of rows 1-3 
       
       var rowSubmit = function()
       {
+        row1var = Number(document.getElementById("row1").value);
+        row2var = Number(document.getElementById("row2").value);
+        row3var = 27 - (row1 + row2);
         if(row1var !== NaN && row2var !== NaN && row3var !== NaN)
         {  
           row3.innerHTML = row3var;//displays value of row3
