@@ -19,7 +19,7 @@
         fill:none;
         stroke:rgb(0, 0, 0);  
       }
-      .part1
+      #part1
       {
         visibility:visible;
       }
@@ -56,20 +56,22 @@
       }
       var startPart2 = function()
       {
+        part1div = document.getElementById("part1");
+        part1div.style.visibility = "hidden";
         part2div = document.getElementById("part2");
         part2div.style.visibility = "visible";
       }
     </script>
     <h1>Sitzordnung</h1>
-    <div id="rowInputs">
+    <div id="part1">
     Anzahl Schüler in der ersten Reihe:<br>
       <input id="row1" /><br><br>
     Anzahl Schüler in der zweiten Reihe:<br>
       <input id="row2" /><br><br>
     Anzahl Schüler in der dritten Reihe:<br>  
       <p id="row3"></p>
+      <button id="rowInputSubmitButton" onclick="rowSubmit();">Bestätigen</button>
     </div>
-  <button id="rowInputSubmitButton" onclick="rowSubmit();">Bestätigen</button>
     <div id="part2">
       <button id="nextButton" onclick="startPart2();" >weiter</button>
       <svg>
