@@ -27,7 +27,9 @@
     Anzahl Schüler in der ersten Reihe:<br>
       <input id="row1" /><br><br>
     Anzahl Schüler in der zweiten Reihe:<br>
-      <input id="row2" />
+      <input id="row2" /><br><br>
+    Anzahl Schüler in der dritten Reihe:<br>  
+      <h2 id="row3"></h2>
     </div>
   <button id="rowInputSubmitButton" onclick="rowSubmit();">Bestätigen</button>
     
@@ -62,7 +64,10 @@
       <rect id="rect27" />  
     </svg>
     <script>
-      
+      var row1 = Number(document.getElementById("row1").value); //amount of students in 1st row
+      var row2 = Number(document.getElementById("row2").value); //amount of students in 2nd row
+      var row3 = 27 - (row1 + row2); //amount of students in 3rd row
+      var ready = false;//shows if it knows values of rows 1-3 
     </script>
   </body>
 </html>
