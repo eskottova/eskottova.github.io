@@ -36,6 +36,7 @@
       var row3var;//amount of students in 3rd row
       var ready = false;//shows if it knows values of rows 1-3
       var next;//button which starts part2
+      var part2div;//used to make part 2 visible
       var rowSubmit = function()
       {
         row1var = Number(document.getElementById("row1").value);
@@ -53,6 +54,11 @@
           alert("Bitte Zahlen eingeben");
         }
       }
+      var startPart2 = function()
+      {
+        part2div = document.getElementById("part2");
+        part2div.style.visibility = "visible";
+      }
     </script>
     <h1>Sitzordnung</h1>
     <div id="rowInputs">
@@ -64,8 +70,8 @@
       <p id="row3"></p>
     </div>
   <button id="rowInputSubmitButton" onclick="rowSubmit();">Bestätigen</button>
-    <div class="part2">
-      <button id="nextButton">weiter</button>
+    <div id="part2">
+      <button id="nextButton" onclick="startPart2();" >weiter</button>
       <svg>
         <rect id="rect0" />
         <rect id="rect1" />
