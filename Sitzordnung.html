@@ -9,8 +9,7 @@
       }
       svg
       {
-        height:155px;
-        width:1005px;  
+        height:155px; 
       }
       rect
       {
@@ -66,6 +65,8 @@
         part2div = document.getElementById("part2");
         part2div.style.visibility = "visible";//makes part2 visible
         next.style.visibility = "hidden";//hides next button
+        //next part should display svg rectangles
+        
       }
     </script>
     <h1>Sitzordnung</h1>
@@ -81,6 +82,8 @@
     </div>
     <div id="part2">
       <button id="nextButton" onclick="startPart2();" >weiter</button>
+      Gib deinen Namen ein:<br>
+        <input id="studentNameInput" /><br><br>
       <svg id="svg">  
       </svg>
     </div>  
