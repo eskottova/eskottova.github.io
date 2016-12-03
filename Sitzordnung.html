@@ -7,9 +7,9 @@
       {
         font-family:sans-serif;
       }
-      svg
+      #svg1
       {
-        height:155px; 
+        height:150px; 
       }
       rect
       {
@@ -38,6 +38,7 @@
       var next;//button which starts part 2
       var part1div;//used to hide part 1
       var part2div;//used to make part 2 visible
+      var svgVar;
       var rowSubmit = function()
       {
         row1var = Number(document.getElementById("row1").value);
@@ -60,13 +61,15 @@
       }
       var startPart2 = function()
       {
+        svgVar = document.getElementById("svg1");
         part1div = document.getElementById("part1");
         part1div.style.visibility = "hidden";//hides part1
         part2div = document.getElementById("part2");
         part2div.style.visibility = "visible";//makes part2 visible
         next.style.visibility = "hidden";//hides next button
         //next part should display svg rectangles
-        
+        if(row1var >= row2var && row1var >= row3var)
+          svgVar.style.width = '"' + row1var * 100 + 'px"'
       }
     </script>
     <h1>Sitzordnung</h1>
@@ -84,7 +87,7 @@
       <button id="nextButton" onclick="startPart2();" >weiter</button><br>
       Gib deinen Namen ein:<br>
         <input id="studentNameInput" /><br><br>
-      <svg id="svg">  
+      <svg id="svg1">  
       </svg>
     </div>  
   </body>
