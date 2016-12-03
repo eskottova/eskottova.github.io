@@ -47,15 +47,19 @@
         allRowsVar = row1var + row2var + row3var;
         pAllRows = document.getElementById("allRows");
         next = document.getElementById("nextButton");
-        if(row1var !== NaN && row2var !== NaN && row3var !== NaN)
+        if(allRowsVar == NaN)
         { 
+          alert("Bitte Zahlen eingeben");
           ready = true;//shows that it's ready for the next step
           next.style.visibility = "visible";//makes next button visible
           pAllRows.innerHTML = "Insgesamt " + allRowsVar + " Plätze";
         }
         else
         {
-          alert("Bitte Zahlen eingeben");
+          ready = true;//shows that it's ready for the next step
+          next.style.visibility = "visible";//makes next button visible
+          pAllRows.innerHTML = "Insgesamt " + allRowsVar + " Plätze";
+        
         }
       }
       var startPart2 = function()
