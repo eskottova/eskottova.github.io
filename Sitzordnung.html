@@ -47,7 +47,7 @@
         if(row1var !== "NaN" && row2var !== "NaN" && row3var !== "NaN")
         { 
           ready = true;//shows that it's ready for the next step
-          next.style.visibility = "visible";
+          next.style.visibility = "visible";//makes next button visible
         }
         else
         {
@@ -57,10 +57,10 @@
       var startPart2 = function()
       {
         part1div = document.getElementById("part1");
-        part1div.style.visibility = "hidden";
+        part1div.style.visibility = "hidden";//hides part1
         part2div = document.getElementById("part2");
-        part2div.style.visibility = "visible";
-        next.style.visibility = "hidden";
+        part2div.style.visibility = "visible";//makes part2 visible
+        next.style.visibility = "hidden";//hides next button
       }
     </script>
     <h1>Sitzordnung</h1>
@@ -70,7 +70,7 @@
     Anzahl Schüler in der zweiten Reihe:<br>
       <input id="row2" /><br><br>
     Anzahl Schüler in der dritten Reihe:<br>  
-      <p id="row3"></p>
+      <input id="row3" />
       <button id="rowInputSubmitButton" onclick="rowSubmit();">Bestätigen</button>
     </div>
     <div id="part2">
