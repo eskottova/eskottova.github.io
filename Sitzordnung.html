@@ -68,17 +68,21 @@
         part2div.style.visibility = "visible";//makes part2 visible
         next.style.visibility = "hidden";//hides next button
         //next part should display svg rectangles
+        var widthOfSvg = function(rowVar)
+        {
+          svgVar.style.width = rowVar * 100 + 'px';
+        } 
         if(row1var >= row2var && row1var >= row3var)
         {
-          svgVar.style.width = row1var * 100 + 'px';
+          withOfSvg(row1Var);
         }
         else if(row2var >= row3var)
         {
-          svgVar.style.width = row2var * 100 + 'px';
+          withOfSvg(row2Var);
         }
         else
         {
-          svgVar.style.width = row3var * 100 + 'px';
+          withOfSvg(row3Var);
         }
       }
     </script>
