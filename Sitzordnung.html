@@ -84,7 +84,14 @@
         {
           widthOfSvg(row3var);
         }
-        svgVar.innerHTML = "<rect id='testRect'>";
+        var rectRows = function(rowVarB)
+        {
+          for(var i = 0; i < rowVarB; i++)
+          {
+            svg.innerHTML = "<rect>Test</rect>";
+          }
+        }
+        rectRows(1);
       }
     </script>
     <h1>Sitzordnung</h1>
