@@ -129,16 +129,31 @@
   </head>
   <body>
     <script>
+      var part1function = function()
+      {
+        var numberOfRows = number(document.getElementById("numberOfRowsInput")).value;
+        if(isNaN(numberOfRows))
+        {
+          alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
+        }
+        else
+        {
+          for(i = 0; i < numberOfRows; i++)
+          {
+            
+          }
+        }
+      }
     </script>
     <h1>Sitzordnung</h1>
-    <div id="part1">
+    <div id="part1div">
       <p>Anzahl Reihen:<br>
-        <input id="numberOfRows" />
+        <input id="numberOfRowsInput" />
       </p>
       <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
     </div>
-    <div id="part2"></div>
-    <div id="part3"></div>
+    <div id="part2div"></div>
+    <div id="part3div"></div>
   </body>
 </html>
       
