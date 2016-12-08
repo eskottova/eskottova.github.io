@@ -19,6 +19,10 @@
         {
           alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
         }
+        else if(numberOfRowsVar == 0)
+        {
+          alert("0? Da bringt das Programm ja gar nichts!");
+        }
         else
         {
           for(i = 0; i < numberOfRowsVar; i++)
@@ -26,6 +30,8 @@
             part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Schüler in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
           }
+          var numberOfRowsPVar = document.getElementById("numberOfRowsP");
+          numberOfRowsVar.style.visibility = "hidden";
         }
       }
     </script>
