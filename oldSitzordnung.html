@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sitzordnung</title>
+    <style>
+      body
+      {
+        font-family:sans-serif;
+      }
+      #svg1
+      {
+        height:200px; 
+      }
+      rect
+      {
+        height:30px;
+        width:100px;
+        fill:none;
+        stroke:rgb(0, 0, 0);  
+      }
+      #part1
+      {
+        visibility:visible;
+      }
+      #part2
+      {
+        visibility:hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var row1var;//places in 1st row
+      var row2var;//places in 2nd row
+      var row3var;//places in 3rd row
+      var allRowsVar;//places in total
+      var ready = false;//shows if it knows values of rows 1-3
+      var next;//button which starts part 2
+      var part1div;//used to hide part 1
+      var part2div;//used to make part 2 visible
+      var svgVar;
+      var rowSubmit = function()
+      {
+        row1var = Number(document.getElementById("row1").value);
+        row2var = Number(document.getElementById("row2").value);
+        row3var = Number(document.getElementById("row3").value);
+        allRowsVar = row1var + row2var + row3var;
+        pAllRows = document.getElementById("allRows");
+        next = document.getElementById("nextButton");
+        if(isNaN(allRowsVar))
+        { 
+          alert("Bitte Zahlen eingeben");
+        }
+        else
+        {
+          ready = true;//shows that it's ready for the next step
+          next.style.visibility = "visible";//makes next button visible
+          pAllRows.innerHTML = "Insgesamt " + allRowsVar + " Plätze";
+        
+        }
+      }
+      var startPart2 = function()
+      {
+        svgVar = document.getElementById("svg1");
+        part1div = document.getElementById("part1");
+        part1div.style.visibility = "hidden";//hides part1
+        part2div = document.getElementById("part2");
+        part2div.style.visibility = "visible";//makes part2 visible
+        next.style.visibility = "hidden";//hides next button
+        //next part should display svg rectangles
+        var widthOfSvg = function(rowVar)
+        {
+          svgVar.style.width = rowVar * 100 + 'px';
+        } 
+        if(row1var >= row2var && row1var >= row3var)
+        {
+          widthOfSvg(row1var);
+        }
+        else if(row2var >= row3var)
+        {
+          widthOfSvg(row2var);
+        }
+        else
+        {
+          widthOfSvg(row3var);
+        }
+        var rectRows = function(rowVarB)
+        {
+          for(var i = 0; i < rowVarB; i++)
+          {
+            svgVar.innerHTML = "<rect>Test</rect>";
+          }
+        }
+        rectRows(1);
+      }
+    </script>
+    <h1>Sitzordnung</h1>
+    <div id="part1">
+    Anzahl Plätze in der ersten Reihe:<br>
+      <input id="row1" /><br><br>
+    Anzahl Plätze in der zweiten Reihe:<br>
+      <input id="row2" /><br><br>
+    Anzahl Plätze in der dritten Reihe:<br>  
+      <input id="row3" /><br><br>
+      <button id="rowInputSubmitButton" onclick="rowSubmit();">Bestätigen</button>
+      <p id="allRows"></p>
+    </div>
+    <div id="part2">
+      <button id="nextButton" onclick="startPart2();" >weiter</button><br>
+      Gib deinen Namen ein:<br>
+        <input id="studentNameInput" /><br><br>
+      <svg id="svg1">  
+      </svg>
+    </div>  
+  </body>
+</html>
