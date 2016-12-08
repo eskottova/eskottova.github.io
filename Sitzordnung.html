@@ -131,7 +131,8 @@
     <script>
       var part1function = function()
       {
-        var numberOfRows = Number(document.getElementById("numberOfRowsInput")).value;
+        var numberOfRowsVar = Number(document.getElementById("numberOfRowsInput")).value;
+        var part1var = document.getElementById("part1div");
         if(isNaN(numberOfRows))
         {
           alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
@@ -140,7 +141,7 @@
         {
           for(i = 0; i < numberOfRows; i++)
           {
-            
+            part1var.innerHTML = part1var.innerHTML + "<p id='numberOfPlacesRow" + i + "p'>";
           }
         }
       }
