@@ -1,3 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sitzordnung</title>
+    <style>
+      body
+      {
+      font-family:sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var part1function = function()
+      {
+        var numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
+        var part1var = document.getElementById("part1div");
+        if(isNaN(numberOfRowsVar))
+        {
+          alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
+        }
+        else
+        {
+          for(i = 0; i < numberOfRowsVar; i++)
+          {
+            part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
+                                 "Anzahl Schüler in der " + (i + 1) + "Reihe: <input id='numberOfColumnsRow" + i + "input' /></p><br><br>";
+          }
+        }
+      }
+    </script>
+    <h1>Sitzordnung</h1>
+    <div id="part1div">
+      <p>Anzahl Reihen:<br>
+        <input id="numberOfRowsInput" />
+      </p>
+      <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
+    </div>
+    <div id="part2div"></div>
+    <div id="part3div"></div>
+  </body>
+</html>
+      
 <!-- old code 
 <!DOCTYPE html>
 <html>
@@ -116,46 +159,3 @@
   </body>
 </html>
 -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Sitzordnung</title>
-    <style>
-      body
-      {
-      font-family:sans-serif;
-      }
-    </style>
-  </head>
-  <body>
-    <script>
-      var part1function = function()
-      {
-        var numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
-        var part1var = document.getElementById("part1div");
-        if(isNaN(numberOfRowsVar))
-        {
-          alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
-        }
-        else
-        {
-          for(i = 0; i < numberOfRowsVar; i++)
-          {
-            part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
-                                 "Anzahl Schüler in der " + (i + 1) + "Reihe: <input id='numberOfColumnsRow" + i + "input' /></p><br><br>";
-          }
-        }
-      }
-    </script>
-    <h1>Sitzordnung</h1>
-    <div id="part1div">
-      <p>Anzahl Reihen:<br>
-        <input id="numberOfRowsInput" />
-      </p>
-      <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
-    </div>
-    <div id="part2div"></div>
-    <div id="part3div"></div>
-  </body>
-</html>
-      
