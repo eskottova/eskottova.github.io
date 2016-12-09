@@ -28,10 +28,21 @@
           for(i = 0; i < numberOfRowsVar; i++)
           {
             part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
-                                 "Anzahl Schüler in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
+                                 "Anzahl Schüler in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>
           }
           var numberOfRowsPVar = document.getElementById("numberOfRowsP");
           numberOfRowsPVar.style.visibility = "hidden";
+        }
+      }
+      var part2function = function()
+      {
+        var columnsRowArray = [];
+        var total = 0;
+        var numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
+        for(i = 0; i < numberOfRowsVar; i++)
+        {
+          columnsRowArray[i] = Number(document.getElementById("numberOfColumnsRow" + i + "input").value);
+          total = total + columnsRowArray[i];
         }
       }
     </script>
