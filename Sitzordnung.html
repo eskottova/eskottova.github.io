@@ -30,6 +30,7 @@
             part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Schüler in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>
           }
+          part1var.innerHTML = part1var.innerHTML + "<button onclick='part2function()'>button</button>";
           var numberOfRowsPVar = document.getElementById("numberOfRowsP");
           numberOfRowsPVar.style.visibility = "hidden";
         }
