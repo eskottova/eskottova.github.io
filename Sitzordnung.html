@@ -30,12 +30,12 @@
             part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Schüler in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
           }
-          part1var.innerHTML = part1var.innerHTML + "<button onclick='part2function()'>button</button>";
+          part1var.innerHTML = part1var.innerHTML + '<button onclick="part1bFunction()">button</button>';
           var numberOfRowsPVar = document.getElementById("numberOfRowsP");
           numberOfRowsPVar.style.visibility = "hidden";
         }
       }
-      var part2function = function()
+      var part1bFunction = function()
       {
         var columnsRowArray = [];
         var total = 0;
