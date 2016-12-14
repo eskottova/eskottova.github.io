@@ -11,6 +11,17 @@
   </head>
   <body>
     <script>
+      var part1bFunction = function()
+      {
+        var columnsRowArray = [];
+        var total = 0;
+        var numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
+        for(i = 0; i < numberOfRowsVar; i++)
+        {
+          columnsRowArray[i] = Number(document.getElementById("numberOfColumnsRow" + i + "input").value);
+          total = total + columnsRowArray[i];
+        }
+      }
       var part1function = function()
       {
         var numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
@@ -33,17 +44,6 @@
           var numberOfRowsPVar = document.getElementById("numberOfRowsP");
           numberOfRowsPVar.style.visibility = "hidden";
           part1var.innerHTML = part1var.innerHTML + '<button id="part1bSubmitButton" onclick="part1bFunction()" >Bestätigen</button>';
-        }
-      }
-      var part1bFunction = function()
-      {
-        var columnsRowArray = [];
-        var total = 0;
-        var numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
-        for(i = 0; i < numberOfRowsVar; i++)
-        {
-          columnsRowArray[i] = Number(document.getElementById("numberOfColumnsRow" + i + "input").value);
-          total = total + columnsRowArray[i];
         }
       }
     </script>
