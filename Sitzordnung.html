@@ -13,36 +13,36 @@
     <script>
       var total = 0;
       var columnsRowArray = [];
+      var numberOfRowsValueVar;
+      var contentVar = document.getElementById("part1div");
       var numberOfRowsVar;
-      var part1var = document.getElementById("part1div");
-      var part2var;
-      var numberOfRowsPVar;
       var part1function = function()
       {
-        numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
-        if(isNaN(numberOfRowsVar))
+        contentVar = document.getElementById("part1div");
+        numberOfRowsValueVar = Number(document.getElementById("numberOfRowsInput").value);
+        if(isNaN(numberOfRowsValueVar))
         {
           alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
         }
-        else if(numberOfRowsVar == 0)
+        else if(numberOfRowsValueVar == 0)
         {
           alert("0? Da bringt das Programm ja gar nichts!");
         }
         else
         {
-          for(i = 0; i < numberOfRowsVar; i++)
+          for(i = 0; i < numberOfRowsValueVar; i++)
           {
-            part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
+            contentVar.innerHTML = contentVar.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Plätze in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
           }
-          numberOfRowsPVar = document.getElementById("numberOfRowsInput");
-          numberOfRowsPVar.style.visibility = "hidden";
-          part1var.innerHTML = part1var.innerHTML + '<button id="part1bSubmitButton" onclick="part1bFunction()" >Bestätigen</button>';
+          numberOfRowsVar = document.getElementById("numberOfRowsInput");
+          numberOfRowsVar.style.visibility = "hidden";
+          contentVar.innerHTML = contentVar.innerHTML + '<button id="part1bSubmitButton" onclick="part1bFunction()" >Bestätigen</button>';
         }
       }
       var part1bFunction = function()
       {
-        for(i = 0; i < numberOfRowsVar; i++)
+        for(i = 0; i < numberOfRowsValueVar; i++)
         {
           columnsRowArray[i] = Number(document.getElementById("numberOfColumnsRow" + i + "input").value);
           if(!isNaN(columnsRowArray[i]))
@@ -54,7 +54,7 @@
             alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
           }
         }
-        part1var.innerHTML = '<p id="totalP">Insgesamt ' + total + ' Plätze</p>' +
+        contentVar.innerHTML = '<p id="totalP">Insgesamt ' + total + ' Plätze</p>' +
                              '<button id="part2SubmitButton" onclick="part2Function()" >weiter</button>';
       }
       var part2function = function()
@@ -63,13 +63,11 @@
       }
     </script>
     <h1>Sitzordnung</h1>
-    <div id="part1div">
+    <div id="contentDiv">
       <p id="numberOfRowsP">Anzahl Reihen:
         <input id="numberOfRowsInput" />
         <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
       </p>
     </div>
-    <div id="part2div"></div>
-    <div id="part3div"></div>
   </body>
 </html>
