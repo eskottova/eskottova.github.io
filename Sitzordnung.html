@@ -45,7 +45,14 @@
         for(i = 0; i < numberOfRowsVar; i++)
         {
           columnsRowArray[i] = Number(document.getElementById("numberOfColumnsRow" + i + "input").value);
-          total = total + columnsRowArray[i];
+          if(!isNaN(columnsRowArray[i]))
+          {
+            total = total + columnsRowArray[i];
+          }
+          else
+          {
+            alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
+          }
         }
       }
     </script>
