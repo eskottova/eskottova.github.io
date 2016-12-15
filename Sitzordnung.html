@@ -12,14 +12,14 @@
   <body>
     <script>
       var total = 0;
-      var numberOfRowsPVar;
-      var part1var;
       var columnsRowArray = [];
       var numberOfRowsVar;
+      var part1var = document.getElementById("part1div");
+      var part2var = document.getElementById("part2div");
+      var numberOfRowsPVar = document.getElementById("numberOfRowsP");
       var part1function = function()
       {
         numberOfRowsVar = Number(document.getElementById("numberOfRowsInput").value);
-        part1var = document.getElementById("part1div");
         if(isNaN(numberOfRowsVar))
         {
           alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
@@ -35,7 +35,6 @@
             part1var.innerHTML = part1var.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Plätze in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
           }
-          numberOfRowsPVar = document.getElementById("numberOfRowsP");
           numberOfRowsPVar.style.visibility = "hidden";
           part1var.innerHTML = part1var.innerHTML + '<button id="part1bSubmitButton" onclick="part1bFunction()" >Bestätigen</button>';
         }
@@ -54,6 +53,7 @@
             alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
           }
         }
+        part2var.innerHTML
       }
     </script>
     <h1>Sitzordnung</h1>
