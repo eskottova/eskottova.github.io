@@ -11,13 +11,14 @@
   </head>
   <body>
     <script>
+      var studentsArray = [];
       var total = 0;
       var columnsRowArray = [];
       var numberOfRowsValueVar;
       var contentVar;
       var numberOfRowsVar;
-      var studentNameVar;
       var studentNameValueVar;
+      var studentNrVar = -1;
       var student = function(name, place)
       {
       this.name = name;
@@ -71,7 +72,9 @@
       }
       var part2bFunction = function()
       {
-        alert("part2bFunction");
+        studentNameValueVar = document.getElementById("studentNameInput").vlaue;
+        studentNrVar ++;
+        studentArray[StudentNrVar] = new student(studentNameValueVar);
       }
     </script>
     <h1>Sitzordnung</h1>
