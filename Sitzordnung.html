@@ -70,7 +70,7 @@
       {
         contentVar.innerHTML = "<p>Gib deinen Namen ein:<input id='studentNameInput' />"+
                                "<button id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p>";
-        for(var i = 0; i < columnsRowArray; i++)
+        for(var i = 0; i < columnsRowArray.length; i++)
         {
           contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
           for(var j = 0; j < columnsRowArray[i]; j++)
