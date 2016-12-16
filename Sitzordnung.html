@@ -7,11 +7,11 @@
       {
       font-family:sans-serif;
       }
-      .nameDiv
+      .nameP
       {
-        height:30px;
-        width:100px;
-        border: solid 3px;
+        height:20px;
+        width:150px;
+        border: solid 2px;
     </style>
   </head>
   <body>
@@ -81,7 +81,7 @@
           for(var j = 0; j < columnsRowArray[i]; j++)
           {
             myRow = document.getElementById("row" + i);
-            myRow.innerHTML = myRow.innerHTML + '<div id="row' + i + 'column' + j + '" class="nameDiv"></div>'; 
+            myRow.innerHTML = myRow.innerHTML + '<p id="row' + i + 'column' + j + '" class="nameP"></p>'; 
           }
         }
       }
