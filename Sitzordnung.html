@@ -16,6 +16,13 @@
       var numberOfRowsValueVar;
       var contentVar;
       var numberOfRowsVar;
+      var studentNameVar;
+      var studentNameValueVar;
+      var student = function(name, place)
+      {
+      this.name = name;
+      this.place = place; 
+      }
       var part1function = function()
       {
         contentVar = document.getElementById("contentDiv");
@@ -59,7 +66,12 @@
       }
       var part2function = function()
       {
-        alert("start of part2function");
+        contentVar.innerHTML = "<input id='studentNameInput'>Git deinen Namen ein:</input>"+
+                               "<button id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button>";
+      }
+      var part2bFunction = function()
+      {
+        alert("part2bFunction");
       }
     </script>
     <h1>Sitzordnung</h1>
