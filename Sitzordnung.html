@@ -75,7 +75,7 @@
       {
         studentNameValueVar = document.getElementById("studentNameInput").value;
         studentNrVar ++;
-        myRandomNumber = math.floor(math.random() * (total - studentsOnPlace) + 1);
+        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace) + 1);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         studentsOnPlace ++;
       }
