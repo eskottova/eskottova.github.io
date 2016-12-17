@@ -10,7 +10,7 @@
       .nameSpan
       {
         border:solid 2px;
-        padding:3px;
+      }  
     </style>
   </head>
   <body>
@@ -22,8 +22,10 @@
       var numberOfRowsValueVar;
       var contentVar;
       var numberOfRowsVar;
+      var numberOfPlacesVar = 0;
       var studentNameValueVar;
-      var studentNrVar = -1;
+      var studentNrVar = 0;
+      var totalVar = 0;
       var student = function(nickname, place)
       {
       this.nickname = nickname;
@@ -72,25 +74,28 @@
       }
       var part2function = function()
       {
-        contentVar.innerHTML = "<p>Gib deinen Namen ein:<input id='studentNameInput' />"+
-                               "<button id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p>";
-        for(var i = 0; i < columnsRowArray.length; i++)
+      numberOfPlacesVar = 0;
+      contentVar.innerHTML = "<p>Gib deinen Namen ein:<input id='studentNameInput' />"+
+                             "<button id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p>";
+      for(var i = 0; i < columnsRowArray.length; i++)
+      {
+        contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
+        for(var j = 0; j < columnsRowArray[i]; j++)
         {
-          contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
-          for(var j = 0; j < columnsRowArray[i]; j++)
-          {
-            myRow = document.getElementById("row" + i);
-            myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '" class="nameSpan">row' + i + 'column' + j + '</span>'; 
+          numberOfPlacesVar ++;
+          myRow = document.getElementById("row" + i);
+          myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '" class='numberOfPlacesVar'>row' + i + 'column' + j'</span>'; 
           }
         }
       }
       var part2bFunction = function()
       {
         studentNameValueVar = document.getElementById("studentNameInput").value;
-        studentNrVar ++;
         myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace) + 1);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
+        studentNrVar ++;
         studentsOnPlace ++;
+        totalVar = 0;
       }
     </script>
     <h1>Sitzordnung</h1>
