@@ -7,14 +7,10 @@
       {
       font-family:sans-serif;
       }
-      .nameP
+      .nameSpan
       {
-        height:20px;
-        width:150px;
         border:solid 2px;
-        display:inline;
-        padding:2px;
-        margin:3px;
+        padding:3px;
     </style>
   </head>
   <body>
@@ -84,7 +80,7 @@
           for(var j = 0; j < columnsRowArray[i]; j++)
           {
             myRow = document.getElementById("row" + i);
-            myRow.innerHTML = myRow.innerHTML + '<p id="row' + i + 'column' + j + '" class="nameP">row' + i + 'column' + j + '</p>'; 
+            myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '" class="nameSpan">row' + i + 'column' + j + '</span>'; 
           }
         }
       }
