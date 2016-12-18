@@ -15,7 +15,6 @@
   </head>
   <body>
     <script>
-      var mySpan;
       var placesArray = [];
       var studentsOnPlace = 0;
       var studentsArray = [];
@@ -86,7 +85,7 @@
           myRow = document.getElementById("row" + i);
           myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '"' + 
                                               'class="nameSpan" >row' + i + 'column' + j + '</span>'; 
-          mySpan =  document.getElementById("row" + i + "column" + j);
+          var mySpan =  document.getElementById("row" + i + "column" + j);
           placesArray[numberOfPlacesVar] = mySpan;
           numberOfPlacesVar ++;
           }
