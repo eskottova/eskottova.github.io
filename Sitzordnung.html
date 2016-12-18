@@ -97,7 +97,7 @@
         myRandomNumber = Math.floor(Math.random() * (total - (studentsOnPlace + 1)));
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].name;
-        for(var i = myRandomNumber; i < total)
+        for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[(i - 1)] = placesArray[1];
         }
