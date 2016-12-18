@@ -15,6 +15,7 @@
   </head>
   <body>
     <script>
+      var placesArray = [];
       var studentsOnPlace = 0;
       var studentsArray = [];
       var total = 0;
@@ -74,25 +75,32 @@
       }
       var part2function = function()
       {
-      numberOfPlacesVar = 0;
-      contentVar.innerHTML = "<p>Gib deinen Namen ein:<input id='studentNameInput' />"+
-                             "<button id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p>";
-      for(var i = 0; i < columnsRowArray.length; i++)
-      {
-        contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
-        for(var j = 0; j < columnsRowArray[i]; j++)
+        numberOfPlacesVar = 0;
+        contentVar.innerHTML = "<p>Gib deinen Namen ein:<input id='studentNameInput' />"+
+                               "<button id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p>";
+        for(var i = 0; i < columnsRowArray.length; i++)
         {
-          numberOfPlacesVar ++;
+          contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
+          for(var j = 0; j < columnsRowArray[i]; j++)
+          {
           myRow = document.getElementById("row" + i);
           myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '" class="nameSpan" >row' + i + 'column' + j + '</span>'; 
+          mySpan = document.getElementById("row' + i + 'column' + j + '");
+          placesArray[numberOfPlacesVar] = mySpan;
+          numberOfPlacesVar ++;
           }
         }
       }
       var part2bFunction = function()
       {
         studentNameValueVar = document.getElementById("studentNameInput").value;
-        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace) + 1);
+        myRandomNumber = Math.floor(Math.random() * (total - (studentsOnPlace + 1));
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
+        placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].name;
+        for(var i = myRandomNumber; i < total)
+        {
+          placesArray[(i - 1)] = placesArray[1];
+        }
         studentNrVar ++;
         studentsOnPlace ++;
         totalVar = 0;
