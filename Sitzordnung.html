@@ -86,7 +86,8 @@
           myRow = document.getElementById("row" + i);
           myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '"' + 
                                               'class="nameSpan" >row' + i + 'column' + j + '</span>'; 
-          placesArray[numberOfPlacesVar] = document.getElementById("row' + i + 'column' + j + '");
+          mySpan =  document.getElementById("row" + i + "column" + j);
+          placesArray[numberOfPlacesVar] = mySpan;
           numberOfPlacesVar ++;
           }
         }
