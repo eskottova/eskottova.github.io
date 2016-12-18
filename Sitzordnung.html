@@ -75,7 +75,6 @@
       }
       var part2function = function()
       {
-        numberOfPlacesVar = 0;
         contentVar.innerHTML = "<p>Gib deinen Namen ein:<input id='studentNameInput' />"+
                                "<button id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p>";
         for(var i = 0; i < columnsRowArray.length; i++)
@@ -96,7 +95,7 @@
         studentNameValueVar = document.getElementById("studentNameInput").value;
         myRandomNumber = Math.floor(Math.random() * (total - (studentsOnPlace + 1)));
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
-        placesArray[myRandomNumber - 1].innerHTML = studentsArray[0].nickname;
+        placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].nickname;
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[(i - 1)] = placesArray[1];
