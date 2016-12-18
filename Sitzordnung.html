@@ -99,7 +99,7 @@
         placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].nickname;
         for(var i = myRandomNumber; i < total; i++)
         {
-          placesArray[(i - 1)] = placesArray[1];
+          placesArray[(i - 1)] = placesArray[i];
         }
         studentNrVar ++;
         studentsOnPlace ++;
