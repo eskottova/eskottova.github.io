@@ -94,7 +94,7 @@
       var part2bFunction = function()
       {
         studentNameValueVar = document.getElementById("studentNameInput").value;
-        myRandomNumber = Math.floor(Math.random() * (total - (studentsOnPlace + 1));
+        myRandomNumber = Math.floor(Math.random() * (total - (studentsOnPlace + 1)));
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].name;
         for(var i = myRandomNumber; i < total)
