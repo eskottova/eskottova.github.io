@@ -84,9 +84,9 @@
           for(var j = 0; j < columnsRowArray[i]; j++)
           {
           myRow = document.getElementById("row" + i);
-          myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '" class="nameSpan" >row' + i + 'column' + j + '</span>'; 
-          mySpan = document.getElementById("row' + i + 'column' + j + '");
-          placesArray[numberOfPlacesVar] = mySpan;
+          myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '"' + 
+                                              'class="nameSpan" >row' + i + 'column' + j + '</span>'; 
+          placesArray[numberOfPlacesVar] = document.getElementById("row' + i + 'column' + j + '");
           numberOfPlacesVar ++;
           }
         }
