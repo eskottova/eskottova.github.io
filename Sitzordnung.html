@@ -10,8 +10,12 @@
       .nameSpan
       {
         border:solid 2px;
-        width:200px;
+        margin:15px;
       }  
+      .rowDiv
+      {
+        margin:15px;
+      }
     </style>
   </head>
   <body>
@@ -79,7 +83,7 @@
                                "<button type='submit' id='studentNameSubmitButton' 11onclick='part2bFunction()'>Bestätigen</button></p></from>";
         for(var i = 0; i < columnsRowArray.length; i++)
         {
-          contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
+          contentVar.innerHTML = contentVar.innerHTML + '<div class="rowDiv" id="row' + i + '"></div>'
           for(var j = 0; j < columnsRowArray[i]; j++)
           {
           myRow = document.getElementById("row" + i);
