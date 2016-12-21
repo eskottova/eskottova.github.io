@@ -105,6 +105,18 @@
           b = Math.floor(Math.random() * 255);
           document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
         }
+        if(x < 6)
+        {
+          setTimeout(animationFunction, 400);
+        }
+        else
+        {
+          for(var j = 0; j < placesArray.length; j++)
+          {
+          document.getElementById(placesArray[j].id).style.background = "rgb(255, 255, 255)";
+          }
+          x = 0;
+        }
       }
       var part2bFunction = function()
       {
