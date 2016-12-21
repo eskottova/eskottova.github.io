@@ -27,10 +27,6 @@
       var numberOfPlacesVar = 0;
       var studentNameValueVar;
       var studentNrVar = 0;
-      var r;
-      var g;
-      var b;
-      var x = 0;
       var student = function(nickname, place)
       {
       this.nickname = nickname;
@@ -80,7 +76,7 @@
       var part2function = function()
       {
         contentVar.innerHTML = "<form onsubmit='part2bFunction(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
-                               "<button type='submit' id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p></from>";
+                               "<button type='submit' id='studentNameSubmitButton' 11onclick='part2bFunction()'>Bestätigen</button></p></from>";
         for(var i = 0; i < columnsRowArray.length; i++)
         {
           contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
@@ -95,32 +91,8 @@
           }
         }
       }
-      var animationFunction = function()
-      {
-        x ++;
-        for(var i = 0; i < placesArray.length; i++)
-        {
-          r = Math.floor(Math.random() * 255);
-          g = Math.floor(Math.random() * 255);
-          b = Math.floor(Math.random() * 255);
-          document.getElementById(placesArray[i]).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
-        }
-        if(x < 6)
-        {
-          setTimeout(animationFunction, 400);
-        }
-        else
-        {
-          for(var j = 0; j < placesArray.length; j++)
-          {
-          document.getElementById(placesArray[j].id).style.background = "rgb(255, 255, 255)";
-          }
-          x = 0;
-        }
-      }
       var part2bFunction = function()
       {
-        animationFunction();
         studentNameValueVar = document.getElementById("studentNameInput").value;
         document.getElementById("studentNameInput").value = "";
         document.getElementById("studentNameInput").focus();
@@ -128,7 +100,6 @@
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         //placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber - 1].id).innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber - 1].id).style.background = "rgb(255, 0, 0)";
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[(i - 1)] = placesArray[i];
@@ -145,8 +116,5 @@
         <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
       </p>
     </div>
-    <script>
-      alert("Wird gerade bearbeitet. Benutzen Sie die ältere Version (eskottova.github.io/SitzordnungAlt)");
-    </script>
   </body>
 </html>
