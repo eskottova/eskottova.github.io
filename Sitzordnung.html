@@ -27,6 +27,10 @@
       var numberOfPlacesVar = 0;
       var studentNameValueVar;
       var studentNrVar = 0;
+      var r;
+      var g;
+      var b;
+      var x;
       var student = function(nickname, place)
       {
       this.nickname = nickname;
@@ -91,8 +95,28 @@
           }
         }
       }
+      var animationFunction = function()
+      {
+        x ++;
+        for(var i = 0; i < placesArray.length; i++)
+        {
+          r = Math.floor(Math.random() * 255);
+          g = Math.floor(Math.random() * 255);
+          b = Math.floor(Math.random() * 255);
+          document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+        }
+        if(x < 6)
+        {
+           setTimeout(animationFunction(), 400);
+        }
+        else
+        {
+          x = 0;
+        }
+      }
       var part2bFunction = function()
       {
+        animationFunction();
         studentNameValueVar = document.getElementById("studentNameInput").value;
         document.getElementById("studentNameInput").value = "";
         document.getElementById("studentNameInput").focus();
@@ -100,6 +124,7 @@
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         //placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber - 1].id).innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber - 1].id).style.background = "rgb(255, 0, 0)";
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[(i - 1)] = placesArray[i];
@@ -117,7 +142,7 @@
       </p>
     </div>
     <script>
-      //alert("Wird gerade bearbeitet. Benutzen Sie die ältere Version (eskottova.github.io/SitzordnungAlt)");
+      alert("Wird gerade bearbeitet. Benutzen Sie die ältere Version (eskottova.github.io/SitzordnungAlt)");
     </script>
   </body>
 </html>
