@@ -80,7 +80,7 @@
       var part2function = function()
       {
         contentVar.innerHTML = "<form onsubmit='part2bFunction(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
-                               "<button type='submit' id='studentNameSubmitButton' 11onclick='part2bFunction()'>Bestätigen</button></p></from>";
+                               "<button type='submit' id='studentNameSubmitButton' onclick='part2bFunction()'>Bestätigen</button></p></from>";
         for(var i = 0; i < columnsRowArray.length; i++)
         {
           contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
