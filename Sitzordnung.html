@@ -20,6 +20,10 @@
   </head>
   <body>
     <script>
+      var x = 0;
+      var r;
+      var g;
+      var b;
       var placesArray = [];
       var studentsOnPlace = 0;
       var studentsArray = [];
@@ -86,12 +90,42 @@
           contentVar.innerHTML = contentVar.innerHTML + '<div class="rowDiv" id="row' + i + '"></div>'
           for(var j = 0; j < columnsRowArray[i]; j++)
           {
-          myRow = document.getElementById("row" + i);
-          myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '"' + 
-                                              'class="nameSpan" >Reihe ' + (i + 1) + ', Platz ' + (j + 1) + '</span>'; 
-          var mySpan =  document.getElementById("row" + i + "column" + j);
-          placesArray[numberOfPlacesVar] = mySpan;
-          numberOfPlacesVar ++;
+            myRow = document.getElementById("row" + i);
+            myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '"' + 
+                                                'class="nameSpan" >Reihe ' + (i + 1) + ', Platz ' + (j + 1) + '</span>'; 
+            var mySpan =  document.getElementById("row" + i + "column" + j);
+            placesArray[numberOfPlacesVar] = mySpan;
+            numberOfPlacesVar ++;
+          }
+        }
+      }
+      var animationFunction = function()
+      {
+        for(var i = 0; i < columnsRowArray.length; i++)
+        {
+          for(var j = 0; j < columnsRowArray[i]; j++)
+          { 
+            r = Math.floor(Math.random() * 255 + 100);
+            g = Math.floor(Math.random() * 255 + 100);
+            b = Math.floor(Math.random() * 255 + 100);
+            var mySpan =  document.getElementById("row" + i + "column" + j);
+            mySpan.style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          }
+        }
+        x ++;
+        if(x < 5)
+        {
+          setTimeout(animationFunction(), 400);
+        }
+        else
+        {
+          for(var i = 0; i < columnsRowArray.length; i++)
+          {
+            for(var j = 0; j < columnsRowArray[i]; j++)
+            { 
+              var mySpan =  document.getElementById("row" + i + "column" + j);
+              mySpan.style.background = "rgb(255, 255, 255)";
+            }
           }
         }
       }
@@ -104,6 +138,7 @@
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         //placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber - 1].id).innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber - 1].id).style.background = "rgb(255, 255, 255)";
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[(i - 1)] = placesArray[i];
