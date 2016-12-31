@@ -148,11 +148,11 @@
         studentNameValueVar = document.getElementById("studentNameInput").value;
         document.getElementById("studentNameInput").value = "";
         document.getElementById("studentNameInput").focus();
-        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace) + 1);
+        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace));
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
-        //placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber - 1].id).innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber - 1].id).style.background = "rgb(255, 0, 0)";
+        //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[(i - 1)] = placesArray[i];
