@@ -84,7 +84,7 @@
       var part2function = function()
       {
         contentVar.innerHTML = "<form onsubmit='part2bFunction(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
-                               "<button type='submit' id='studentNameSubmitButton' 11onclick='part2bFunction()'>Bestätigen</button></p></from>";
+                               "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1Function()'>Bestätigen</button></p></from>";
         for(var i = 0; i < columnsRowArray.length; i++)
         {
           contentVar.innerHTML = contentVar.innerHTML + '<div class="rowDiv" id="row' + i + '"></div>'
@@ -99,6 +99,11 @@
           }
         }
       }
+      var part2b1function = function()
+      {
+        animatonFunction();
+        setTimeout(part2bFunction, 2000);
+      }
       var animationFunction = function()
       {
         for(var i = 0; i < columnsRowArray.length; i++)
@@ -112,9 +117,9 @@
             mySpan.style.background = "rgb(" + r + ", " + g + ", " + b + ")";
           }
         }
-        x ++;
         if(x < 5)
         {
+          x ++;
           setTimeout(animationFunction, 400);
         }
         else
@@ -132,7 +137,6 @@
       }
       var part2bFunction = function()
       {
-        animationFunction();
         studentNameValueVar = document.getElementById("studentNameInput").value;
         document.getElementById("studentNameInput").value = "";
         document.getElementById("studentNameInput").focus();
