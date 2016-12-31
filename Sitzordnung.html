@@ -24,8 +24,9 @@
           1) An animation that changes the color of:
             a) the empty places four times to a random color  *partially done
             b) the new place of the student to red
-            c) the rest of the occupied places to black with white font and 
-               the new empty places white
+            c) the rest of the occupied places to black with white font 
+            d) the new empty places to white
+          2) Making the page easier to use  
       */
       var x = 0;
       var r;
@@ -118,8 +119,7 @@
           r = Math.floor(Math.random() * 255 + 100);
           g = Math.floor(Math.random() * 255 + 100);
           b = Math.floor(Math.random() * 255 + 100);
-          var myNewSpan =  document.getElementById(placesArray[i].id);
-          myNewSpan.style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
         }
         if(x < 5)
         {
@@ -128,13 +128,9 @@
         }
         else
         {
-          for(var i = 0; i < columnsRowArray.length; i++)
+          for(var i = 0; i < placesArray.length; i++)
           {
-            for(var j = 0; j < columnsRowArray[i]; j++)
-            { 
-              var mySpan =  document.getElementById("row" + i + "column" + j);
-              mySpan.style.background = "rgb(255, 255, 255)";
-            }
+            document.getElementById(placesArray[i].id).style.background = "rgb(255, 255, 255)";
           }
           x = 0;
         }
