@@ -114,16 +114,13 @@
       }
       var animationFunction = function()
       {
-        for(var i = 0; i < columnsRowArray.length; i++)
+        for(var i = 0; i < placesArray.length; i++)
         {
-          for(var j = 0; j < columnsRowArray[i]; j++)
-          { 
-            r = Math.floor(Math.random() * 255 + 100);
-            g = Math.floor(Math.random() * 255 + 100);
-            b = Math.floor(Math.random() * 255 + 100);
-            var mySpan =  document.getElementById("row" + i + "column" + j);
-            mySpan.style.background = "rgb(" + r + ", " + g + ", " + b + ")";
-          }
+          r = Math.floor(Math.random() * 255 + 100);
+          g = Math.floor(Math.random() * 255 + 100);
+          b = Math.floor(Math.random() * 255 + 100);
+          var myNewSpan =  placesArray[i];
+          myNewSpan.style.background = "rgb(" + r + ", " + g + ", " + b + ")";
         }
         if(x < 5)
         {
