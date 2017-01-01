@@ -27,7 +27,6 @@
             c) the rest of the occupied places to black with white font 
             d) the new empty places to white *only thing that works
           2) Making the page easier to use  ****working on it right now****
-            a) row1 (row0 in the code) should be on the bottom
       */
       var x = 0;
       var r;
@@ -68,7 +67,7 @@
             contentVar.innerHTML = contentVar.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Plätze in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
           }
-          numberOfRowsVar = document.getElementById("numberOfRowsInput");
+          numberOfRowsVar = document.getElementById("numberOfRowsP");
           numberOfRowsVar.style.visibility = "hidden";
           contentVar.innerHTML = contentVar.innerHTML + '<button id="part1bSubmitButton" onclick="part1bFunction()" >Bestätigen</button>';
         }
