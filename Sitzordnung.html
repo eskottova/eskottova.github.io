@@ -94,7 +94,7 @@
       {
         contentVar.innerHTML = "<form onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
                                "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1function()'>Bestätigen</button></p></from>";
-        for(var i = columnsRowArray.length; i > 0; i--)
+        for(var i = columnsRowArray.length; i >= 0; i--)
         {
           contentVar.innerHTML = contentVar.innerHTML + '<div class="rowDiv" id="row' + i + '"></div>'
           for(var j = 0; j < columnsRowArray[i]; j++)
