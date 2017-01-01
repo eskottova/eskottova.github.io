@@ -114,12 +114,15 @@
       }
       var animationFunction = function()
       {
-        for(var i = 0; i < placesArray.length; i++)
+        for(var i = 0; i < columnRowArray.length; i++)
         {
-          r = Math.floor(Math.random() * 255 + 100);
-          g = Math.floor(Math.random() * 255 + 100);
-          b = Math.floor(Math.random() * 255 + 100);
-          document.getElementById(placesArray[i]).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          for(var j = 0; j < columnRowArray[i]; j++)
+          { 
+            r = Math.floor(Math.random() * 255 + 100);
+            g = Math.floor(Math.random() * 255 + 100);
+            b = Math.floor(Math.random() * 255 + 100);
+            document.getElementById("row" + i + "column" + j).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          }
         }
         if(x < 5)
         {
@@ -128,9 +131,12 @@
         }
         else
         {
-          for(var i = 0; i < placesArray.length; i++)
+          for(var i = 0; i < columnRowArray.length; i++)
           {
-            document.getElementById(placesArray[i]).style.background = "rgb(255, 255, 255)";
+            for(var j = 0; j < columnRowArray[i]; j++)
+            {
+              document.getElementById("row" + i + "column" + j).style.background = "rgb("255, 255, 255)";
+            }
           }
           x = 0;
         }
