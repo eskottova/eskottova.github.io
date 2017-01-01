@@ -27,6 +27,7 @@
             c) the rest of the occupied places to black with white font 
             d) the new empty places to white *only thing that works
           2) Making the page easier to use  ****working on it right now****
+            a) row1 (row0 in the code) should be on the bottom
       */
       var x = 0;
       var r;
@@ -93,7 +94,7 @@
       {
         contentVar.innerHTML = "<form onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
                                "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1function()'>Bestätigen</button></p></from>";
-        for(var i = 0; i < columnsRowArray.length; i++)
+        for(var i = columnsRowArray.length; i > 0; i--)
         {
           contentVar.innerHTML = contentVar.innerHTML + '<div class="rowDiv" id="row' + i + '"></div>'
           for(var j = 0; j < columnsRowArray[i]; j++)
