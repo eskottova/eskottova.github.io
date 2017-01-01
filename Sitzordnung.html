@@ -62,7 +62,7 @@
         }
         else
         {
-          for(i = 0; i < numberOfRowsValueVar; i++)
+          for(var i = columnsRowArray.length; i >= 0; i--)
           {
             contentVar.innerHTML = contentVar.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Plätze in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
