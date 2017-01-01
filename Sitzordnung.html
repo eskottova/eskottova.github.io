@@ -92,7 +92,7 @@
       }
       var part2function = function()
       {
-        contentVar.innerHTML = "<form onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
+        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
                                "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1function()'>Bestätigen</button></p></from>";
         for(var i = columnsRowArray.length; i >= 0; i--)
         {
@@ -110,8 +110,16 @@
       }
       var part2b1function = function()
       {
-        animationFunction();
-        setTimeout(part2bFunction, 2000);
+        if(studentsOnPlace != total)
+        {
+          animationFunction();
+          setTimeout(part2bFunction, 2000);
+        }
+        else
+        {
+          alert("Alle Plätze sind besetzt!!");
+          document.getElementById("studentNameInputForm").style.visibility = "hidden";
+        }
       }
       var animationFunction = function()
       {
@@ -144,24 +152,21 @@
       }
       var part2bFunction = function()
       {
-        if(studentsOnPlace != total)
+        studentNameValueVar = document.getElementById("studentNameInput").value;
+        document.getElementById("studentNameInput").value = "";
+        document.getElementById("studentNameInput").focus();
+        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace));
+        studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
+        //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
+        for(var i = myRandomNumber; i < total; i++)
         {
-          studentNameValueVar = document.getElementById("studentNameInput").value;
-          document.getElementById("studentNameInput").value = "";
-          document.getElementById("studentNameInput").focus();
-          myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace));
-          studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
-          //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
-          document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
-          document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
-          for(var i = myRandomNumber; i < total; i++)
-          {
-            placesArray[i] = placesArray[(i + 1)];
-          }
-          placesArray[(total - 1)] = null;
-          studentNrVar ++;
-          studentsOnPlace ++;
+          placesArray[i] = placesArray[(i + 1)];
         }
+        placesArray[(total - 1)] = null;
+        studentNrVar ++;
+        studentsOnPlace ++;
       }
     </script>
     <h1>Sitzordnung</h1>
