@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,12 +11,27 @@
       .nameSpan
       {
         border:solid 2px;
-        width:200px;
       }  
+      .rowDiv
+      {
+        margin:15px;
+      }
     </style>
   </head>
   <body>
     <script>
+      /*
+        I'm working on: 
+          1) An animation that changes the color of:
+            a) the empty places four times to a random color  *works, but changes color of every place
+            b) the new place of the student to red  *works
+            c) the rest of the occupied places to black with white font 
+            d) the new empty places to white *works
+      */      
+      var x = 0;
+      var r;
+      var g;
+      var b;
       var placesArray = [];
       var studentsOnPlace = 0;
       var studentsArray = [];
@@ -46,12 +62,12 @@
         }
         else
         {
-          for(i = 0; i < numberOfRowsValueVar; i++)
+          for(var i = (numberOfRowsValueVar - 1); i >= 0; i--)
           {
             contentVar.innerHTML = contentVar.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Plätze in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
           }
-          numberOfRowsVar = document.getElementById("numberOfRowsInput");
+          numberOfRowsVar = document.getElementById("numberOfRowsP");
           numberOfRowsVar.style.visibility = "hidden";
           contentVar.innerHTML = contentVar.innerHTML + '<button id="part1bSubmitButton" onclick="part1bFunction()" >Bestätigen</button>';
         }
@@ -75,20 +91,62 @@
       }
       var part2function = function()
       {
-        contentVar.innerHTML = "<form onsubmit='part2bFunction(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
-                               "<button type='submit' id='studentNameSubmitButton' 11onclick='part2bFunction()'>Bestätigen</button></p></from>";
-        for(var i = 0; i < columnsRowArray.length; i++)
+        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
+                               "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1function()'>Bestätigen</button></p></from>";
+        for(var i = columnsRowArray.length; i >= 0; i--)
         {
-          contentVar.innerHTML = contentVar.innerHTML + '<div id="row' + i + '"></div>'
+          contentVar.innerHTML = contentVar.innerHTML + '<div class="rowDiv" id="row' + i + '"></div>'
           for(var j = 0; j < columnsRowArray[i]; j++)
           {
-          myRow = document.getElementById("row" + i);
-          myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '"' + 
-                                              'class="nameSpan" >Reihe ' + (i + 1) + ', Platz ' + (j + 1) + '</span>'; 
-          var mySpan =  document.getElementById("row" + i + "column" + j);
-          placesArray[numberOfPlacesVar] = mySpan;
-          numberOfPlacesVar ++;
+            myRow = document.getElementById("row" + i);
+            myRow.innerHTML = myRow.innerHTML + '<span id="row' + i + 'column' + j + '"' + 
+                                                'class="nameSpan" >Reihe ' + (i + 1) + ', Platz ' + (j + 1) + '</span>'; 
+            var mySpan =  document.getElementById("row" + i + "column" + j);
+            placesArray[numberOfPlacesVar] = mySpan;
+            numberOfPlacesVar ++;
           }
+        }
+      }
+      var part2b1function = function()
+      {
+        if(studentsOnPlace != total)
+        {
+          animationFunction();
+          setTimeout(part2bFunction, 2000);
+        }
+        else
+        {
+          alert("Alle Plätze sind besetzt!!");
+          document.getElementById("studentNameInputForm").style.visibility = "hidden";
+        }
+      }
+      var animationFunction = function()
+      {
+        for(var i = 0; i < columnsRowArray.length; i++)
+        {
+          for(var j = 0; j < columnsRowArray[i]; j++)
+          { 
+            r = Math.floor(Math.random() * 255 + 100);
+            g = Math.floor(Math.random() * 255 + 100);
+            b = Math.floor(Math.random() * 255 + 100);
+            document.getElementById("row" + i + "column" + j).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          }
+        }
+        if(x < 5)
+        {
+          x ++;
+          setTimeout(animationFunction, 400);
+        }
+        else
+        {
+          for(var i = 0; i < columnsRowArray.length; i++)
+          {
+            for(var j = 0; j < columnsRowArray[i]; j++)
+            {
+              document.getElementById("row" + i + "column" + j).style.background = "rgb(255, 255, 255)";
+            }
+          }
+          x = 0;
         }
       }
       var part2bFunction = function()
@@ -96,13 +154,14 @@
         studentNameValueVar = document.getElementById("studentNameInput").value;
         document.getElementById("studentNameInput").value = "";
         document.getElementById("studentNameInput").focus();
-        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace) + 1);
+        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace));
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
-        //placesArray[myRandomNumber - 1].innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber - 1].id).innerHTML = studentsArray[studentNrVar].nickname;
+        //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
         for(var i = myRandomNumber; i < total; i++)
         {
-          placesArray[(i - 1)] = placesArray[i];
+          placesArray[i] = placesArray[(i + 1)];
         }
         placesArray[(total - 1)] = null;
         studentNrVar ++;
