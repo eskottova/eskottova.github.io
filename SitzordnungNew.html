@@ -158,7 +158,7 @@
         //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
-        //placesArray.splice(myRandomNumber, myRandomNumber);
+        placesArray.splice(myRandomNumber, (myRandomNumber + 1));
         studentNrVar ++;
         studentsOnPlace ++;
       }
