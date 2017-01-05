@@ -121,15 +121,15 @@
       }
       var animationFunction = function()
       {
-        for(var i = 0; i < columnsRowArray.length; i++)
+        for(var i = 0; i < total; i++)
         {
-          for(var j = 0; j < columnsRowArray[i]; j++)
-          { 
+         /* for(var j = 0; j < columnsRowArray[i]; j++)
+          {*/ 
             r = Math.floor(Math.random() * 255 + 100);
             g = Math.floor(Math.random() * 255 + 100);
             b = Math.floor(Math.random() * 255 + 100);
-            document.getElementById("row" + i + "column" + j).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
-          }
+            document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          //}
         }
         if(x < 5)
         {
@@ -153,7 +153,7 @@
         studentNameValueVar = document.getElementById("studentNameInput").value;
         document.getElementById("studentNameInput").value = "";
         document.getElementById("studentNameInput").focus();
-        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace));
+        myRandomNumber = Math.floor(Math.random() * total);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
@@ -164,7 +164,7 @@
         }
         placesArray[(total - 1)] = null;
         studentNrVar ++;
-        studentsOnPlace ++;
+        total --;
       }
     </script>
     <h1>Sitzordnung</h1>
