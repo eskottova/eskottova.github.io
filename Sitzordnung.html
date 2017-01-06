@@ -121,6 +121,16 @@
       }
       var animationFunction = function()
       {
+        for(var i = 0; i < columnsRowArray.length; i++)
+        {
+          for(var j = 0; j < columnsRowArray[i]; j++)
+          {
+            span = document.getElementById("row" + i + "column" + j)
+            span.style.background = "rgb(0, 0, 0)";
+            span.style.color = "rgb(255, 255, 255)";
+            span.style.border = "rgb(0, 0, 0) solid 2px";
+          }
+        }
         for(var i = 0; i < total; i++)
         {
           r = Math.floor(Math.random() * 255 + 100);
@@ -135,16 +145,6 @@
         }
         else
         {
-          for(var i = 0; i < columnsRowArray.length; i++)
-          {
-            for(var j = 0; j < columnsRowArray[i]; j++)
-            {
-              span = document.getElementById("row" + i + "column" + j)
-              span.style.background = "rgb(0, 0, 0)";
-              span.style.color = "rgb(255, 255, 255)";
-              span.style.border = "rgb(0, 0, 0) solid 2px";
-            }
-          }
           for(var i = 0; i < total; i++)
           {
              document.getElementById(placesArray[i].id).style.background = "rgb(255, 255, 255)";
