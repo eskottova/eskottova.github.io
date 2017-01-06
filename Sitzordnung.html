@@ -139,8 +139,10 @@
           {
             for(var j = 0; j < columnsRowArray[i]; j++)
             {
-              document.getElementById("row" + i + "column" + j).style.background = "rgb(0, 0, 0)";
-              document.getElementById("row" + i + "column" + j).style.color = "rgb(255, 255, 255)";
+              span = document.getElementById("row" + i + "column" + j)
+              span.style.background = "rgb(0, 0, 0)";
+              span.style.color = "rgb(255, 255, 255)";
+              span.style.border:"rgb(0, 0, 0) solid 2px";
             }
           }
           for(var i = 0; i < total; i++)
