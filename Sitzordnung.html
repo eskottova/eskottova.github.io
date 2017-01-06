@@ -123,14 +123,11 @@
       {
         for(var i = 0; i < total; i++)
         {
-         /* for(var j = 0; j < columnsRowArray[i]; j++)
-          {*/ 
-            r = Math.floor(Math.random() * 255 + 100);
-            g = Math.floor(Math.random() * 255 + 100);
-            b = Math.floor(Math.random() * 255 + 100);
-            document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
-          //}
-        }
+          r = Math.floor(Math.random() * 255 + 100);
+          g = Math.floor(Math.random() * 255 + 100);
+          b = Math.floor(Math.random() * 255 + 100);
+          document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+        } 
         if(x < 5)
         {
           x ++;
@@ -142,9 +139,13 @@
           {
             for(var j = 0; j < columnsRowArray[i]; j++)
             {
-              document.getElementById("row" + i + "column" + j).style.background = "rgb(255, 255, 255)";
+              document.getElementById("row" + i + "column" + j).style.background = "rgb(0, 0, 0)";
             }
           }
+          for(var i = 0; i < total; i++)
+          {
+             document.getElementById(placesArray[i].id).style.background = "rgb(255, 255, 255)";
+          } 
           x = 0;
         }
       }
@@ -155,7 +156,6 @@
         document.getElementById("studentNameInput").focus();
         myRandomNumber = Math.floor(Math.random() * total);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
-        //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
         for(var i = myRandomNumber; i < total; i++)
