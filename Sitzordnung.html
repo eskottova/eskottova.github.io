@@ -137,6 +137,7 @@
           g = Math.floor(Math.random() * 255 + 100);
           b = Math.floor(Math.random() * 255 + 100);
           document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          document.getElementById(placesArray[i].id).style.color = "rgb(0, 0, 0)";
         } 
         if(x < 5)
         {
@@ -148,7 +149,6 @@
           for(var i = 0; i < total; i++)
           {
              document.getElementById(placesArray[i].id).style.background = "rgb(255, 255, 255)";
-             document.getElementById(placesArray[i].id).style.color = "rgb(0, 0, 0)";
           } 
           x = 0;
         }
