@@ -19,13 +19,13 @@
   </head>
   <body>
     <script>   
-      var color1 = "rgb(255, 255, 255)";
-      var color2 = "rgb(0, 0, 0)";
-      var color3 = "rgb(255, 0, 0)";
+      var color1 = "rgb(200, 232, 247)";
+      var color2 = "rgb(5, 84, 20)";
+      var color3 = "rgb(5, 20, 80)";
       var x = 0;
       var r;
       var g;
-      var b;
+      var b = 0;
       var placesArray = [];
       var studentsOnPlace = 0;
       var studentsArray = [];
@@ -130,7 +130,7 @@
         {
           r = Math.floor(Math.random() * 255 + 100);
           g = Math.floor(Math.random() * 255 + 100);
-          b = Math.floor(Math.random() * 255 + 100);
+          //b = Math.floor(Math.random() * 255 + 100);
           document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
           document.getElementById(placesArray[i].id).style.color = color2;
         } 
