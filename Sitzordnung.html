@@ -163,7 +163,7 @@
         myRandomNumber = Math.floor(Math.random() * total);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber].id).style.background = color1;
+        document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(0, 255, 0)";
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[i] = placesArray[(i + 1)];
