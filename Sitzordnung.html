@@ -91,8 +91,8 @@
       }
       var part2function = function()
       {
-        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input " + 
-                               "id='studentNameInput' autofocus />"+
+        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:" + 
+                               "<input id='studentNameInput' autocomplete='off' autofocus /><button type='submit'"+
                                "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1function()'>Bestätigen</button></p></from>";
         for(var i = columnsRowArray.length; i >= 0; i--)
         {
@@ -174,7 +174,7 @@
       }
     </script>
     <h1>Sitzordnung</h1>
-    <div id="contentDiv" autocomplete="off">
+    <div id="contentDiv" >
       <p id="numberOfRowsP">Anzahl Reihen:
         <input id="numberOfRowsInput" />
         <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
