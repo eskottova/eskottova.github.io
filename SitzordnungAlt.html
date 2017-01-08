@@ -2,35 +2,47 @@
 <html>
   <head>
     <title>Sitzordnung</title>
-    <style>
+   <!-- <style>
       body
       {
-      font-family:sans-serif;
+        background: rgb(225, 250, 255);
+        font-family:sans-serif;
+        color:rgb(5, 20, 80);
       }
       .nameSpan
       {
-        border:solid 2px;
+        margin-bottom:35px;
+        padding:10px;
+        border:solid 2.5px;
       }  
       .rowDiv
       {
-        margin:15px;
+        margin:35px;
       }
-    </style>
+      button
+      {
+        padding:5px;
+        color:rgb(225, 250, 255);
+        background: rgb(5, 20, 80);
+        border:solid 2.5px rgb(5, 20, 80);
+      }
+      input
+      {
+        padding:5px;
+        background: rgb(225, 250, 255);
+        color:rgb(5, 20, 80);
+        border:solid 2.5px rgb(5, 20, 80);
+      }
+    </style> -->
   </head>
   <body>
-    <script>
-      /*
-        I'm working on: 
-          1) An animation that changes the color of:
-            a) the empty places four times to a random color  *working, but changes color of every place
-            b) the new place of the student to red  *working
-            c) the rest of the occupied places to black with white font 
-            d) the new empty places to white *working
-      */      
+    <script>   
+     // var color1 = "rgb(225, 250, 255)";//light blue
+      //var color2 = "rgb(5, 20, 80)";//dark blue
       var x = 0;
-      var r;
-      var g;
-      var b;
+      //var r;
+      //var g;
+      //var b = 0;
       var placesArray = [];
       var studentsOnPlace = 0;
       var studentsArray = [];
@@ -51,7 +63,7 @@
       {
         contentVar = document.getElementById("contentDiv");
         numberOfRowsValueVar = Number(document.getElementById("numberOfRowsInput").value);
-        if(isNaN(numberOfRowsValueVar))
+        /*if(isNaN(numberOfRowsValueVar))
         {
           alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
         }
@@ -60,38 +72,39 @@
           alert("0? Da bringt das Programm ja gar nichts!");
         }
         else
-        {
+        {*/
           for(var i = (numberOfRowsValueVar - 1); i >= 0; i--)
           {
             contentVar.innerHTML = contentVar.innerHTML + "<p id='numberOfColumnsRow" + i + "p'>" + 
                                  "Anzahl Plätze in der " + (i + 1) + ". Reihe: <input id='numberOfColumnsRow" + i + "input' /></p>";
           }
           numberOfRowsVar = document.getElementById("numberOfRowsP");
-          numberOfRowsVar.style.visibility = "hidden";
+          //numberOfRowsVar.style.visibility = "hidden";
           contentVar.innerHTML = contentVar.innerHTML + '<button id="part1bSubmitButton" onclick="part1bFunction()" >Bestätigen</button>';
-        }
+        //}
       }
       var part1bFunction = function()
       {
         for(i = 0; i < numberOfRowsValueVar; i++)
         {
           columnsRowArray[i] = Number(document.getElementById("numberOfColumnsRow" + i + "input").value);
-          if(!isNaN(columnsRowArray[i]))
-          {
+          /*if(!isNaN(columnsRowArray[i]))
+          {*/
             total = total + columnsRowArray[i];
-          }
+          /*}
           else
           {
             alert("Normalerweise wird eine Anzahl als Zahl angegeben!!");
-          }
+          }*/
         }
         contentVar.innerHTML = '<p id="totalP">Insgesamt ' + total + ' Plätze</p>' +
                              '<button id="part2SubmitButton" onclick="part2function()" >weiter</button>';
       }
       var part2function = function()
       {
-        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
-                               "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1function()'>Bestätigen</button></p></from>";
+        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:" + 
+                               "<input id='studentNameInput' "/*"autocomplete='off' autofocus"*/" /><button type='submit'"+
+                               "<button type='submit' id='studentNameSubmitButton' "/*11onclick='part2b1function()*/"'>Bestätigen</button></p></from>";
         for(var i = columnsRowArray.length; i >= 0; i--)
         {
           contentVar.innerHTML = contentVar.innerHTML + '<div class="rowDiv" id="row' + i + '"></div>'
@@ -106,7 +119,7 @@
           }
         }
       }
-      var part2b1function = function()
+      /*var part2b1function = function()
       {
         if(studentsOnPlace != total)
         {
@@ -118,19 +131,27 @@
           alert("Alle Plätze sind besetzt!!");
           document.getElementById("studentNameInputForm").style.visibility = "hidden";
         }
-      }
-      var animationFunction = function()
+      }*/
+     /* var animationFunction = function()
       {
         for(var i = 0; i < columnsRowArray.length; i++)
         {
           for(var j = 0; j < columnsRowArray[i]; j++)
-          { 
-            r = Math.floor(Math.random() * 255 + 100);
-            g = Math.floor(Math.random() * 255 + 100);
-            b = Math.floor(Math.random() * 255 + 100);
-            document.getElementById("row" + i + "column" + j).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          {
+            span = document.getElementById("row" + i + "column" + j)
+            span.style.background = color2;
+            span.style.color = color1;
+            span.style.border = color2 + " solid 2px";
           }
         }
+        for(var i = 0; i < total; i++)
+        {
+          r = Math.floor(Math.random() * 255 + 100);
+          g = Math.floor(Math.random() * 255 + 100);
+          //b = Math.floor(Math.random() * 255 + 100);
+          document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          document.getElementById(placesArray[i].id).style.color = color2;
+        } 
         if(x < 5)
         {
           x ++;
@@ -138,37 +159,34 @@
         }
         else
         {
-          for(var i = 0; i < columnsRowArray.length; i++)
+          for(var i = 0; i < total; i++)
           {
-            for(var j = 0; j < columnsRowArray[i]; j++)
-            {
-              document.getElementById("row" + i + "column" + j).style.background = "rgb(255, 255, 255)";
-            }
-          }
+             document.getElementById(placesArray[i].id).style.background = color1;
+          } 
           x = 0;
         }
-      }
+      }*/
       var part2bFunction = function()
       {
         studentNameValueVar = document.getElementById("studentNameInput").value;
-        document.getElementById("studentNameInput").value = "";
-        document.getElementById("studentNameInput").focus();
-        myRandomNumber = Math.floor(Math.random() * (total - studentsOnPlace));
+       // document.getElementById("studentNameInput").value = "";
+        //document.getElementById("studentNameInput").focus();
+        myRandomNumber = Math.floor(Math.random() * total);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
-        //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
         document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
+        /*document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(0, 0, 255)";
+        document.getElementById(placesArray[myRandomNumber].id).style.color = color1;*/
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[i] = placesArray[(i + 1)];
         }
         placesArray[(total - 1)] = null;
         studentNrVar ++;
-        studentsOnPlace ++;
+        total --;
       }
     </script>
     <h1>Sitzordnung</h1>
-    <div id="contentDiv">
+    <div id="contentDiv" >
       <p id="numberOfRowsP">Anzahl Reihen:
         <input id="numberOfRowsInput" />
         <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
