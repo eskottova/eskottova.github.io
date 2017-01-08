@@ -18,7 +18,10 @@
     </style>
   </head>
   <body>
-    <script>     
+    <script>   
+      var color1;
+      var color2;
+      var color3;
       var x = 0;
       var r;
       var g;
@@ -118,9 +121,9 @@
           for(var j = 0; j < columnsRowArray[i]; j++)
           {
             span = document.getElementById("row" + i + "column" + j)
-            span.style.background = "rgb(0, 0, 0)";
-            span.style.color = "rgb(255, 255, 255)";
-            span.style.border = "rgb(0, 0, 0) solid 2px";
+            span.style.background = color2;
+            span.style.color = color1;
+            span.style.border = color2 + " solid 2px";
           }
         }
         for(var i = 0; i < total; i++)
@@ -129,7 +132,7 @@
           g = Math.floor(Math.random() * 255 + 100);
           b = Math.floor(Math.random() * 255 + 100);
           document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
-          document.getElementById(placesArray[i].id).style.color = "rgb(0, 0, 0)";
+          document.getElementById(placesArray[i].id).style.color = color2;
         } 
         if(x < 5)
         {
@@ -140,7 +143,7 @@
         {
           for(var i = 0; i < total; i++)
           {
-             document.getElementById(placesArray[i].id).style.background = "rgb(255, 255, 255)";
+             document.getElementById(placesArray[i].id).style.background = color1;
           } 
           x = 0;
         }
@@ -153,7 +156,7 @@
         myRandomNumber = Math.floor(Math.random() * total);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
+        document.getElementById(placesArray[myRandomNumber].id).style.background = color3;
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[i] = placesArray[(i + 1)];
