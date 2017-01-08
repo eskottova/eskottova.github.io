@@ -26,9 +26,8 @@
   </head>
   <body>
     <script>   
-      var color1 = "rgb(200, 232, 247)";
-      var color2 = "rgb(5, 84, 20)";
-      var color3 = "rgb(5, 20, 80)";
+      var color1 = "rgb(200, 232, 247)";//light blue
+      var color2 = "rgb(5, 84, 20)";//dark blue
       var x = 0;
       var r;
       var g;
@@ -163,7 +162,7 @@
         myRandomNumber = Math.floor(Math.random() * total);
         studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
         document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber].id).style.background = color3;
+        document.getElementById(placesArray[myRandomNumber].id).style.background = color2;
         for(var i = myRandomNumber; i < total; i++)
         {
           placesArray[i] = placesArray[(i + 1)];
