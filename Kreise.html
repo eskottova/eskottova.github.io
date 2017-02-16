@@ -8,7 +8,7 @@
     <script>
       var wholeCircle = function()
       {
-        
+        alert("test");
       }
       var partOfCircle = function()
       {
@@ -22,14 +22,21 @@
       {
         
       }
+      var functions = [wholeCircle, partOfCircle, ringOfCircle, partOfRingOfCircle];
+      var selectEl = document.getElementById("functionSelect");
+      var findFunction = function()
+      {
+            functions[selectEl.value];
+      }
+      selectEl.addEventListener("onchange", findFunction);
     </script>
     <h1>Kreise</h1>
-    <select>
+    <select id="functionSelect">
       <option value="" disabled selected>Auswählen</option>
-      <option value="wholeCircle">ganzer Kreis</option>
-      <option value="partOfCircle">Kreissektor</option>
-      <option value="ringOfCircle">Kreisring</option>
-      <option value="partOfRingOfCircle">Kreisringsektor</option>
+      <option value="0">ganzer Kreis</option>
+      <option value="1">Kreissektor</option>
+      <option value="2">Kreisring</option>
+      <option value="3">Kreisringsektor</option>
     </select>
   </body>
 </html>
