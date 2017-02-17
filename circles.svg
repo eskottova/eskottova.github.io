@@ -1,0 +1,11 @@
+
+<link href="eskottova.github.io/svgStyle.css" />
+<circle r="170" />
+<circle r="140" />
+<circle r="110" />
+<circle r="80" />
+<circle r="50" />
+<circle r="20" />
+<text x="205" y="320">Isegassträff</text>
+<text x="300" y="400">201</text>
+<text class="tall" x="400" y="400">7</text>
