@@ -5,16 +5,16 @@ body
       }
       h1, h2, p
       {
-        color:rgb(0, 0, 0);
+        color:rgb(150, 150, 150);
       }
       input
       {
-        width:5em;
+        width:3em;
       }
       button, input, select
       {
-        background:rgb(0, 0, 0);
-        border:rgb(0, 0, 0);
+        background:rgb(150, 150, 150);
+        border:rgb(150, 150, 150);
         font-size:1.2em;
         color:rgb(255, 255, 255);
       }
@@ -67,7 +67,7 @@ body
         margin:10px;
         padding:10px;
       }
-      .resultate
+      .results
       {
-        color:black;
+        color:rgb(150, 150, 150);
       }
