@@ -5,7 +5,29 @@
   </head>
   <body>
     <script>
+      var myPi = "3.1415926535" +
+                   "8979323846" +
+                   "2643383279" +
+                   "5028841971" +
+                   "6939937510" +
+                   "5820974944" +
+                   "5923078164" +
+                   "0628620899" +
+                   "8628034825" +
+                   "3421170679"; //8214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196";
+      for(i = 0; i < myPi.length; i++)
+      {
+        var newSpan = document.createElement("span");
+        body.appendChild(newSpan);
+        if(i != 1)
+        {
+        newSpan.innerHTML = myPi.substring(i, i + 1);
+        }
+        else
+        {
+          newSpan.innerHTML = ".";
+        }
+      }
     </script>
-    <p id="displayParagraph"></p>
   </body>
 </html>
