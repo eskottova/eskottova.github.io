@@ -21,7 +21,8 @@
         document.body.appendChild(newSpan);
         if(i != 1)
         {
-        newSpan.innerHTML = myPi.substring(i, i + 1);
+        var digit = myPi.substring(i, i + 1);
+        newSpan.innerHTML = '<span class="'digitColor'" >'digit'</span>'
         }
         else
         {
