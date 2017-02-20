@@ -1,71 +1,71 @@
 body
-      {
-        background:rgb(255, 255, 255);
-        font-family:sans-serif;
-      }
-      h1, h2, p
-      {
-        color:rgb(100, 100, 100);
-      }
-      input
-      {
-        width:3em;
-      }
-      button, input, select
-      {
-        background:rgb(100, 100, 100);
-        border:rgb(100, 100, 100);
-        font-size:1.2em;
-        color:rgb(255, 255, 255);
-      }
-      .container
-      {
-        float:left;
-        width:28%;
-        border:3px solid;
-        margin:10px;
-        padding:10px;    
-      }
-      #container1 button, #container1 input
-      {
-        background:rgb(50, 101, 50);
-        border:1px solid rgb(50, 101, 50);
-      }
-      #container1 p     
-      {
-        color:rgb(50, 101, 50);
-      }
-      #container1
-      {
-        border:rgb(50, 101, 50);
-      }
-      #container2 button,#container2 input
-      {
-        background:rgb(50, 50, 162);
-        border:1px solid rgb(50, 50, 162);
-      }
-      #container2 p
-      {
-        color:rgb(50, 50, 162);
-      }
-      #container2
-      {
-        border:rgb(50, 50, 162);
-      }
-      #container3 button,#container3 input
-      {
-        background:rgb(50, 126, 203);
-        border:1px solid rgb(50, 126, 203);
-      }
-      #container3 p
-      {
-        color:rgb(50, 126, 203);
-      }
-      #container3
-      {
-        border:3px solid rgb(50, 126, 203);
-      }
-      .results
-      {
-        color:rgb(100, 100, 100);
-      }
+{
+  background:rgb(255, 255, 255);
+  font-family:sans-serif;
+  margin:10px;
+  padding:10px;  
+}
+h1, h2, p
+{
+  color:rgb(100, 100, 100);
+}
+input
+{
+  width:3em;
+}
+button, input, select
+{
+  background:rgb(100, 100, 100);
+  border:rgb(100, 100, 100);
+  font-size:1.2em;
+  color:rgb(255, 255, 255);
+}
+.container
+{
+  float:left;
+  width:28%;
+  border:3px solid;  
+}
+#container1 button, #container1 input
+{
+  background:rgb(50, 101, 50);
+  border:1px solid rgb(50, 101, 50);
+}
+#container1 p     
+{
+  color:rgb(50, 101, 50);
+}
+#container1
+{
+  border:rgb(50, 101, 50);
+}
+#container2 button,#container2 input
+{
+  background:rgb(50, 50, 162);
+  border:1px solid rgb(50, 50, 162);
+}
+#container2 p
+{
+  color:rgb(50, 50, 162);
+}
+#container2
+{
+  border:rgb(50, 50, 162);
+}
+#container3 button,#container3 input
+{
+  background:rgb(50, 126, 203);
+  border:1px solid rgb(50, 126, 203);
+}
+#container3 p
+{
+  color:rgb(50, 126, 203);
+}
+#container3
+{
+  border:3px solid rgb(50, 126, 203);
+}
+.results
+{
+  color:rgb(100, 100, 100);
+}
