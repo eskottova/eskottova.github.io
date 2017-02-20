@@ -6,16 +6,16 @@
   <body>
     <script>
       var v1 = 0;
-      var prozentsatz = function()
+      var ganzerKreis = function()
       {
-        var p1 = document.getElementById("prozentsatz1");
-        var p2 = document.getElementById("prozentsatz2");
-        var p3 = document.getElementById("prozentsatz3");
-        var p4 = document.getElementById("prozentsatz4");
+        var p1 = document.getElementById("ganzerKreis1");
+        var p2 = document.getElementById("ganzerKreis2");
+        var p3 = document.getElementById("ganzerKreis3");
+        var p4 = document.getElementById("ganzerKreis4");
         var button = document.getElementById("bu1");
         if(v1 === 1)
         {
-          button.innerHTML = "Prozentsatz";
+          button.innerHTML = "Ganzer Kreis";
           p1.innerHTML = "";
           p2.innerHTML = "";
           p3.innerHTML = "";
@@ -38,21 +38,21 @@
         var b = Number(document.getElementById("b1").value);
         var result = a/b*100;
         var message = a + " von " + b + " sind " + result + " %.";
-        var p4 = document.getElementById("prozentsatz4");
+        var p4 = document.getElementById("ganzerKreis4");
         p4.innerHTML = message;
       }
       var v2 = 0;
-      var prozentwert = function()
+      var kreisSektor = function()
       {
-        var p1 = document.getElementById("prozentwert1");
-        var p2 = document.getElementById("prozentwert2");
-        var p3 = document.getElementById("prozentwert3");
-        var p4 = document.getElementById("prozentwert4");
-        var p5 = document.getElementById("prozentwert5");
+        var p1 = document.getElementById("kreisSektor1");
+        var p2 = document.getElementById("kreisSektor2");
+        var p3 = document.getElementById("kreisSektor3");
+        var p4 = document.getElementById("kreisSektor4");
+        var p5 = document.getElementById("kreisSektor5");
         var button = document.getElementById("bu2");
         if(v2 === 1)
         {
-          button.innerHTML = "Prozentwert";
+          button.innerHTML = "Kreissektor";
           p1.innerHTML = "";
           p2.innerHTML = "";
           p3.innerHTML = "";
@@ -86,17 +86,17 @@
             p5.innerHTML = message;
         }
       var v3 = 0;
-      var grundwert = function()
+      var kreisRing = function()
       {
-        var p1 = document.getElementById("grundwert1");
-        var p2 = document.getElementById("grundwert2");
-        var p3 = document.getElementById("grundwert3");
-        var p4 = document.getElementById("grundwert4");
-        var p5 = document.getElementById("grundwert5");
+        var p1 = document.getElementById("kreisRing1");
+        var p2 = document.getElementById("kreisRing2");
+        var p3 = document.getElementById("kreisRing3");
+        var p4 = document.getElementById("kreisRing4");
+        var p5 = document.getElementById("kreisRing5");
         var button = document.getElementById("bu3");
         if(v3 === 1)
         {
-          button.innerHTML = "Grundwert";
+          button.innerHTML = "Kreisring";
           p1.innerHTML = "";
           p2.innerHTML = "";
           p3.innerHTML = "";
