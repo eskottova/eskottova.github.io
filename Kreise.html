@@ -1,42 +1,191 @@
-<!DOCTYPE html>
+<!Doctype HTML>
 <html>
   <head>
-    <title>Kreise</title>
     <link rel="stylesheet" type="text/css" href="eskottova.github.io/style.css">
   </head>
   <body>
     <script>
-      var wholeCircle = function()
+      var v1 = 0;
+      var prozentsatz = function()
       {
-        alert("test");
+        var p1 = document.getElementById("prozentsatz1");
+        var p2 = document.getElementById("prozentsatz2");
+        var p3 = document.getElementById("prozentsatz3");
+        var p4 = document.getElementById("prozentsatz4");
+        var button = document.getElementById("bu1");
+        if(v1 === 1)
+        {
+          button.innerHTML = "Prozentsatz";
+          p1.innerHTML = "";
+          p2.innerHTML = "";
+          p3.innerHTML = "";
+          p4.innerHTML = "";
+          v1 ++;
+        }
+        else
+        {
+          p1.innerHTML = "Beim Prozentsatz muss man herausfinden, wie viele Prozent a von b sind. Beispiel: '40 von 50 sind 80%'";
+          p2.innerHTML = "In das nächste Eingabefeld schreibst du die erste Zahl also z.B. '40'.<br><input id='a1'><br><br>";
+          p3.innerHTML = "In das nächste Eingabefeld schreibst du die zweite  Zahl also z.B. '50'.<br><input id='b1'><br><br>" + 
+                         "<button onclick='ausrechnen1()'>Ausrechnen</button><br>"; 
+          button.innerHTML = "OK";
+          v1 = 1;
+        }  
       }
-      var partOfCircle = function()
+      var ausrechnen1 = function()
       {
-        
+        var a = Number(document.getElementById("a1").value);
+        var b = Number(document.getElementById("b1").value);
+        var result = a/b*100;
+        var message = a + " von " + b + " sind " + result + " %.";
+        var p4 = document.getElementById("prozentsatz4");
+        p4.innerHTML = message;
       }
-      var ringOfCircle = function()
+      var v2 = 0;
+      var prozentwert = function()
       {
-        
-      }
-      var partOfRingOfCircle = function()
+        var p1 = document.getElementById("prozentwert1");
+        var p2 = document.getElementById("prozentwert2");
+        var p3 = document.getElementById("prozentwert3");
+        var p4 = document.getElementById("prozentwert4");
+        var p5 = document.getElementById("prozentwert5");
+        var button = document.getElementById("bu2");
+        if(v2 === 1)
+        {
+          button.innerHTML = "Prozentwert";
+          p1.innerHTML = "";
+          p2.innerHTML = "";
+          p3.innerHTML = "";
+          p4.innerHTML = "";
+          p5.innerHTML = "";
+          v2 ++;
+        }
+        else
+        {
+          p1.innerHTML = "Beim Prozentwert muss man herausfinden, wie viel a Prozent von b sind. Beispiel: '60% von 50 sind 30'";
+          p2.innerHTML = "Hier gibst du den Zähler ein. z.B. 33.33333... = 1/3 = '1' Falls du eigentlich " +
+                         "keinen Bruch brauchst, schreibst du hier einfach die Prozente hin.<br><input id='a2'><br><br>";
+          p3.innerHTML = "Gib den Nenner an. z.B.33.33333... = 1/3 = '3' Falls du eigentlich keinen Bruch " +
+                         "brauchst, schreibst du hier einfach '100' hin.<br><input id='b2'><br><br>";
+          p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '50'." + 
+                         "<br><input id='c2'><br><br><button onclick='ausrechnen2()'>Ausrechnen</button><br>";
+          button.innerHTML = "OK";
+          v2 = 1;
+        } 
+      }  
+        var ausrechnen2 = function()
+        {
+            var a = Number(document.getElementById("a2").value);
+            var b = Number(document.getElementById("b2").value);
+            var c = Number(document.getElementById("c2").value);
+            var p5 = document.getElementById("prozentwert5");
+           
+            var result = c*a/b;
+            var message = a + " / " + b + " von " + c + " sind " + result +" .";
+          
+            p5.innerHTML = message;
+        }
+      var v3 = 0;
+      var grundwert = function()
       {
-        
-      }
-      var functions = [wholeCircle, partOfCircle, ringOfCircle, partOfRingOfCircle];
-      var selectEl = document.getElementById("functionSelect");
-      var findFunction = function()
+        var p1 = document.getElementById("grundwert1");
+        var p2 = document.getElementById("grundwert2");
+        var p3 = document.getElementById("grundwert3");
+        var p4 = document.getElementById("grundwert4");
+        var p5 = document.getElementById("grundwert5");
+        var button = document.getElementById("bu3");
+        if(v3 === 1)
+        {
+          button.innerHTML = "Grundwert";
+          p1.innerHTML = "";
+          p2.innerHTML = "";
+          p3.innerHTML = "";
+          p4.innerHTML = "";
+          p5.innerHTML = "";
+          v3 ++;
+        }
+        else
+        {
+          p1.innerHTML = "Beim Grundwert muss man herausfinden, wie viel 100 Prozent sind, wenn a% b sind.Beispiel: 'Wenn 60% 180 sind, sind 100% 300'";
+          p2.innerHTML = "In das nächste Eingabefeld schreibst du die Prozentzahl. Also z.B. '60'. " +
+                         "Falls du einen Bruch brauchst, gib nur den Zähler an. "+
+                         "z.B. 33.33333... = 1/3 = '1'<br><input id='a3'><br><br>";
+          p3.innerHTML = "Falls du eigentlich keinen Bruch brauchst schreibst du hier einfach '100' hin." +
+                         "Wenn du einen brauchst, gibst du den Nenner ein. z.B.33.33333... = 1/3 = '3'<br><input id='b3'><br>";
+          p4.innerHTML = "In das nächste Eingabefeld schreibst du die andere Zahl. Also z.B. '180'." + 
+                         "<br><input id='c3'><br><br><button onclick='ausrechnen3()'>Ausrechnen</button><br>";
+          button.innerHTML = "OK";
+          v3 = 1;               
+        }                 
+      }                 
+      var ausrechnen3 = function()
       {
-            functions[selectEl.value];
+          var a = Number(document.getElementById("a3").value);
+          var b = Number(document.getElementById("b3").value);
+          var c = Number(document.getElementById("c3").value);
+         var p5 = document.getElementById("grundwert5");
+         
+          var result = c/a*b;
+          var message = "Wenn " + a + "/" + b + " " + c +" sind, sind 100% "  + result + " .";
+          p5.innerHTML = message;
       }
-      selectEl.addEventListener("onchange", findFunction);
+      var infos = function()
+      {
+        var button = document.getElementById("bu");
+        var paragraph = document.getElementById("p");
+        if(button.class === "1")
+        {
+          button.innerHTML = "Allgemeine Infos";
+          button.class = "2";
+          paragraph.innerHTML = "";
+        }
+        else
+        {
+          button.innerHTML = "OK";
+          button.class = "1";
+          paragraph.innerHTML = "Dezimalbrüche musst du so eingeben: '5.4', nicht '5,4'!<br><br>" + 
+                                "Sollte das Resultat ein Mal 'NaN' entsprechen, hast du eine ungültige<br>" +
+                                "oder gar keine Zahl eingegeben.<br><br>";
+        }
+      }
     </script>
-    <h1>Kreise</h1>
-    <select id="functionSelect">
-      <option value="" disabled selected>Auswählen</option>
-      <option value="0">ganzer Kreis</option>
-      <option value="1">Kreissektor</option>
-      <option value="2">Kreisring</option>
-      <option value="3">Kreisringsektor</option>
-    </select>
+      <h1>Prozente</h1>
+      <button id="bu" onclick="infos()">Allgemeine Infos</button>
+      <p id="p"></p>
+      <h2>Ich suche...</h2>
+      <div id="container-a">
+        <div id="container1">
+          <button id="bu1" class="ganzerKreis" onclick="ganzerKreis()">Ganzer Kreis</button>
+            <p class="math1" id="ganzerKreis1"></p>
+            <p class="math1" id="ganzerKreis2"></p>
+            <p class="math1" id="ganzerKreis3"></p>
+            <p class="math1 results" id="ganzerKreis4"></p>
+        </div>
+        <div id="container2">
+          <button id="bu2" class="kreisSektor" onclick="kreisSektor()">Kreissektor</button>
+            <p class="math2" id="kreisSektor1"></p>
+            <p class="math2" id="kreisSektor2"></p>
+            <p class="math2" id="kreisSektor3"></p>
+            <p class="math2 results" id="kreisSektor4"></p>
+        </div>
+        <div id="container3">
+          <button id="bu3" class="kreisRing" onclick="kreisRing()">Kreisring</button>
+            <p class="math3" id="kreisRing1"></p>
+            <p class="math3" id="kreisRing2"></p>
+            <p class="math3" id="kreisRing3"></p>
+            <p class="math3 results" id="kreisRing4"></p>
+        </div>
+        <div id="container4">
+          <button id="bu4" class="kreisRingSektor" onclick="kreisRingSektor()">Kreisringsektor</button>
+            <p class="math4" id="kreisRingSektor1"></p>
+            <p class="math4" id="kreisRingSektor2"></p>
+            <p class="math4" id="kreisRingSektor3"></p>
+            <p class="math4 results" id="kreisRingSektor4"></p>
+        </div>
+      </div>
+      <script>
+        alert("Diese Seite wird gerade bearbeitet. Bitte vertraue keinen Resultaten und rechne damit," + 
+              "dass einige Dinge nicht funktionieren, solage diese Meldung beim Laden der Seite erscheint.")
+      </script>
   </body>
 </html>
