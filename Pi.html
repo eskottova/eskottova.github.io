@@ -24,7 +24,8 @@
         var classes = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
         var digit = myPi.substring(i, i + 1);
         var digitNr = parseInt(digit);
-        newSpan.innerHTML = '<span class="'classes[digitNr]'" >'digit'</span>';
+        newSpan.textContent = digit;
+        newSpan.className = classes[digitNr];
         }
         else
         {
