@@ -23,14 +23,12 @@ button, input, select
 .container
 {
   float:left;
-  width:28%;
-  border:3px solid;  
+  width:28%;  
 }
 #container1 button, #container1 input
 {
-  background:rgb(255, 255, 255);
   color:(50, 101, 50)
-  border:rgb(50, 101, 50);
+  border:1px solid rgb(50, 101, 50);
 }
 #container1 p     
 {
@@ -38,14 +36,13 @@ button, input, select
 }
 #container1
 {
-  border:rgb(50, 101, 50);
+  border:3px solid rgb(50, 101, 50);
 }
 #container2 button,#container2 i
 input
 {
-  background:rgb(255, 255, 255);
   color:rgb(50, 50, 162);
-  border:rgb(50, 50, 162);
+  border:1px solid rgb(50, 50, 162);
 }
 #container2 p
 {
@@ -53,20 +50,20 @@ input
 }
 #container2
 {
-  border:rgb(50, 50, 162);
+  border:3px solid rgb(50, 50, 162);
 }
 #container3 button,#container3 input
 {
-  background:rgb(50, 126, 203);
-  border:rgb(50, 126, 203);
+  color:rgb(50, 126, 203);
+  border:1px solid rgb(50, 126, 203);
 }
-#container3 p
+#container3
 {
   color:rgb(50, 126, 203);
 }
 #container3
 {
-  border:rgb(50, 126, 203);
+  border:3px solid rgb(50, 126, 203);
 }
 .results
 {
