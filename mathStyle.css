@@ -16,9 +16,9 @@ input
 button, input, select
 {
   background:rgb(100, 100, 100);
-  border:rgb(100, 100, 100);
+  border:1px solid rgb(100, 100, 100);
   font-size:1.2em;
-  color:rgb(255, 255, 255);
+  color:rgb(255, 255, 255)
 }
 .container
 {
@@ -29,7 +29,7 @@ button, input, select
 #container1 button, #container1 input
 {
   background:rgb(50, 101, 50);
-  border:1px solid rgb(50, 101, 50);
+  border:rgb(50, 101, 50);
 }
 #container1 p     
 {
@@ -42,7 +42,7 @@ button, input, select
 #container2 button,#container2 input
 {
   background:rgb(50, 50, 162);
-  border:1px solid rgb(50, 50, 162);
+  border:rgb(50, 50, 162);
 }
 #container2 p
 {
@@ -55,7 +55,7 @@ button, input, select
 #container3 button,#container3 input
 {
   background:rgb(50, 126, 203);
-  border:1px solid rgb(50, 126, 203);
+  border:rgb(50, 126, 203);
 }
 #container3 p
 {
@@ -63,7 +63,7 @@ button, input, select
 }
 #container3
 {
-  border:3px solid rgb(50, 126, 203);
+  border:rgb(50, 126, 203);
 }
 .results
 {
