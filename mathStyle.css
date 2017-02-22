@@ -31,7 +31,7 @@ button, input, select
 }
 #container1 button, #container1 input
 {
-  color:(50, 101, 50)
+  color:rgb(50, 101, 50)
   border:3px solid rgb(50, 101, 50);
 }
 #container1 p     
