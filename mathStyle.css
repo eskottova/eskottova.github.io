@@ -41,8 +41,7 @@ button, input, select
 {
   border:5px solid rgb(50, 101, 50);
 }
-#container2 button,#container2 i
-input
+#container2 button,#container2 input
 {
   color:rgb(50, 50, 162);
   border:3px solid rgb(50, 50, 162);
@@ -60,7 +59,7 @@ input
   color:rgb(50, 126, 203);
   border:3px solid rgb(50, 126, 203);
 }
-#container3
+#container3 p
 {
   color:rgb(50, 126, 203);
 }
