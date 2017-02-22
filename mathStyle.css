@@ -23,7 +23,9 @@ button, input, select
 .container
 {
   float:left;
-  width:28%;  
+  width:28%;
+  margin:10px;
+  padding:5px;
 }
 #container1 button, #container1 input
 {
