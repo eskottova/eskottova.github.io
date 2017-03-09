@@ -53,12 +53,17 @@
         divArray[i].id = "place" + i;
         divArray[i].style.top = (i - i % 20) * 2.5 + 100 + "px";
         divArray[i].style.left = i % 20 * 100 + "px";
-         myFunction = function(i)
+        var some_other_function = function() 
         {
-            alert(i);
+          alert("So this worked... I'm just not exactly sure why!");
         }
-        divArray[i].addEventListener.bind("click", myFunction("null", i));
-      }
+        var someVar = some_other_function();
+        divArray[i].addEventListener("click", 
+        function(theVar){
+        return function(){some_function(theVar)};
+        }(someVar),
+
+false);
       /*var color1 = "rgb(225, 250, 255)";//light blue
       var color2 = "rgb(5, 20, 80)";//dark blue
       var x = 0;
