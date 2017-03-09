@@ -57,7 +57,10 @@
         {
             alert(i);
         }
-        divArray[i].addEventListener("click", myFunction);
+        divArray[i].addEventListener("click", var myFunction = function ()
+        {
+            alert(i);
+        });
       }
       /*var color1 = "rgb(225, 250, 255)";//light blue
       var color2 = "rgb(5, 20, 80)";//dark blue
