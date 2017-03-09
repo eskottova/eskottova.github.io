@@ -3,6 +3,10 @@
   <head>
     <title>Sitzordnung</title>
     <style>
+      .placeEls
+      {
+        position:absolute;
+      }
       body
       {
         background: rgb(225, 250, 255);
@@ -36,8 +40,18 @@
     </style>
   </head>
   <body>
-    <script>   
-      var color1 = "rgb(225, 250, 255)";//light blue
+    <script>
+      var divArray = [];
+      for(i = 0; i < 400; i++)
+      {
+        divArray[i] = document.createElement("div");
+        body.appendChild(divArray[i]);
+        divArray[i].className = "placeEls";
+        divArray[i].id = "place" + i;
+        divArray[i].style.top = i - i % 100;
+        divArray[i].style.left = 1 % 100 * 100;
+      }
+      /*var color1 = "rgb(225, 250, 255)";//light blue
       var color2 = "rgb(5, 20, 80)";//dark blue
       var x = 0;
       var r;
@@ -182,7 +196,7 @@
         placesArray[(total - 1)] = null;
         studentNrVar ++;
         total --;
-      }
+      }*/
     </script>
     <h1>Sitzordnung</h1>
     <div id="contentDiv" >
