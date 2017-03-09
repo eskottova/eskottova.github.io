@@ -5,32 +5,44 @@
     <style>
       body
       {
-      font-family:sans-serif;
+        background: rgb(225, 250, 255);
+        font-family:sans-serif;
+        color:rgb(5, 20, 80);
       }
       .nameSpan
       {
-        border:solid 2px;
+        margin-bottom:35px;
+        padding:10px;
+        border:solid 2.5px;
       }  
       .rowDiv
       {
-        margin:15px;
+        margin:35px;
+      }
+      button
+      {
+        padding:5px;
+        color:rgb(225, 250, 255);
+        background: rgb(5, 20, 80);
+        border:solid 2.5px rgb(5, 20, 80);
+      }
+      input
+      {
+        padding:5px;
+        background: rgb(225, 250, 255);
+        color:rgb(5, 20, 80);
+        border:solid 2.5px rgb(5, 20, 80);
       }
     </style>
   </head>
   <body>
-    <script>
-      /*
-        I'm working on: 
-          1) An animation that changes the color of:
-            a) the empty places four times to a random color  *working, but changes color of every place
-            b) the new place of the student to red  *working
-            c) the rest of the occupied places to black with white font 
-            d) the new empty places to white *working
-      */      
+    <script>   
+      var color1 = "rgb(225, 250, 255)";//light blue
+      var color2 = "rgb(5, 20, 80)";//dark blue
       var x = 0;
       var r;
       var g;
-      var b;
+      var b = 0;
       var placesArray = [];
       var studentsOnPlace = 0;
       var studentsArray = [];
@@ -90,7 +102,8 @@
       }
       var part2function = function()
       {
-        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:<input id='studentNameInput' autofocus/>"+
+        contentVar.innerHTML = "<form id='studentNameInputForm' onsubmit='part2b1function(); return false;'><p>Gib deinen Namen ein:" + 
+                               "<input id='studentNameInput' autocomplete='off' autofocus /><button type='submit'"+
                                "<button type='submit' id='studentNameSubmitButton' 11onclick='part2b1function()'>Bestätigen</button></p></from>";
         for(var i = columnsRowArray.length; i >= 0; i--)
         {
@@ -121,16 +134,23 @@
       }
       var animationFunction = function()
       {
+        for(var i = 0; i < columnsRowArray.length; i++)
+        {
+          for(var j = 0; j < columnsRowArray[i]; j++)
+          {
+            span = document.getElementById("row" + i + "column" + j)
+            span.style.background = color2;
+            span.style.color = color1;
+            span.style.border = color2 + " solid 2px";
+          }
+        }
         for(var i = 0; i < total; i++)
         {
-         /* for(var j = 0; j < columnsRowArray[i]; j++)
-          {*/ 
-            r = Math.floor(Math.random() * 255 + 100);
-            g = Math.floor(Math.random() * 255 + 100);
-            b = Math.floor(Math.random() * 255 + 100);
-            document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
-          //}
-        }
+          r = Math.floor(Math.random() * 255 + 100);
+          g = Math.floor(Math.random() * 255 + 100);
+          document.getElementById(placesArray[i].id).style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+          document.getElementById(placesArray[i].id).style.color = color2;
+        } 
         if(x < 5)
         {
           x ++;
@@ -138,13 +158,10 @@
         }
         else
         {
-          for(var i = 0; i < columnsRowArray.length; i++)
+          for(var i = 0; i < total; i++)
           {
-            for(var j = 0; j < columnsRowArray[i]; j++)
-            {
-              document.getElementById("row" + i + "column" + j).style.background = "rgb(255, 255, 255)";
-            }
-          }
+             document.getElementById(placesArray[i].id).style.background = color1;
+          } 
           x = 0;
         }
       }
@@ -153,12 +170,12 @@
         studentNameValueVar = document.getElementById("studentNameInput").value;
         document.getElementById("studentNameInput").value = "";
         document.getElementById("studentNameInput").focus();
-        myRandomNumber = Math.floor(Math.random() * total);
-        studentsArray[studentNrVar] = new student(studentNameValueVar, myRandomNumber);
-        //placesArray[myRandomNumber].innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
-        document.getElementById(placesArray[myRandomNumber].id).style.background = "rgb(255, 0, 0)";
-        for(var i = myRandomNumber; i < total; i++)
+        randomNumber = Math.floor(Math.random() * total);
+        studentsArray[studentNrVar] = new student(studentNameValueVar, randomNumber);
+        document.getElementById(placesArray[randomNumber].id).innerHTML = studentsArray[studentNrVar].nickname;
+        document.getElementById(placesArray[randomNumber].id).style.background = "rgb(0, 0, 255)";
+        document.getElementById(placesArray[randomNumber].id).style.color = color1;
+        for(var i = randomNumber; i < total; i++)
         {
           placesArray[i] = placesArray[(i + 1)];
         }
@@ -168,14 +185,11 @@
       }
     </script>
     <h1>Sitzordnung</h1>
-    <div id="contentDiv">
+    <div id="contentDiv" >
       <p id="numberOfRowsP">Anzahl Reihen:
         <input id="numberOfRowsInput" />
         <button id="part1submitButton" onclick="part1function()">Bestätigen</button>
       </p>
     </div>
-    <script>
-      //alert("Wird bearbeitet. Ich würde Ihnen empfehlen 'eskottova.github.io/SitzordnungAlt' zu verwenden");
-    </script>
   </body>
 </html>
