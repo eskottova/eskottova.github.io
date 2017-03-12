@@ -45,21 +45,28 @@
   <body>
     <script>
       var divArray = [];
+      var myDiv = function(i)
+      {
+      this.i = i; 
+      divArray[i] = document.createElement("div");
+      document.body.appendChild(divArray[i]);
+      divArray[i].className = "placeEls";
+      divArray[i].id = "place" + i;
+      divArray[i].style.top = (i - i % 20) * 2.5 + 100 + "px";
+      divArray[i].style.left = i % 20 * 100 + "px";
+      }  
+      var myDiv.prototype.alertFunction = function()
+      {
+        alert(this.i);
+      }
       for(i = 0; i < 400; i++)
       {
-        divArray[i] = document.createElement("div");
-        document.body.appendChild(divArray[i]);
-        divArray[i].className = "placeEls";
-        divArray[i].id = "place" + i;
-        divArray[i].style.top = (i - i % 20) * 2.5 + 100 + "px";
-        divArray[i].style.left = i % 20 * 100 + "px";
+        myDiv+i = new myDiv(i);
         var myFunction = function(number)
         {
           alert(number);
         }
-        divArray[i].addEventListener("click", function(){
-        myFunction(i);
-        });
+        divArray[i].addEventListener("click", divArray[i].myAlertFunction);
       }
       /*var color1 = "rgb(225, 250, 255)";//light blue
       var color2 = "rgb(5, 20, 80)";//dark blue
@@ -157,7 +164,7 @@
         }
       }
       var animationFunction = function()
-      {
+      { 
         for(var i = 0; i < columnsRowArray.length; i++)
         {
           for(var j = 0; j < columnsRowArray[i]; j++)
