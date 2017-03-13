@@ -51,21 +51,21 @@
       var myDiv = function(i)
       {
       this.i = i; 
-      this.El = document.createElement("div");
-      document.body.appendChild(this.El);
-      this.El.className = "placeEls";
-      this.El.id = "place" + i;
-      this.El.style.top = (i - i % 20) * 2.5 + 100 + "px";
-      this.El.style.left = i % 20 * 100 + "px";
+      this.el = document.createElement("div");
+      document.body.appendChild(this.el);
+      this.el.className = "placeEls";
+      this.el.id = "place" + i;
+      this.el.style.top = (i - i % 20) * 2.5 + 100 + "px";
+      this.el.style.left = i % 20 * 100 + "px";
       }  
-      myDiv.prototype.alertFunction = function()
+      myDiv.el.prototype.alertFunction = function()
       {
         alert(this.i);
       }
       for(i = 0; i < 400; i++)
       {
         divArray[i] = new myDiv(i);
-        //divArray[i].addEventListener("click", divArray[i].alertFunction);
+        divArray[i].el.addEventListener("click", divArray[i].el.alertFunction);
       }
       /*var color1 = "rgb(225, 250, 255)";//light blue
       var color2 = "rgb(5, 20, 80)";//dark blue
