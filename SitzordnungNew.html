@@ -59,17 +59,14 @@
       {
         alert(this.i);
       }
-      var myMiddleFunction = function (number)
-      {
-        divArray[number].alertFunction;
-      }
+      
       for(i = 0; i < 400; i++)
       {
         divArray[i] = new myDiv(i);
         divArray[i].el.addEventListener("click", 
-                                        function()
+                                        function(event)
                                         {
-                                          this.alertFunction();
+                                          event.source.alertFunction();
                                         },
                                         false);
       }
