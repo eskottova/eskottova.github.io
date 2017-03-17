@@ -62,11 +62,17 @@
       
       for(i = 0; i < 400; i++)
       {
-        divArray[i] = new myDiv(i);
-        divArray[i].el.addEventListener("click", 
+        divArray[i] = document.createElement("div");
+        document.body.appendChild(divArray[i]);
+        divArray.i = i;
+        divArray[i].className = "placeEls";
+        divArray[i].id = "place" + i;
+        divArray[i].style.top = (i - i % 20) * 2.5 + 100 + "px";
+        divArray[i].style.left = i % 20 * 100 + "px";
+        divArray[i].addEventListener("click", 
                                         function(event)
                                         {
-                                          event.source.alertFunction();
+                                          alert(event.source.i);
                                         },
                                         false);
       }
