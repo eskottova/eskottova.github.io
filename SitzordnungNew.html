@@ -59,7 +59,7 @@
       {
         divArray[i] = document.createElement("div");
         document.body.appendChild(divArray[i]);
-        divArray.i = i;
+        divArray[i].i = i;
         divArray[i].className = "placeEls";
         divArray[i].id = "place" + i;
         divArray[i].style.top = (i - i % 20) * 2.5 + 100 + "px";
