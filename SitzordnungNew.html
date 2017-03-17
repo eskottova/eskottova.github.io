@@ -67,12 +67,11 @@
       {
         divArray[i] = new myDiv(i);
         divArray[i].el.addEventListener("click", 
-                                        function(i)
+                                        function()
                                         {
-                                          var x = i; 
-                                          myMiddleFunction(x);
-                                        }
-                                       );
+                                          this.alertFunction();
+                                        },
+                                        false);
       }
       /*var color1 = "rgb(225, 250, 255)";//light blue
       var color2 = "rgb(5, 20, 80)";//dark blue
