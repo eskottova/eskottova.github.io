@@ -47,7 +47,7 @@
       var divArray = [];
       var myDiv = function(i)
       {
-      this.i = i; 
+      this.el.i = i; 
       this.el = document.createElement("div");
       document.body.appendChild(this.el);
       this.el.className = "placeEls";
@@ -55,19 +55,17 @@
       this.el.style.top = (i - i % 20) * 2.5 + 100 + "px";
       this.el.style.left = i % 20 * 100 + "px";
       }  
+      this.el.prototype.alertFunction = function()
+      {
+        alert(this.el.i);
+      }
       for(i = 0; i < 400; i++)
       {
-        divArray[i] = document.createElement("div");
-        document.body.appendChild(divArray[i]);
-        divArray[i].i = i;
-        divArray[i].className = "placeEls";
-        divArray[i].id = "place" + i;
-        divArray[i].style.top = (i - i % 20) * 2.5 + 100 + "px";
-        divArray[i].style.left = i % 20 * 100 + "px";
+        divArray[i] = new myDiv;
         divArray[i].addEventListener("click", 
                                         function(event)
                                         {
-                                          alert(event.source.i);
+                                        divArray[i].el.talk();
                                         },
                                         false);
       }
