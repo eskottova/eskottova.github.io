@@ -47,8 +47,8 @@
       var divArray = [];
       var myDiv = function(i)
       {
-      this.el.i = i; 
       this.el = document.createElement("div");
+      this.el.i = i; 
       document.body.appendChild(this.el);
       this.el.className = "placeEls";
       this.el.id = "place" + i;
