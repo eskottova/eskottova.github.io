@@ -48,7 +48,6 @@
       var myDiv = function(i)
       {
       this.el = document.createElement("div");
-      this.el.i = i; 
       document.body.appendChild(this.el);
       this.el.className = "placeEls";
       this.el.id = "place" + i;
@@ -57,7 +56,7 @@
       }  
       myDiv.prototype.alertFunction = function()
       {
-        alert(this.el.i);
+        alert(this.el.id);
       }
       for(i = 0; i < 400; i++)
       {
