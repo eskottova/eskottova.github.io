@@ -46,17 +46,19 @@
     </style>
   </head>
   <body>
-    <svg height="140" width="140">
-      <circle r="60"/>
-      <circle r="50"/>
-      <circle r="40"/>
-      <circle r="30"/>
-      <circle r="20"/>
-      <circle r="10"/>
-      <text font-size="23px" fill="#000099" x="20" y="60">Isegassträff</text>
-      <text font-size="23px" fill="#000099" x="50" y="90">201</text>
-      <text font-size="28px" fill="#000099" x="80" y="90">7</text>
-    </svg> 
+    <div class="chapter" id="svg">
+      <svg height="140" width="140">
+        <circle r="60"/>
+        <circle r="50"/>
+        <circle r="40"/>
+        <circle r="30"/>
+        <circle r="20"/>
+        <circle r="10"/>
+        <text font-size="23px" fill="#000099" x="20" y="60">Isegassträff</text>
+        <text font-size="23px" fill="#000099" x="50" y="90">201</text>
+        <text font-size="28px" fill="#000099" x="80" y="90">7</text>
+      </svg>
+    </div>  
     <h1>Einfache Website selber programmieren</h1>
     <div id="contents">
       <a href="#html">HTML</a><br>
@@ -65,23 +67,29 @@
       <a href="#heading">H Elemente</a><br>
       <a href="#paragraph">P Element</a><br>
     </div><br><br>
-    <h3 id="html">HTML</h3>
-    <p>Wir werden heute in der Programmiersprache <span class="code">HTML</span>
+    <div class="chapter" id="html">
+      <h3>HTML</h3>
+      <p>Wir werden heute in der Programmiersprache <span class="code">HTML</span>
       (<b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage) programmieren.</p><br><br>
-    <h3 id="elements">HTML Elemente</h3>
-    <p>Elemente fangen mit einem Anfangstag an und hören meistens mit einem Endtag auf. 
-    <span class="code">&lt;Beispiel&gt;Text&lt;Beispiel/&gt;</span></p><br><br>
-    <h3 id="aufbau">Aufbau eines HTML Programms</h3>
-    <p class="code">
-    &lt;!DOCTYPE html&gt;<br>
-    &lt;html&gt;<br>
-      &ensp;&lt;body&gt;<br>
-      &ensp;&lt;/body&gt;<br>
-    &lt;/html&gt;<br>
-    </p><br>
-    <p>Diesen Teil kann man als Anfänger eifach kopieren oder abtippen. Alles, was wir jetzt lernen werden, kommt 
-    zwischen <span class="code">&lt;body&gt;</span> und <span class="code">&lt;/body&gt;. </span></p><br><br>
-    <h3 id="heading">H Elemente</h3>
+    </div>  
+    <div class="chapter" id="elements">
+      <h3>HTML Elemente</h3>
+      <p>Elemente fangen mit einem Anfangstag an und hören meistens mit einem Endtag auf. 
+      <span class="code">&lt;Beispiel&gt;Text&lt;Beispiel/&gt;</span></p><br><br>
+    </div>
+    <div class="chapter" id="aufbau">
+      <h3>Aufbau eines HTML Programms</h3>
+      <p class="code">
+      &lt;!DOCTYPE html&gt;<br>
+      &lt;html&gt;<br>
+        &ensp;&lt;body&gt;<br>
+        &ensp;&lt;/body&gt;<br>
+      &lt;/html&gt;<br>
+      </p><br>
+      <p>Diesen Teil kann man als Anfänger eifach kopieren oder abtippen. Alles, was wir jetzt lernen werden, kommt 
+      zwischen <span class="code">&lt;body&gt;</span> und <span class="code">&lt;/body&gt;. </span></p><br><br>
+    <div class="chapter" id="heading">
+    <h3>H Elemente</h3>
     <p>H ist die Abkürzung des englischen Wortes <em>heading</em> (Überschrift). Es gibt sechs verschiedene Grössen von Überschriften.
       Beispiel:</p><br>
     <p class="code" > 
@@ -95,6 +103,7 @@
       <h1>Das ist die grösste Überschrift</h1>
       <h6>Das ist die kleinste Überschrift</h6>
     </div><br><br>
+      </div>
     <h3 id="paragraph">P Elemente</h3>   
     <p>P ist die Abkürzung des englischen Wortes <em>paragraph</em> (Abschnitt/Absatz). Ps werden für alle Arten von Texen verwendet.
       Dieser Text ist auch in einem P Element. Beispiel:</p><br>
