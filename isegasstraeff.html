@@ -22,10 +22,19 @@
       stroke-width:15; 
       fill:#ffe699;
       }
+      #contents{
+       float:left;
+        width:30%;
+      }
     </style>
   </head>
   <body>
     <h1>Einfache Website selber programmieren</h1>
+    <div id="contents">
+      <a href="#html">HTML</a>
+      <a href="#tags">Tags</a>
+      <a href="#aufbau">Aufbau eines HTML-Programms</a>
+    </div>
     <svg height="370" width="370">
       <circle r="170"/>
       <circle r="140"/>
@@ -37,13 +46,13 @@
       <text font-size="65" fill="#000099" x="130" y="250">201</text>
       <text font-size="85px" fill="#000099" x="230" y="250">7</text>
     </svg> 
-    <h3>HTML</h3>
+    <h3 id="html">HTML</h3>
     <p>Wir werden heute in der Programmiersprache <span class="code">HTML</span>
       (<b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage) programmieren.</p>
-    <h3>Tags</h3>
+    <h3 id="tags">Tags</h3>
     <p>Tags fangen mit einem Anfangstag an und hören meistens mit einem Endtag auf. 
     <span class="code">&lt;Beispiel&gt;Text&lt;Beispiel/&gt;</span></p>
-    <h3>Aufbau eines HTML-Programms</h3>
+    <h3 id="aufbau">Aufbau eines HTML-Programms</h3>
     <p class="code">
     &lt;!DOCTYPE html&gt;<br>
     &lt;html&gt;<br>
