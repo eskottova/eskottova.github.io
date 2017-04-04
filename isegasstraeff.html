@@ -77,6 +77,7 @@
       <a href="#aufbau">Aufbau eines HTML Programms</a><br>
       <a href="#heading">H Elemente</a><br>
       <a href="#paragraph">P Element</a><br>
+      <a href="#hyperlink">Link</a><br>
     </div><br><br>
     <div class="chapter" id="html">
       <h3>HTML</h3>
@@ -105,10 +106,8 @@
       <p>H ist die Abkürzung des englischen Wortes <em>heading</em> (Überschrift). Es gibt sechs verschiedene Grössen von Überschriften.
         Beispiel:</p><br>
       <p class="code" > 
-        &lt;body&gt;<br>
-        &ensp;&lt;h1&gt;Das ist die grösste Überschrift&ensp;&lt;/h1&gt;<br>
-        &ensp;&lt;h6&gt;Das ist die kleinste Überschrift&ensp;&lt;/h6&gt;<br>
-        &lt;/body&gt;<br>
+        &lt;h1&gt;Das ist die grösste Überschrift&lt;/h1&gt;<br>
+        &lt;h6&gt;Das ist die kleinste Überschrift&lt;/h6&gt;
       </p><br>
       <p>Auf einer Website sähe das so aus:</p><br>
       <div class="example">
@@ -121,14 +120,25 @@
       <p>P ist die Abkürzung des englischen Wortes <em>paragraph</em> (Abschnitt/Absatz). Ps werden für alle Arten von Texen verwendet.
         Dieser Text ist auch in einem P Element. Beispiel:</p><br>
       <p class="code" > 
-        &lt;body&gt;<br>
-        &ensp;&lt;p&gt;Das ist ein Absatz.&ensp;&lt;/p&gt;<br>
-        &lt;/body&gt;<br>
+        &lt;p&gt;Das ist ein Absatz.&lt;/p&gt;
       </p><br>
       <p>Auf einer Website sähe das so aus:</p><br>
       <div class="example">
         <p>Das ist ein Absatz.</p>
       </div><br><br>
+    </div>
+    <div class="chapter" id="hyperlink">
+      <h3>Links</h3>
+      <p>Viele Webseiten würden ohne Links gar nich mehr funktionieren. Wenn man bei Google ein Suchergebnis auswählt, oder ein 
+      Youtube Video anklickt, benutzt man auf einen Link. Links werden nich mit L oder H (<em>hyperlink</em>) abgekürzt. Man verwendet
+      ein 'a'. Dort wo wir bisher den Text hingeschrieben haben, kommt jetzt das hin, was angezeigt werden soll. Wir müssen aber noch
+        angeben, wo der Link hingehen soll. Dafür benutzt man HREF (<b>H</b>yperlink <b>REF</b>erence). Beispiel:</p>
+      <p class="code">
+        &lt;a href="http://eskottova.github.io/isegasstraeff.html"&gt;Dieser Link führt hier hin.&lt;/a&gt;
+      </p>
+      <p class="example">
+        <a href="http://eskottova.github.io/isegasstraeff.html">Dieser Link führt hier hin.</a><br>
+        </p>
     </div>
   </body>
 </html>
