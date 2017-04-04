@@ -57,6 +57,12 @@
     </style>
   </head>
   <body>
+    <script>
+      var runProgram = function()
+      {
+        document.getElementById("displayDiv").innerHTML = document.getElementById("userCodeInput").value;
+      };
+    </script>
     <div id="svg">
       <svg height="140" width="140">
         <circle r="60"/>
@@ -78,6 +84,7 @@
       <a href="#heading">H Elemente</a><br>
       <a href="#paragraph">P Element</a><br>
       <a href="#hyperlink">Link</a><br>
+      <a href="#task">Auftrag</a>
     </div><br><br>
     <div class="chapter" id="html">
       <h3>HTML</h3>
@@ -129,7 +136,7 @@
     </div>
     <div class="chapter" id="hyperlink">
       <h3>Links</h3>
-      <p>Viele Webseiten würden ohne Links gar nich mehr funktionieren. Wenn man bei Google ein Suchergebnis auswählt, oder ein 
+      <p>Viele Webseiten würden ohne Links gar nicht mehr funktionieren. Wenn man bei Google ein Suchergebnis auswählt, oder ein 
       Youtube Video anklickt, benutzt man auf einen Link. Links werden nich mit L oder H (<em>hyperlink</em>) abgekürzt. Man verwendet
       ein 'a'. Dort wo wir bisher den Text hingeschrieben haben, kommt jetzt das hin, was angezeigt werden soll. Wir müssen aber noch
         angeben, wo der Link hingehen soll. Dafür benutzt man HREF (<b>H</b>yperlink <b>REF</b>erence). Beispiel:</p>
@@ -139,6 +146,13 @@
       <p class="example">
         <a href="http://eskottova.github.io/isegasstraeff.html">Dieser Link führt hier hin.</a><br>
         </p>
+    </div>
+    <div class="chapter" id="task">
+    <h3>Auftrag</h3>
+    <p>Du darfst deine erste eigene Website erstellen</p>
+    <input id="userCodeInput"/>
+    <button onclick="runProgram()">Bstätigen</button>
+    <div id="displayDiv" ></div>
     </div>
   </body>
 </html>
