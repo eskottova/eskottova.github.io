@@ -92,7 +92,7 @@
       <a href="#aufbau">Aufbau eines HTML Programms</a><br>
       <a href="#heading">H Elemente</a><br>
       <a href="#paragraph">P Element</a><br>
-      <a href="#hyperlink">Link</a><br>
+      <a href="#hyperlink">Links</a><br>
       <a href="#task">Auftrag</a>
     </div><br><br>
     <div class="chapter" id="html">
@@ -154,13 +154,38 @@
       </p>
       <p class="example">
         <a href="http://eskottova.github.io/isegasstraeff.html">Dieser Link führt hier hin.</a><br>
-        </p>
+      </p>
+      <p>Links können auch in anderen Elementen sein:
+      <p class="code">
+        &lt;h4&gt;Dieser <br>
+          &ensp;&lt;a href="http://eskottova.github.io"&gt;Link&lt;/a&gt; <br>
+        ist in einer Überschrift.&lt;/h4&gt;  
+        &lt;p&gt;Dieser <br>
+          &ensp;&lt;a href="http://eskottova.github.io"&gt;Link&lt;/a&gt; <br>
+        ist in einem Absatz.&lt;/p&gt;  
+      </p>
+      <div class="example">
+        <h4>Dieser 
+          <a href="http://eskottova.github.io">Link</a>
+        ist in einer Überschrift.</h4>  
+        <p>Dieser 
+          <a href="http://eskottova.github.io">Link</a>
+        ist in einem Absatz.</p>
+      </div>
     </div>
     <div class="chapter" id="task">
-    <h3>Auftrag</h3>
-    <p>Hier kannst du zeigen, was du gelernt hast:</p><br>
-    <textarea id="userCodeInput"></textarea>
-    <button onclick="runProgram()">Bestätigen</button>
+      <h3>Auftrag</h3>
+      <p>Hier kannst du zeigen, was du gelernt hast!</p>
+      <div>Um einen Stempel zu erhalten, brauchst du mindestens:
+      <ul>
+        <li>2 Überschriften mit unterschiedlichen Grössen</li>
+        <li>3 Abschnitte</li>
+        <li>2 Links</li>
+        <li>3 farbige Elemente</li>
+      </ul>
+      </div>
+      <textarea id="userCodeInput"></textarea>
+      <button onclick="runProgram()">Bestätigen</button>
     </div>
     <div class="chapter" id="displayDiv"></div>
   </body>
