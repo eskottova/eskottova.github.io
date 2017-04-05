@@ -93,7 +93,8 @@
       <a href="#heading">H Elemente</a><br>
       <a href="#paragraph">P Element</a><br>
       <a href="#hyperlink">Links</a><br>
-      <a href="#task">Auftrag</a>
+      <a href="#styles">Style</a><br>
+      <a href="#task">Auftrag</a><br>
     </div><br><br>
     <div class="chapter" id="html">
       <h3>HTML</h3>
@@ -173,16 +174,29 @@
         ist in einem Absatz.</p>
       </div>
     </div>
+    <div class="chapter" id="styles">
+      <h3>Style</h3>
+      <p>Bei den Links stand etwas <em>im</em> Anfangstag und nicht <em>zwischen</em> dem Anfangs- und Endtag. Das macht man immer, wenn
+        man etwas schreiben will, das nicht als Text gesehen werden soll. Oft macht man das auch mit Farben. Es macht ja keinen Sinn, 
+        wenn man in den Text schreibt: "Meine Überschrift (eigentlich sollte sie rot sein)". 
+      </p>
+      <p class="code">
+        &lt;p style="color:red;background-color:yellow;"&gt;Mein farbiger Absatz&lt;/p&gt;
+      </p>
+      <div class="example">
+      <p style="color:red;background-color:yellow;">Mein farbiger Absatz</p>
+      </div>
+    </div>
     <div class="chapter" id="task">
       <h3>Auftrag</h3>
       <p>Hier kannst du zeigen, was du gelernt hast!</p><br>
       <div>Um einen Stempel zu erhalten, brauchst du mindestens:
-      <ul>
-        <li>2 Überschriften mit unterschiedlichen Grössen</li>
-        <li>3 Abschnitte</li>
-        <li>2 Links</li>
-        <li>3 farbige Elemente</li>
-      </ul>
+        <ul>
+          <li>2 Überschriften mit unterschiedlichen Grössen</li>
+          <li>3 Abschnitte</li>
+          <li>2 Links</li>
+          <li>3 farbige Elemente</li>
+        </ul>
       </div>
       <textarea id="userCodeInput"></textarea>
       <button onclick="runProgram()">Bestätigen</button>
