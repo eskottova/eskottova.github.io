@@ -9,8 +9,6 @@
     .stars{
      border-radius:50%;
      background-color:yellow;
-     height:5px;
-      width:5px;
       position:absolute;
     }
   </style>
@@ -23,8 +21,11 @@
     {
       stars[i] = document.createElement("div");
       stars[i].className = "stars";
-      stars[i].style.left = Math.random() * 1000 + "px";
-      stars[i].style.top = Math.random() * 1000 + "px";
+      size = Math.random * 20 + "px";
+      stars[i].style.height = size;
+      stars[i].style.widtht = size;
+      stars[i].style.left = Math.random() * 100 + "%";
+      stars[i].style.top = Math.random() * 100 + "%";
       document.body.appendChild(stars[i]);
     }
   </script>
