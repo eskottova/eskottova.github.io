@@ -1,0 +1,30 @@
+<DOCTYPE html>
+<html>
+<head>
+  <title>Game</title>
+  <style>
+    body{
+     background-color:#051450; 
+    }
+    .stars{
+     border-radius:50%;
+     background-color:yellow;
+     height:50px;
+      width:50px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var scene = 0;
+    var stars = [];
+    for(i = 0; i < 200; i++)
+    {
+      stars[i] = document.createElement("div");
+      stars[i].classNames = "stars";
+      stars[i].style.left = Math.random * 100;
+      stars[i].style.top = Math.random * 100;
+      document.body.appendChild(stars[i]);
+    }
+  </script>
+</body>
