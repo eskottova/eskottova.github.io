@@ -11,6 +11,7 @@
      background-color:yellow;
      height:50px;
       width:50px;
+      position:absolute;
     }
   </style>
 </head>
@@ -22,8 +23,8 @@
     {
       stars[i] = document.createElement("div");
       stars[i].classNames = "stars";
-      stars[i].style.left = Math.random * 100;
-      stars[i].style.top = Math.random * 100;
+      stars[i].style.left = Math.random * 100 + "%";
+      stars[i].style.top = Math.random * 100 + "%";
       document.body.appendChild(stars[i]);
     }
   </script>
