@@ -57,7 +57,7 @@
     {
       for(i = 0; i < stars.length; i++)
       {
-        stars[i].style.x = stars[i].speed + stars[i].style.x;
+        stars[i].style.top = stars[i].speed + (stars[i].style.top + "px");
       }
       setTimeout(moveStars, 100);
     }
