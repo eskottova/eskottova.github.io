@@ -51,17 +51,15 @@
       stars[i].style.left = Math.random() * 97 + "%";
       stars[i].style.top = Math.random() * 97 + "%";
       document.body.appendChild(stars[i]);
+      stars[i].speed = Math.random();
     }
-    /*
-    var rocket = {
-      x : 500,
-      y : 150
-    };
-    var rocketTop = document.createElement("div");
-    rocketTop.style.height = 300 + "px";
-    rocketTop.style.top = rocket.y + "px";
-    rocketTop.style.left = rocket.x + "px";
-    */
+    var moveStars = function()
+    {
+      for(i = 0; i < stars.length; i++)
+      {
+        stars[i].style.x = stars[i].speed + stars[i].style.;
+      }
+    }
   </script>
   <div class="rocketParts" id="topOfRocket"></div>
   <div class="rocketParts" id="bodyOfRocket"></div>
