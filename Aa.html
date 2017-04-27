@@ -10,6 +10,28 @@
      border-radius:50%;
       position:absolute;
     }
+    #topOfRocket{
+      border-radius:50%;
+      height:200px;
+      width:80px;
+      position:absolute;
+      background:beige;
+      top:200px;
+      left:500px;
+      z-index:500;
+    }
+    #bodyOfRocket{
+      border-radius:10%;
+      height:250px;
+      width:80px;
+      background:beige;
+      position:absolute;
+      top:300px;
+      left:500px;
+      border-top-left-radius:0%;
+      border-top-right-radius:0%;
+      z-index:501;
+    }
   </style>
 </head>
 <body>
@@ -39,6 +61,6 @@
     rocketTop.style.left = rocket.x + "px";
     */
   </script>
-  <div style="border-radius:50%;height:200px;width:80px;position:absolute;background:beige;top:200px;left:500px;z-index:500;"></div>
-  <div style="border-radius:10%;border-top-left-radius:0%;border-top-right-radius:0%;height:250px;width:80px;background:beige;position:absolute;top:300px;left:500px;z-index:501;"></div>
+  <div id="topOfRocket"></div>
+  <div id="bodyOfRocket"></div>
 </body>
