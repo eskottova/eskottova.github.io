@@ -41,9 +41,10 @@
   <script>
     var scene = 0;
     var stars = [];
+    var x;
     var createStars = function(amount, yCoordinateFactor)
     {
-      for(i = 0; i < amount; i++)
+      for(i = x; i < x + amount; i++)
       {
         stars[i] = document.createElement("div");
         stars[i].className = "stars";
@@ -57,6 +58,7 @@
         stars[i].speed = Math.random() / 4 + 0.2;
         stars[i].style.zIndex = Math.floor(stars[i].speed * 2000);
       }
+      x = i;
     }
     var moveStars = function()
     {
