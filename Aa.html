@@ -48,8 +48,8 @@
       stars[i].style.height = size;
       stars[i].style.width = size;
       stars[i].style.backgroundColor = "rgb(255, 255, " + Math.floor(Math.random() * 255) + ")";
-      stars[i].style.left = Math.random() * 500 + "px";
-      stars[i].style.top = Math.random() * 500 + "px";
+      stars[i].style.left = Math.random() * 98 + "%";
+      stars[i].style.top = Math.random() * 98 + "%";
       document.body.appendChild(stars[i]);
       stars[i].speed = Math.random();
     }
@@ -57,7 +57,14 @@
     {
       for(i = 0; i < stars.length; i++)
       {
-        stars[i].style.top = stars[i].speed + parseFloat(stars[i].style.top) + "px";
+        if(parseFloat(stars[i].style.top) < 98)
+        {
+        stars[i].style.top = stars[i].speed + parseFloat(stars[i].style.top) + "%";
+        }
+        else
+        {
+          stars[i].style.visibility = "hidden";
+        }
       }
       setTimeout(moveStars, 100);
     }
