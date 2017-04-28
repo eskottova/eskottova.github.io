@@ -52,7 +52,7 @@
       stars[i].style.top = Math.random() * 98 + "%";
       document.body.appendChild(stars[i]);
       stars[i].speed = Math.random() / 4 + 0.2;
-      stars[i].style.zIndex = stars[i].speed;
+      stars[i].style.zIndex = Math.floor(stars[i].speed * 2000);
     }
     var moveStars = function()
     {
