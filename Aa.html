@@ -41,11 +41,10 @@
   <script>
     var scene = 0;
     var stars = [];
-    var x = 0;
     var y = 0;//checks if new stars can be generated
     var createStars = function(amount, yCoordinateFactor)
     {
-      for(i = x; i < x + amount; i++)
+      for(i = stars[].length - 1; i < stars[].length - 1 + amount; i++)
       {
         stars[i] = document.createElement("div");
         stars[i].className = "stars";
@@ -77,6 +76,7 @@
         {
           stars[i].style.visibility = "hidden";
         }
+      }
       y++;  
       setTimeout(moveStars, 10);
     }
