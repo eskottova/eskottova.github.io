@@ -42,6 +42,7 @@
     var scene = 0;
     var stars = [];
     var x = 0;
+    var y = 0;//checks if new stars can be generated
     var createStars = function(amount, yCoordinateFactor)
     {
       for(i = x; i < x + amount; i++)
@@ -62,19 +63,22 @@
     }
     var moveStars = function()
     {
-      createStars(1, 0);
+      if(y % 30 == 0)
+      {
+        createStars(1, 0);
+      }
       for(i = 0; i < stars.length; i++)
       {
         if(parseFloat(stars[i].style.top) < 98)
         {
-        stars[i].style.top = stars[i].speed + parseFloat(stars[i].style.top) + "%";
+        stars[i].style.top = stars[i].speed / 10 + parseFloat(stars[i].style.top) + "%";
         }
         else
         {
           stars[i].style.visibility = "hidden";
         }
-      }
-      setTimeout(moveStars, 100);
+      y++;  
+      setTimeout(moveStars, 10);
     }
     createStars(100, 1);
     moveStars();
