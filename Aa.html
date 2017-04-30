@@ -44,7 +44,7 @@
     var y = 0;//checks if new stars can be generated
     var createStars = function(amount, yCoordinateFactor)
     {
-      for(i = (stars.length - 1); i < (stars.length - 1) + amount; i++)
+      for(i = stars.length; i < stars.length + amount; i++)
       {
         stars[i] = document.createElement("div");
         stars[i].className = "stars";
