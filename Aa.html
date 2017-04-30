@@ -41,10 +41,12 @@
   <script>
     var scene = 0;
     var stars = [];
+    var x;//should prevent infinte loop in createStars function
     var y = 0;//checks if new stars can be generated
     var createStars = function(amount, yCoordinateFactor)
     {
-      for(i = stars.length; i < stars.length + amount; i++)
+      x = stars.length;
+      for(i = stars.length; i < x + amount; i++)
       {
         stars[i] = document.createElement("div");
         stars[i].className = "stars";
