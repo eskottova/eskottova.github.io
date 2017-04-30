@@ -41,7 +41,7 @@
   <script>
     var scene = 0;
     var stars = [];
-    var x;//should prevent infinte loop in createStars function
+    var x;//prevents infinte loop in createStars function
     var y = 0;//checks if new stars can be generated
     var createStars = function(amount, yCoordinateFactor)
     {
@@ -61,7 +61,7 @@
         stars[i].style.zIndex = Math.floor(stars[i].speed * 2000);
       }
     }
-    /*var moveStars = function()
+    var moveStars = function()
     {
       if(y % 20 == 0)
       {
@@ -80,9 +80,9 @@
       }
       y++;  
       setTimeout(moveStars, 20);
-    }*/
+    }
     createStars(100, 1);
-    //moveStars();
+    moveStars();
   </script>
   <div class="rocketParts" id="topOfRocket"></div>
   <div class="rocketParts" id="bodyOfRocket"></div>
