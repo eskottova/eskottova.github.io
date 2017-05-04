@@ -49,7 +49,7 @@
     }
     #rocketThrust1b{
       left:507px;
-      height:70px;
+      height:60px;
       width:10px;
       top:300px;
       background-color:orange;
@@ -57,7 +57,7 @@
     #rocketThrust1c{
       background-color:orange;
       left:523px;
-      height:70px;
+      height:60px;
       width:10px;
       top:300px;
     }
@@ -110,7 +110,7 @@
     }
     var moveStars = function()
     {
-      if(y % 20 == 0)
+      if(y % 7 == 0)
       {
         createStars(1, 0);
       }
@@ -126,10 +126,10 @@
         }
       }
       y++;  
-      setTimeout(moveStars, 20);
+      setTimeout(moveStars, 60);
     }
     createStars(100, 1);
-    //moveStars();
+    moveStars();
   </script>
   <div class="rocketParts" id="topOfRocket"></div>
   <div class="rocketParts" id="bodyOfRocket"></div>
