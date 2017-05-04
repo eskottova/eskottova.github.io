@@ -109,6 +109,7 @@
         stars[i].style.zIndex = Math.floor(stars[i].speed * 2000);
       }
     }
+    createStars(100, 1);
     var moveStars = function()
     {
       if(y % 10 == 0)
@@ -129,7 +130,6 @@
       y++;  
       setTimeout(moveStars, 60);
     }
-    createStars(100, 1);
     moveStars();
   </script>
   <div class="rocketParts" id="topOfRocket"></div>
