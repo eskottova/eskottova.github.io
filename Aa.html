@@ -122,9 +122,13 @@
         {
         stars[i].style.top = stars[i].speed / 10 + parseFloat(stars[i].style.top) + "%";
         }
+        else if(stars[i] == false)
+        {
+        }
         else
         {
           document.getElementById("star" + i).remove();
+          stars[i] = false;
         }
       }
       y++;  
