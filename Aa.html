@@ -112,7 +112,7 @@
     createStars(100, 1);
     var moveStars = function()
     {
-      if(y % 10 == 0)
+      if(y % 20 == 0)
       {
         createStars(1, 0);
       }
@@ -132,7 +132,7 @@
         }
       }
       y++;  
-      setTimeout(moveStars, 60);
+      setTimeout(moveStars, 30);
     }
     moveStars();
   </script>
