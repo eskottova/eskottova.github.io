@@ -132,12 +132,12 @@
         {
           document.getElementById("star" + i).remove();
           stars[i] = false;
-          starsCreated++;
+          starsRemoved++;
         }
       }
       if(starsCreated == 100 || starsRemoved == 100)
       {
-        alert(starsCreated + " stars created and " + starsRemoved + "removed.");
+        alert(starsCreated + " stars created and " + starsRemoved + " removed.");
       }
       y++;  
       setTimeout(moveStars, 30);
