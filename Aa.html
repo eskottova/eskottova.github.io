@@ -118,12 +118,12 @@
       }
       for(i = 0; i < stars.length; i++)
       {
-        if(parseFloat(stars[i].style.top) < 98)
+        if(stars[i] == false)
+        {
+        }
+        else if(parseFloat(stars[i].style.top) < 98)
         {
         stars[i].style.top = stars[i].speed / 10 + parseFloat(stars[i].style.top) + "%";
-        }
-        else if(stars[i] == false)
-        {
         }
         else
         {
