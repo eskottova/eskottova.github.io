@@ -8,12 +8,18 @@
     <script>
       var h = document.getElementById("heading");
       var i = 0;
-      var count = function(){
+      var timer = function()
+      {
+        setTimeout(showResults, 60000);
+      }
+      var count = function()
+      {
         i ++;
         h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!";
-        if(i%100===0){
-          alert("Gratuliere, du hast " + i + "x auf den Knopf geklickt!")
-        }
+      }
+      var showResults = function ()
+      {
+        alert("Deine Klickgeschwindigkeit ist "+i+" Klicks pro Sekunde");
       }
     </script>
   </body>
