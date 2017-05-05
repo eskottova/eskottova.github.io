@@ -35,47 +35,47 @@
       top:300px;
       z-index:2000;
     }
-    .rocketThrust{
+    .rocketFlame{
       position:absolute;
       border-radius:50%;
       z-index:1997;
     }
-    #rocketThrust1{
+    #rocketFlame1{
       background-color:orange;
       left:510px;
       height:80px;
       width:20px;
       top:300px;
     }
-    #rocketThrust1b{
+    #rocketFlame1b{
       left:506px;
       height:65px;
       width:10px;
       top:300px;
       background-color:orange;
     }
-    #rocketThrust1c{
+    #rocketFlame1c{
       background-color:orange;
       left:524px;
       height:65px;
       width:10px;
       top:300px;
     }
-    #rocketThrust2{
+    #rocketFlame2{
       background-color:red;
       top:310px;
       left:515px;
       height:60px;
       width:10px;
     }
-    #rocketThrust3{
+    #rocketFlame3{
       background-color:red;
       top:310px;
       left:509px;
       height:50px;
       width:7px;
     }
-    #rocketThrust4{
+    #rocketFlame4{
       background-color:red;
       top:310px;
       left:524px;
@@ -86,8 +86,6 @@
 </head>
 <body>
   <script>
-    var starsCreated = 0;
-    var starsRemoved = 0;
     var scene = 0;
     var stars = [];
     var x;//prevents infinte loop in createStars function
@@ -112,11 +110,10 @@
       }
     }
     createStars(100, 1);
-    var moveStars = function()
+    var move = function()
     {
-      if(y % 16 == 0)
+      if(y % 15 == 0)
       {
-        starsCreated++;
         createStars(1, 0);
       }
       for(i = 0; i < stars.length; i++)
@@ -132,25 +129,25 @@
         {
           document.getElementById("star" + i).remove();
           stars[i] = false;
-          starsRemoved++;
         }
       }
-      if(starsCreated == 100 || starsRemoved == 100)
+      var flames = document.getElementsByClassName("rocketFlame");
+      for(i = 0; i < flames.lenght; i++)
       {
-        alert(starsCreated + " stars created and " + starsRemoved + " removed.");
+        flames[i].style.lenght = 3 * Math.random() + parseFloat(flames[i].style.lenght) + "px";
       }
       y++;  
       setTimeout(moveStars, 30);
     }
-    moveStars();
+    move();
   </script>
   <div class="rocketParts" id="topOfRocket"></div>
   <div class="rocketParts" id="bodyOfRocket"></div>
   <div class="rocketParts" id="endOfRocket"></div>
-  <div class="rocketThrust" id="rocketThrust1"></div>
-  <div class="rocketThrust" id="rocketThrust1b"></div>
-  <div class="rocketThrust" id="rocketThrust1c"></div>
-  <div class="rocketThrust" id="rocketThrust2"></div>
-  <div class="rocketThrust" id="rocketThrust3"></div>
-  <div class="rocketThrust" id="rocketThrust4"></div>
+  <div class="rocketFlame" id="rocketFlame1"></div>
+  <div class="rocketFlame" id="rocketFlame1b"></div>
+  <div class="rocketFlame" id="rocketFlame1c"></div>
+  <div class="rocketFlame" id="rocketFlame2"></div>
+  <div class="rocketFlame" id="rocketFlame3"></div>
+  <div class="rocketFlame" id="rocketFlame4"></div>
 </body>
