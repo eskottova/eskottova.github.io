@@ -134,7 +134,7 @@
       var flames = document.getElementsByClassName("rocketFlame");
       for(i = 0; i < flames.length; i++)
       {
-        flames[i].offsetHeight = 3 * Math.random() + parseFloat(flames[i].offsetHeight) + "px";
+        flames[i].offsetHeight = 3 * Math.random() + flames[i].offsetHeight + "px";
       }
       y++;  
       setTimeout(move, 30);
