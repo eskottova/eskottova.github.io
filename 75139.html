@@ -11,9 +11,12 @@
     <script>
       var numP = function()
       {
-        return Math.random() * 80;
+        return Math.floor(Math.random() * 100);
       }
-      alert(numP());
+      for(i = 0; i < 100; i++)
+      {
+        body.innerHTML(numP() + "<br>");
+      }
     </script>
   </body>
 </html>
