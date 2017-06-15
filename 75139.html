@@ -13,12 +13,12 @@
       {
         return Math.floor(Math.random() * 100);
       }
-      var content = document.getElementById("contentDiv");
+      var content = document.createElement("div");
+      document.body.appendChild(content);
       for(i = 0; i < 100; i++)
       {
         content.innerHTML(numP() + "<br>");
       }
     </script>
-    <div id="contentDiv" ></div>
   </body>
 </html>
