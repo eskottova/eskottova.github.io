@@ -13,11 +13,13 @@
       {
         return Math.floor(Math.random() * 100);
       }
+      var numAr = [];
       var content = document.createElement("div");
       document.body.appendChild(content);
       for(i = 0; i < 100; i++)
       {
-        content.innerHTML += numP() + "<br>";
+        numAr[i] = numP();
+        content.innerHTML += numAr[i] + "<br>";
       }
     </script>
   </body>
