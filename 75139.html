@@ -33,12 +33,12 @@
       
       content.appendChild(sumDiv); 
       
-      for(i = 0; i < numAr.length; i += 10) //computes sums of the random numbers and adds them to contentDiv
+      for(i = 0; i < numAr.length; i ++) //computes sums of the random numbers and adds them to contentDiv
       {
         var sum = 0;
         for(j = 0; j < 10; j++)
         {
-          sum += numAr[i+j];
+          sum += numAr[10 * i + j];
         }
         sums[i] = sum;
         sumDiv.innerHTML += sums[i] + "<br>";
