@@ -5,11 +5,14 @@
       body{
       font-family:sans-serif;
       }
+      #sumdiv{
+      font-weight:bold;
+      }
     </style>
   </head>
   <body>
     <script>
-      var numP = function() //creates sandom numbers
+      var numP = function() //creates random numbers
       {
         return Math.floor(Math.random() * 100);
       }
@@ -19,6 +22,7 @@
       var content = document.createElement("div");
       document.body.appendChild(content);
       var sumDiv = document.createElement("div");
+      sumDiv.id = "sumDiv";
       
       for(i = 0; i < 100; i++) //creates random numbers and adds them to contentDiv
       {
@@ -27,8 +31,7 @@
       }
       
       
-      content.appendChild(sumDiv);
-      sumDiv.innerHTML = "<strong>"; //should make the sums bold
+      content.appendChild(sumDiv); 
       
       for(i = 0; i < numAr.length; i += 10) //computes sums of the random numbers and adds them to contentDiv
       {
@@ -40,8 +43,6 @@
         sums[i] = sum;
         sumDiv.innerHTML += sums[i] + "<br>";
       }
-      
-      sumDiv.innerHTML += "</strong>";
       
       var allSums = 0;
       for(i = 0; i < sums.length; i ++) // finds average of the sums 
