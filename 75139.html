@@ -9,7 +9,7 @@
   </head>
   <body>
     <script>
-      var numP = function()
+      var numP = function() //creates sandom numbers
       {
         return Math.floor(Math.random() * 100);
       }
@@ -17,19 +17,42 @@
       var ratingAr = [];
       var content = document.createElement("div");
       document.body.appendChild(content);
-      for(i = 0; i < 100; i++)
+      
+      for(i = 0; i < 100; i++) //creates random numbers and adds them to contentDiv
       {
         numAr[i] = numP();
         content.innerHTML += numAr[i] + "<br>";
       }
-      for(i = 0; i < numAr.length; i += 5)
+      
+      content.innerHTML += "<b>"; //should make the sums bold
+      
+      for(i = 0; i < numAr.length; i += 10) //computes sums of the random numbers and adds them to contentDiv
       {
+        var sums = [];
         var sum = 0;
-        for(j = 0; j < 5; j++)
+        for(j = 0; j < 10; j++)
         {
           sum += numAr[i+j];
         }
-        content.innerHTML += sum + "<br>";
+        sums[i] = sum;
+        content.innerHTML += + sums[i] + "<br>";
+      }
+      
+      content.innerHTML += "</b>";
+      
+      var allSums = 0;
+      for(i = 0; i < sums.length; i ++) // finds average of the sums 
+      {
+        allSums += sums[i];
+      }
+      var avg = allSums/sums.length;
+      
+      for(i = 0; i < sums.length; i ++) //adds the sums > average to contentDiv
+      {
+        if(sums[i] > avg)
+        {
+           content.innerHTML += + sums[i] + "<br>";
+        }
       }
     </script>
   </body>
