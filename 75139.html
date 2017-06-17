@@ -14,12 +14,22 @@
         return Math.floor(Math.random() * 100);
       }
       var numAr = [];
+      var ratingAr = [];
       var content = document.createElement("div");
       document.body.appendChild(content);
       for(i = 0; i < 100; i++)
       {
         numAr[i] = numP();
         content.innerHTML += numAr[i] + "<br>";
+      }
+      for(i = 0; 1 < numAr.length; i += 5)
+      {
+        var sum;
+        for(j = 0; j < 5; j++)
+        {
+          sum += numAr[i+j];
+        }
+        content.innerHTML += sum + "<br>";
       }
     </script>
   </body>
