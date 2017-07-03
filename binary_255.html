@@ -45,7 +45,6 @@
       document.getElementById("circles").appendChild(circles[i]);
       }
       var H2 = document.getElementById("countInBinaryH2");
-      /*
       var lightOn = function(onLight) 
       {
         onLight.style.fill = "rgb(255, 255, 0)";
@@ -72,7 +71,7 @@
             {
               for(v = 0; v < 8; v++)
               {
-                lightOff(lights[v]);
+                lightOff(circles[v]);
               }
               x = 1;
               reset = true;
@@ -88,12 +87,12 @@
                 on = false; //resetting on
                 if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
                 {
-                  lightOn(lights[z]); 
+                  lightOn(circles[z]); 
                   on = true;
                 }
                 else if(!on)
                 {
-                  lightOff(lights[z]);
+                  lightOff(circles[z]);
                 }
                 z ++;
               }
@@ -113,7 +112,7 @@
         {
           counting = true;
           x = 0;
-        }*/
+        }
     </script>
   </body>
 </html>
