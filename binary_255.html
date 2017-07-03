@@ -38,21 +38,14 @@
     <div id="circles"></div>
     <button onclick="countInBinary();" >Click to start</button>
     <script>
-      /*
-      stuff I'm currently working on:
-        getting rid of the svg part 
-        making a new part with base 3 and base 4
-      */
-      
-      
       var circles = [];
-      for(i = 0; 1 < 8; i++)
+      for(i = 0; i < 8; i++)
       {
       circles[i] = document.createElement("div");
       document.getElementById("circles").appendChild(circles[i]);
       }
       var H2 = document.getElementById("countInBinaryH2");
-      
+      /*
       var lightOn = function(onLight) 
       {
         onLight.style.fill = "rgb(255, 255, 0)";
@@ -112,7 +105,7 @@
             else
             {
               counting = false; //the program will stop counting
-              setTimeout(allowToCount, 2000); /*waits a 2 seconds before it allows to start again*/
+              setTimeout(allowToCount, 2000); //waits a 2 seconds before it allows to start again
             }
           }
         }  
@@ -120,7 +113,7 @@
         {
           counting = true;
           x = 0;
-        }
+        }*/
     </script>
   </body>
 </html>
