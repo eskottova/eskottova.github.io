@@ -18,6 +18,7 @@
         font-family:sans-serif;
         font-size:2em;
       }
+      
       h2
       {
         color:rgb(255, 255, 0);
@@ -33,17 +34,8 @@
   </head>
   <body>
       <h1>BINARY_255</h1><br>
-      <svg height="110" width="1160">
-        <circle id="circle8" cx="55"/>
-        <circle id="circle7" cx="205"/>
-        <circle id="circle6" cx="355"/>
-        <circle id="circle5" cx="505"/>
-        <circle id="circle4" cx="655"/>
-        <circle id="circle3" cx="805"/>
-        <circle id="circle2" cx="955"/>
-        <circle id="circle1" cx="1105"/>
-    </svg><br>
     <h2 id="countInBinaryH2"></h2>
+    <div id="circles"></div>
     <button onclick="countInBinary();" >Click to start</button>
     <script>
       /*
@@ -51,15 +43,16 @@
         getting rid of the svg part 
         making a new part with base 3 and base 4
       */
-      var light1 = document.getElementById("circle1");
-      var light2 = document.getElementById("circle2");
-      var light3 = document.getElementById("circle3");
-      var light4 = document.getElementById("circle4");
-      var light5 = document.getElementById("circle5");
-      var light6 = document.getElementById("circle6");
-      var light7 = document.getElementById("circle7");
-      var light8 = document.getElementById("circle8");
+      
+      
+      var circles = [];
+      for(i = 0; 1 < 8; i++)
+      {
+      circles[i] = document.createElement("div");
+      document.getElementById("circles").appendChild(circles[i]);
+      }
       var H2 = document.getElementById("countInBinaryH2");
+      
       var lightOn = function(onLight) 
       {
         onLight.style.fill = "rgb(255, 255, 0)";
@@ -68,13 +61,12 @@
       {
         offLight.style.fill = "rgb(0, 0, 0)";
       }
-        var lights = [light1, light2, light3, light4, light5, light6, light7, light8];
         
-        var v = 0; //used for a loop wich turns off lights 
+        var v = 0; //used for a loop wich turns lights off 
         var w = 0; //checks if x is divisible by y
         var x = 0; //number wich should be displayed
         var y = 0; //value of the pin
-        var z = -1; //pin number
+        var z = 0; //pin number
         var reset = true;
         var counting = true; //checks if the prgram is allowed to count
         var on = false; //if true, it won't turn off the light for the number that should be dispalyed
@@ -96,11 +88,10 @@
             {
               x ++; //counts
               H2.innerHTML = x; //displays the binary number in decimal
-              z = -1; //resetting z 
+              z = 0; //resetting z 
               for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
               {
-                w = x % y; //setting w to the remainder of x / y 
-                z ++;
+                w = x % y; //setting w to the remainder of x / y
                 on = false; //resetting on
                 if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
                 {
@@ -111,11 +102,12 @@
                 {
                   lightOff(lights[z]);
                 }
+                z ++;
               }
             }  
             if(x < 255) //runs the function until x is equal to 255
             {
-              setTimeout(countInBinary, 1000); //wait 1000 milliseconds until next number
+              setTimeout(countInBinary, 300); //wait 300 milliseconds until next number
             }
             else
             {
