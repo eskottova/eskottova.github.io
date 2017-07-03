@@ -18,7 +18,6 @@
         font-family:sans-serif;
         font-size:2em;
       }
-      
       h2
       {
         color:rgb(255, 255, 0);
@@ -52,67 +51,65 @@
       var lightOff = function(offLight) 
       {
         offLight.style.background = "rgb(0, 0, 0)";
-      }
-        
-        var v = 0; //used for a loop wich turns lights off 
-        var w = 0; //checks if x is divisible by y
-        var x = 0; //number wich should be displayed
-        var y = 0; //value of the pin
-        var z = 0; //pin number
-        var reset = true;
-        var counting = true; //checks if the prgram is allowed to count
-        var on = false; //if true, it won't turn off the light for the number that should be dispalyed
-        
-        var countInBinary = function()
+      } 
+      var v = 0; //used for a loop wich turns lights off 
+      var w = 0; //checks if x is divisible by y
+      var x = 0; //number wich should be displayed
+      var y = 0; //value of the pin
+      var z = 0; //pin number
+      var reset = true;
+      var counting = true; //checks if the prgram is allowed to count
+      var on = false; //if true, it won't turn off the light for the number that should be dispalyed
+      var countInBinary = function()
+      {
+        if(counting)
         {
-          if(counting)
+          if(x === 0 && !reset)
           {
-            if(x === 0 && !reset)
+            for(v = 0; v < 8; v++)
             {
-              for(v = 0; v < 8; v++)
-              {
-                lightOff(circles[v]);
-              }
-              x = 1;
-              reset = true;
+              lightOff(circles[v]);
             }
-            else
-            {
-              x ++; //counts
-              H2.innerHTML = x; //displays the binary number in decimal
-              z = 0; //resetting z 
-              for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
-              {
-                w = x % y; //setting w to the remainder of x / y
-                on = false; //resetting on
-                if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
-                {
-                  lightOn(circles[z]); 
-                  on = true;
-                }
-                else if(!on)
-                {
-                  lightOff(circles[z]);
-                }
-                z ++;
-              }
-            }  
-            if(x < 255) //runs the function until x is equal to 255
-            {
-              setTimeout(countInBinary, 300); //wait 300 milliseconds until next number
-            }
-            else
-            {
-              counting = false; //the program will stop counting
-              setTimeout(allowToCount, 2000); //waits a 2 seconds before it allows to start again
-            }
+            x = 1;
+            reset = true;
           }
-        }  
-        var allowToCount = function()
-        {
-          counting = true;
-          x = 0;
+          else
+          {
+            x ++; //counts
+            H2.innerHTML = x; //displays the binary number in decimal
+            z = 0; //resetting z 
+            for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+            {
+              w = x % y; //setting w to the remainder of x / y
+              on = false; //resetting on
+              if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
+              {
+                lightOn(circles[z]); 
+                on = true;
+              }
+              else if(!on)
+              {
+                lightOff(circles[z]);
+              }
+              z ++;
+            }
+          }  
+          if(x < 255) //runs the function until x is equal to 255
+          {
+            setTimeout(countInBinary, 300); //wait 300 milliseconds until next number
+          }
+          else
+          {
+            counting = false; //the program will stop counting
+            setTimeout(allowToCount, 2000); //waits a 2 seconds before it allows to start again
+          }
         }
+      }  
+      var allowToCount = function()
+      {
+        counting = true;
+        x = 0;
+      }
     </script>
   </body>
 </html>
