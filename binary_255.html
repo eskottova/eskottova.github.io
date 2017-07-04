@@ -9,24 +9,23 @@
         border-radius:50%;
         height:50px;
         width:50px;
-        border:solid 5px rgb(255,255,0);
       }
       body 
       {
         background:rgb(0,0,0);
-        color:rgb(255, 255, 0);
+        color:rgb(255, 255, 255);
         font-family:sans-serif;
         font-size:2em;
       }
       h2
       {
-        color:rgb(255, 255, 0);
+        color:rgb(255, 255, 255);
       }
       button 
       {
         background:rgb(0, 0, 0);
-        border:1px solid rgb(255, 255, 0);
-        color:rgb(255, 255, 0);
+        border:1px solid rgb(255, 255, 255);
+        color:rgb(255, 255, 255);
         font-size:2em;
       }
     </style>
@@ -35,18 +34,26 @@
       <h1>BINARY_255</h1><br>
     <h2 id="countInBinaryH2"></h2>
     <div id="circles"></div>
-    <button onclick="countInBinary();" >Click to start</button>
+    <div id="circles3"></div>
+    <button onclick="countInBinary();countInBase3();" >Click to start</button>
     <script>
       var circles = [];
-      for(i = 7; i >= 0; i--)
+      for(i = 15; i >= 0; i--)
       {
       circles[i] = document.createElement("div");
-      document.getElementById("circles").appendChild(circles[i]);
+      if(i >= 8)
+      {
+        document.getElementById("circles3").appendChild(circles[i]);
+      }
+      else
+      {
+        document.getElementById("circles").appendChild(circles[i]);
+      }
       }
       var H2 = document.getElementById("countInBinaryH2");
       var lightOn = function(onLight) 
       {
-        onLight.style.background = "rgb(255, 255, 0)";
+        onLight.style.background = "rgb(255, 255, 255)";
       }
       var lightOff = function(offLight) 
       {
