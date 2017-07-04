@@ -44,15 +44,12 @@
     <button onclick="countInBinary();" >Click to start</button>
     <script>
       var circles = [];
-      var t = 2187;
       for(i = 15; i >= 0; i--)
       {
         circles[i] = document.createElement("div");
         if(i >= 8)
         {
           document.getElementById("circles3").appendChild(circles[i]);
-          circles[i].innerHTML = t;
-          t /= 3;
         }
         else
         {
