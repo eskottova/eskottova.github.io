@@ -7,9 +7,10 @@
       {
         display:inline-block;
         border-radius:50%;
-        height:50px;
-        width:50px;
+        height:100px;
+        width:100px;
         color:blue;
+        margin:10px;
       }
       body 
       {
@@ -43,7 +44,7 @@
     <button onclick="countInBinary();" >Click to start</button>
     <script>
       var circles = [];
-      var t = 1;
+      var t = 2187;
       for(i = 15; i >= 0; i--)
       {
         circles[i] = document.createElement("div");
@@ -51,7 +52,7 @@
         {
           document.getElementById("circles3").appendChild(circles[i]);
           circles[i].innerHTML = t;
-          t *= 3;
+          t /= 3;
         }
         else
         {
