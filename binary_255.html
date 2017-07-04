@@ -58,7 +58,7 @@
       var z = 0; //pin number
       //same variables for base 3
       var w3 = 0;
-      var y3 = 0;
+      var y3 = 1;
       var reset = true;
       var counting = true; //checks if the prgram is allowed to count
       var on = false; //if true, it won't turn off the light for the number that should be dispalyed
@@ -80,7 +80,7 @@
             x ++; //counts
             H2.innerHTML = x; //displays the binary number in decimal
             z = 0; //resetting z 
-            y3 = 0; //resetting y3
+            y3 = 1; //resetting y3
             for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
               y3 *= 3;
