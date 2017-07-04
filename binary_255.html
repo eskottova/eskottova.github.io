@@ -35,7 +35,7 @@
     <h2 id="countInBinaryH2"></h2>
     <div id="circles"></div>
     <div id="circles3"></div>
-    <button onclick="countInBinary();countInBase3();" >Click to start</button>
+    <button onclick="countInBinary();" >Click to start</button>
     <script>
       var circles = [];
       for(i = 15; i >= 0; i--)
@@ -73,7 +73,7 @@
         {
           if(x === 0 && !reset)
           {
-            for(v = 0; v < 8; v++)
+            for(v = 0; v < 16; v++)
             {
               lightOff(circles[v]);
             }
@@ -85,7 +85,7 @@
             x ++; //counts
             H2.innerHTML = x; //displays the binary number in decimal
             z = 0; //resetting z 
-            for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+            for(y = 1; y < 32769; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
               w = x % y; //setting w to the remainder of x / y
               on = false; //resetting on
