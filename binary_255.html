@@ -40,30 +40,25 @@
       var circles = [];
       for(i = 15; i >= 0; i--)
       {
-      circles[i] = document.createElement("div");
-      if(i >= 8)
-      {
-        document.getElementById("circles3").appendChild(circles[i]);
-      }
-      else
-      {
-        document.getElementById("circles").appendChild(circles[i]);
-      }
+        circles[i] = document.createElement("div");
+        if(i >= 8)
+        {
+          document.getElementById("circles3").appendChild(circles[i]);
+        }
+        else
+        {
+          document.getElementById("circles").appendChild(circles[i]);
+        }
       }
       var H2 = document.getElementById("countInBinaryH2");
-      var lightOn = function(onLight) 
-      {
-        onLight.style.background = "rgb(255, 255, 155)";
-      }
-      var lightOff = function(offLight) 
-      {
-        offLight.style.background = "rgb(0, 0, 0)";
-      } 
       var v = 0; //used for a loop wich turns lights off 
       var w = 0; //checks if x is divisible by y
-      var x = 0; //number wich should be displayed
+      var x = 0; //number which should be displayed
       var y = 0; //value of the pin
       var z = 0; //pin number
+      //same variables for base 3
+      var w3 = 0;
+      var y3 = 0;
       var reset = true;
       var counting = true; //checks if the prgram is allowed to count
       var on = false; //if true, it won't turn off the light for the number that should be dispalyed
@@ -85,25 +80,45 @@
             x ++; //counts
             H2.innerHTML = x; //displays the binary number in decimal
             z = 0; //resetting z 
-            for(y = 1; y < 32769; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+            y3 = 0; //resetting y3
+            for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
+              y3 *= 3;
               w = x % y; //setting w to the remainder of x / y
+              w3 = x % y3;
               on = false; //resetting on
               if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
               {
-                lightOn(circles[z]); 
+                circles[z].style.background = "rgb(255, 255, 155); 
                 on = true;
               }
               else if(!on)
               {
-                lightOff(circles[z]);
+                circles[z].style.background = "rgb(0, 0, 0);
+              }
+              //base 3
+              if((x - w3) % y3 == 0 && (x - w3) % (y3 * 3) != 0) //complicated condition
+              {
+                if(((x - w3) / y3) % 2)
+                {
+                  circles[(z + 8)].style.background = "rgb(255, 255, 255);
+                }
+                else
+                {
+                  circles[(z + 8)].style.background = "rgb(255, 255, 155);
+                } 
+                on = true;
+              }
+              else if(!on)
+              {
+                circles[(z + 8)].style.background = "rgb(0, 0, 0);
               }
               z ++;
             }
           }  
-          if(x < 65535) //runs the function until x is equal to 255 (now 65535)
+          if(x < 255) //runs the function until x is equal to 255
           {
-            setTimeout(countInBinary, 15); //wait 15 milliseconds until next number
+            setTimeout(countInBinary, 300); //wait 300 milliseconds until next number
           }
           else
           {
