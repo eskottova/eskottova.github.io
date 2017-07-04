@@ -7,10 +7,10 @@
       {
         display:inline-block;
         border-radius:50%;
-        height:100px;
-        width:100px;
+        height:40px;
+        width:40px;
         color:blue;
-        margin:10px;
+        margin:4px;
       }
       body 
       {
@@ -50,18 +50,18 @@
     <button onclick="countInBinary();" >Click to start</button>
     <script>
       var circles = [];
-      for(i = 31; i >= 0; i--)
+      for(i = 63; i >= 0; i--)
       {
         circles[i] = document.createElement("div");
-        if(i >= 24)
+        if(i >= 48)
         {
           document.getElementById("circles5").appendChild(circles[i]);
         }
-        else if(i >= 16)
+        else if(i >= 32)
         {
           document.getElementById("circles4").appendChild(circles[i]);
         }
-        else if(i >= 8)
+        else if(i >= 16)
         {
           document.getElementById("circles3").appendChild(circles[i]);
         }
@@ -94,7 +94,7 @@
         {
           if(x === 0 && !reset)
           {
-            for(v = 0; v < 32; v++)
+            for(v = 0; v < 48; v++)
             {
               lightOff(circles[v]);
             }
@@ -109,7 +109,7 @@
             y3 = 1; //resetting y3
             y4 = 1; //resetting y4
             y5 = 1; //resetting y5
-            for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
+            for(y = 1; y < 65535; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
               w = x % y; //setting w to the remainder of x / y
               w3 = x % y3;
@@ -156,7 +156,7 @@
               z ++;
             }
           }  
-          if(x < 255) //runs the function until x is equal to 255
+          if(x < 65535) //runs the function until x is equal to 65535
           {
             setTimeout(countInBinary, 300); //wait 300 milliseconds until next number
           }
