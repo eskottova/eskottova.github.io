@@ -33,8 +33,12 @@
   <body>
       <h1>BINARY_255</h1><br>
     <h2 id="countInBinaryH2"></h2>
-    <div id="circles"></div>
-    <div id="circles3"></div>
+    <div id="circles">
+    Binary:
+    </div>
+    <div id="circles3">
+    Base 3:
+    </div>
     <button onclick="countInBinary();" >Click to start</button>
     <script>
       var circles = [];
@@ -83,7 +87,6 @@
             y3 = 1; //resetting y3
             for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
-              y3 *= 3;
               w = x % y; //setting w to the remainder of x / y
               w3 = x % y3;
               on = false; //resetting on
@@ -113,6 +116,7 @@
               {
                 circles[(z + 8)].style.background = "rgb(0, 0, 0)";
               }
+              y3 *= 3;
               z ++;
             }
           }  
