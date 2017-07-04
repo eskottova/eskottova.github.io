@@ -107,7 +107,7 @@
               //base 3
               if((x - w3) % y3 == 0 && (x - w3) % (y3 * 3) != 0) //complicated condition
               {
-                if(((x - w3) / y3) % 2)
+                if((x - w3) % y3 % 2 == 0)
                 {
                   circles[(z + 8)].style.background = "rgb(255, 255, 155)";
                 }
