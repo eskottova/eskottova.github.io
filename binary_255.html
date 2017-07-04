@@ -41,13 +41,27 @@
     <div id="circles3">
     Base 3:<br>
     </div>
+    <div id="circles4">
+    Base 4:<br>
+    </div>
+    <div id="circles5">
+    Base 5:<br>
+    </div>
     <button onclick="countInBinary();" >Click to start</button>
     <script>
       var circles = [];
-      for(i = 15; i >= 0; i--)
+      for(i = 31; i >= 0; i--)
       {
         circles[i] = document.createElement("div");
-        if(i >= 8)
+        if(i >= 24)
+        {
+          document.getElementById("circles5").appendChild(circles[i]);
+        }
+        else if(i >= 16)
+        {
+          document.getElementById("circles4").appendChild(circles[i]);
+        }
+        else if(i >= 8)
         {
           document.getElementById("circles3").appendChild(circles[i]);
         }
@@ -80,7 +94,7 @@
         {
           if(x === 0 && !reset)
           {
-            for(v = 0; v < 16; v++)
+            for(v = 0; v < 32; v++)
             {
               lightOff(circles[v]);
             }
@@ -112,7 +126,7 @@
               //base 3
               if((x - w3) % y3 == 0 && (x - w3) % (y3 * 3) != 0) //complicated condition
               {
-                circles[(z + 8)].style.background = colors[(x - w3) % (3 * y3) / y3];
+                circles[(z + 8)].style.background = colors[(x - w3) % (3 * y3) / y3 - 1];
               }
               else
               {
@@ -120,7 +134,25 @@
               }
               y3 *= 3;
               //base 4
+              if((x - w4) % y4 == 0 && (x - w4) % (y4 * 4) != 0) //complicated condition
+              {
+                circles[(z + 16)].style.background = colors[(x - w4) % (4 * y4) / y4 - 1];
+              }
+              else
+              {
+                circles[(z + 16)].style.background = "rgb(0, 0, 0)";
+              }
+              y4 *= 4;
               //base 5
+              if((x - w5) % y5 == 0 && (x - w5) % (y5 * 5) != 0) //complicated condition
+              {
+                circles[(z + 24)].style.background = colors[(x - w5) % (5 * y5) / y5 - 1];
+              }
+              else
+              {
+                circles[(z + 24)].style.background = "rgb(0, 0, 0)";
+              }
+              y5 *= 5;
               z ++;
             }
           }  
