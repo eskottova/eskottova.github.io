@@ -62,12 +62,18 @@
       var x = 0; //number which should be displayed
       var y = 0; //value of the pin
       var z = 0; //pin number
+      var colors["rgb(225, 255, 155)","rgb(255, 155, 0)","rgb(255, 0, 0)","rgb(0, 0, 155)"];
       //same variables for base 3
       var w3 = 0;
       var y3 = 1;
+      //base 4
+      var w4 = 0;
+      var y4 = 0; 
+      //base 5
+      var w5 = 0;
+      var y5 = 0;
       var reset = true;
       var counting = true; //checks if the prgram is allowed to count
-      var on = false; //if true, it won't turn off the light for the number that should be dispalyed
       var countInBinary = function()
       {
         if(counting)
@@ -87,38 +93,34 @@
             H2.innerHTML = x; //displays the binary number in decimal
             z = 0; //resetting z 
             y3 = 1; //resetting y3
+            y4 = 1; //resetting y4
+            y5 = 1; //resetting y5
             for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
               w = x % y; //setting w to the remainder of x / y
               w3 = x % y3;
-              on = false; //resetting on
+              w4 = x % y4;
+              w5 = x % y5;
               if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
               {
-                circles[z].style.background = "rgb(255, 255, 155)"; 
-                on = true;
+                circles[z].style.background = "rgb(255, 255, 155)";
               }
-              else if(!on)
+              else
               {
                 circles[z].style.background = "rgb(0, 0, 0)";
               }
               //base 3
               if((x - w3) % y3 == 0 && (x - w3) % (y3 * 3) != 0) //complicated condition
               {
-                if((x - w3) % (3 * y3) / y3 == 2)
-                {
-                  circles[(z + 8)].style.background = "rgb(255, 155, 0)";
-                }
-                else
-                {
-                  circles[(z + 8)].style.background = "rgb(255, 255, 155)";
-                } 
-                on = true;
+                circles[(z + 8)].style.background = colors[(x - w3) % (3 * y3) / y3];
               }
               else
               {
                 circles[(z + 8)].style.background = "rgb(0, 0, 0)";
               }
               y3 *= 3;
+              //base 4
+              //base 5
               z ++;
             }
           }  
