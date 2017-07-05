@@ -3,31 +3,30 @@
   <head>
     <title>BINARY_255</title>
     <style>
-      #circles div, #circles3 div, #circles4 div, #circles5 div, #circles6 div
+      #circles div	
       {
         display:inline-block;
         border-radius:50%;
-        height:25px;
-        width:25px;
-        color:blue;
-        margin:2px;
+        height:50px;
+        width:50px;
+        border:solid 5px rgb(255,255,0);
       }
       body 
       {
         background:rgb(0,0,0);
-        color:rgb(255, 255, 155);
+        color:rgb(255, 255, 0);
         font-family:sans-serif;
         font-size:2em;
       }
       h2
       {
-        color:rgb(255, 255, 155);
+        color:rgb(255, 255, 0);
       }
       button 
       {
         background:rgb(0, 0, 0);
-        border:1px solid rgb(255, 255, 155);
-        color:rgb(255, 255, 155);
+        border:1px solid rgb(255, 255, 0);
+        color:rgb(255, 255, 0);
         font-size:2em;
       }
     </style>
@@ -35,67 +34,21 @@
   <body>
       <h1>BINARY_255</h1><br>
     <h2 id="countInBinaryH2"></h2>
-    <div id="circles">
-    Binary:<br>
-    </div>
-    <div id="circles3">
-    Base 3:<br>
-    </div>
-    <div id="circles4">
-    Base 4:<br>
-    </div>
-    <div id="circles5">
-    Base 5:<br>
-    </div>
-    <div id="circles6">
-    Base 6:<br>
-    </div>
+    <div id="circles"></div>
     <button onclick="countInBinary();" >Click to start</button>
     <script>
       var circles = [];
-      for(i = 159; i >= 0; i--)
+      for(i = 7; i >= 0; i--)
       {
-        circles[i] = document.createElement("div");
-        if(i >= 128)
-        {
-          document.getElementById("circles6").appendChild(circles[i]);
-        }
-        else if(i >= 96)
-        {
-          document.getElementById("circles5").appendChild(circles[i]);
-        }
-        else if(i >= 64)
-        {
-          document.getElementById("circles4").appendChild(circles[i]);
-        }
-        else if(i >= 32)
-        {
-          document.getElementById("circles3").appendChild(circles[i]);
-        }
-        else
-        {
-          document.getElementById("circles").appendChild(circles[i]);
-        }
+      circles[i] = document.createElement("div");
+      document.getElementById("circles").appendChild(circles[i]);
       }
       var H2 = document.getElementById("countInBinaryH2");
       var v = 0; //used for a loop wich turns lights off 
       var w = 0; //checks if x is divisible by y
-      var x = 0; //number which should be displayed
+      var x = 0; //number wich should be displayed
       var y = 0; //value of the pin
       var z = 0; //pin number
-      var colors = ["rgb(255, 255, 155)","rgb(255, 155, 0)","rgb(255, 0, 0)","rgb(0, 0, 155)","rgb(0, 155, 0)"];
-      //same variables for base 3
-      var w3 = 0;
-      var y3 = 1;
-      //base 4
-      var w4 = 0;
-      var y4 = 1; 
-      //base 5
-      var w5 = 0;
-      var y5 = 1;
-      //base 6
-      var w6 = 0;
-      var y6 = 1;
       var reset = true;
       var counting = true; //checks if the prgram is allowed to count
       var countInBinary = function()
@@ -104,9 +57,9 @@
         {
           if(x === 0 && !reset)
           {
-            for(v = 0; v < 160; v++)
+            for(v = 0; v < 8; v++)
             {
-              lightOff(circles[v]);
+              circles[v].style.background = "rgb(0, 0, 0)";
             }
             x = 1;
             reset = true;
@@ -116,69 +69,22 @@
             x ++; //counts
             H2.innerHTML = x; //displays the binary number in decimal
             z = 0; //resetting z 
-            y3 = 1; //resetting y3
-            y4 = 1; //resetting y4
-            y5 = 1; //resetting y5
-            y6 = 1; //resetting y6
-            for(y = 1; y < (2**32); y *= 2) //cycle through pins by using multiples of 2 (binary!)
+            for(y = 1; y < 255; y *= 2) //cycle through pins by using multiples of 2 (binary!)
             {
               w = x % y; //setting w to the remainder of x / y
-              w3 = x % y3;
-              w4 = x % y4;
-              w5 = x % y5;
-              w6 = x % y6;
+              on = false; //resetting on
               if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
               {
-                circles[z].style.background = "rgb(255, 255, 155)";
+                circles[z].style.background = "rgb(255, 255, 255)"; 
               }
               else
               {
                 circles[z].style.background = "rgb(0, 0, 0)";
               }
-              //base 3
-              if((x - w3) % y3 == 0 && (x - w3) % (y3 * 3) != 0) //complicated condition
-              {
-                circles[(z + 32)].style.background = colors[(x - w3) % (3 * y3) / y3 - 1];
-              }
-              else
-              {
-                circles[(z + 32)].style.background = "rgb(0, 0, 0)";
-              }
-              y3 *= 3;
-              //base 4
-              if((x - w4) % y4 == 0 && (x - w4) % (y4 * 4) != 0) //complicated condition
-              {
-                circles[(z + 64)].style.background = colors[(x - w4) % (4 * y4) / y4 - 1];
-              }
-              else
-              {
-                circles[(z + 64)].style.background = "rgb(0, 0, 0)";
-              }
-              y4 *= 4;
-              //base 5
-              if((x - w5) % y5 == 0 && (x - w5) % (y5 * 5) != 0) //complicated condition
-              {
-                circles[(z + 96)].style.background = colors[(x - w5) % (5 * y5) / y5 - 1];
-              }
-              else
-              {
-                circles[(z + 96)].style.background = "rgb(0, 0, 0)";
-              }
-              y5 *= 5;
-              //base 6
-              if((x - w6) % y6 == 0 && (x - w6) % (y6 * 6) != 0) //complicated condition
-              {
-                circles[(z + 128)].style.background = colors[(x - w6) % (6 * y6) / y6 - 1];
-              }
-              else
-              {
-                circles[(z + 128)].style.background = "rgb(0, 0, 0)";
-              }
-              y6 *= 6;
               z ++;
             }
           }  
-          if(x < (2**32-1)) //runs the function until x is equal to 4294967295
+          if(x < 255) //runs the function until x is equal to 255
           {
             setTimeout(countInBinary, 300); //wait 300 milliseconds until next number
           }
