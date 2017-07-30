@@ -120,7 +120,7 @@
             y4 = 1; //resetting y4
             y5 = 1; //resetting y5
             y6 = 1; //resetting y6
-            for(u = 2; u < 5; u++)
+            for(u = 2; u < 7; u++)
             {
               z = 0;//resetting z
               for(y = 1; y < (u**32); y *= u) //cycle through pins by using multiples of 2 (binary!)
@@ -132,11 +132,11 @@
                 w6 = x % y6;
                 if((x - w) % (y * u) != 0) //complicated condition
                 {
-                  circles[z + (u - 1) * 32].style.background = colors[(x - w) % (u * y) / y - 1];
+                  circles[z + (u - 2) * 32].style.background = colors[(x - w) % (u * y) / y - 1];
                 }
                 else
                 {
-                  circles[z + (u - 1) * 32].style.background = "rgb(0, 0, 0)";
+                  circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";
                 }
               /*  //base 3
                 if((x - w3) % (y3 * 3) != 0) //complicated condition
