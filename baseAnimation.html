@@ -116,13 +116,13 @@
           {
             x ++; //counts
             H2.innerHTML = x; //displays the binary number in decimal
-            z = 0; //resetting z 
             y3 = 1; //resetting y3
             y4 = 1; //resetting y4
             y5 = 1; //resetting y5
             y6 = 1; //resetting y6
             for(u = 2; u < 6; u++)
             {
+              z = 0;//resetting z
               for(y = 1; y < (u**32); y *= u) //cycle through pins by using multiples of 2 (binary!)
               {
                 w = x % y; //setting w to the remainder of x / y
