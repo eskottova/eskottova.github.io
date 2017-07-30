@@ -128,7 +128,7 @@
               w4 = x % y4;
               w5 = x % y5;
               w6 = x % y6;
-              if((x - w) % y == 0 && (x - w) % (y * 2) != 0) //complicated condition
+              if((x - w) % (y * 2) != 0) //complicated condition
               {
                 circles[z].style.background = "rgb(255, 255, 155)";
               }
@@ -137,7 +137,7 @@
                 circles[z].style.background = "rgb(0, 0, 0)";
               }
               //base 3
-              if((x - w3) % y3 == 0 && (x - w3) % (y3 * 3) != 0) //complicated condition
+              if((x - w3) % (y3 * 3) != 0) //complicated condition
               {
                 circles[(z + 32)].style.background = colors[(x - w3) % (3 * y3) / y3 - 1];
               }
@@ -147,7 +147,7 @@
               }
               y3 *= 3;
               //base 4
-              if((x - w4) % y4 == 0 && (x - w4) % (y4 * 4) != 0) //complicated condition
+              if((x - w4) % (y4 * 4) != 0) //complicated condition
               {
                 circles[(z + 64)].style.background = colors[(x - w4) % (4 * y4) / y4 - 1];
               }
@@ -157,7 +157,7 @@
               }
               y4 *= 4;
               //base 5
-              if((x - w5) % y5 == 0 && (x - w5) % (y5 * 5) != 0) //complicated condition
+              if((x - w5) % (y5 * 5) != 0) //complicated condition
               {
                 circles[(z + 96)].style.background = colors[(x - w5) % (5 * y5) / y5 - 1];
               }
@@ -167,7 +167,7 @@
               }
               y5 *= 5;
               //base 6
-              if((x - w6) % y6 == 0 && (x - w6) % (y6 * 6) != 0) //complicated condition
+              if((x - w6) % (y6 * 6) != 0) //complicated condition
               {
                 circles[(z + 128)].style.background = colors[(x - w6) % (6 * y6) / y6 - 1];
               }
