@@ -3,7 +3,7 @@
   <head>
     <title>BASE ANIMATION</title>
     <style>
-      .circles div
+      .circles div div
       {
         display:inline-block;
         border-radius:50%;
@@ -35,20 +35,22 @@
   <body>
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
-    <div id="circles2">  
-      Binary:<br>
-    </div>
-    <div id="circles3">
-      Base 3:<br>
-    </div>
-    <div id="circles4">
-      Base 4:<br>
-    </div>
-    <div id="circles5">
-      Base 5:<br>
-    </div>
-    <div id="circles6">
-      Base 6:<br>
+    <div class="circles">
+      <div id="circles2">  
+        Binary:<br>
+      </div>
+      <div id="circles3">
+        Base 3:<br>
+      </div>
+      <div id="circles4">
+        Base 4:<br>
+      </div>
+      <div id="circles5">
+        Base 5:<br>
+      </div>
+      <div id="circles6">
+        Base 6:<br>
+      </div>
     </div>
     <button onclick="count();" >Click to start</button>
     <script>
@@ -56,7 +58,7 @@
       for(i = 0; i < 160; i++)
       {
         circles[i] = document.createElement("div");
-        document.getElementById("circles" + (i - i % 32 + 2)).appendChild(circles[i]);
+        document.getElementById("circles" + ((i - i % 32) / 32 + 2)).appendChild(circles[i]);
         /*if(i >= 128)
         {
           document.getElementById("circles6").appendChild(circles[i]);
