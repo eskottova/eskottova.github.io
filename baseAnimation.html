@@ -35,23 +35,7 @@
   <body>
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
-    <div id="circles">
-      <!--<div id="circles2">  
-        Binary:<br>
-      </div>
-      <div id="circles3">
-        Base 3:<br>
-      </div>
-      <div id="circles4">
-        Base 4:<br>
-      </div>
-      <div id="circles5">
-        Base 5:<br>
-      </div>
-      <div id="circles6">
-        Base 6:<br>
-      </div>-->
-    </div>
+    <div id="circles"></div>
     <button onclick="count();" >Click to start</button>
     <script>
       for(i = 2; i < 7; i++)
@@ -59,7 +43,7 @@
         div = document.createElement("div");
         div.id = "circles" + i;
         document.getElementById("circles").appendChild(div);
-        div.innerHTML = "Base " + i;
+        div.innerHTML = "Base " + i + "<br>";
       }
       var circles = [];
       for(i = 159; i >= 0; i--)//creates circles
