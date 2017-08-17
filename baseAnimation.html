@@ -3,7 +3,7 @@
   <head>
     <title>BASE ANIMATION</title>
     <style>
-      #circles div, #circles3 div, #circles4 div, #circles5 div, #circles6 div
+      .circles div
       {
         display:inline-block;
         border-radius:50%;
@@ -33,9 +33,9 @@
     </style>
   </head>
   <body>
-      <h1>BASE ANIMATION</h1><br>
+    <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
-    <div id="circles">  
+    <div id="circles2">  
       Binary:<br>
     </div>
     <div id="circles3">
@@ -53,10 +53,11 @@
     <button onclick="count();" >Click to start</button>
     <script>
       var circles = [];
-      for(i = 159; i >= 0; i--)
+      for(i = 0; i < 160; i++)
       {
         circles[i] = document.createElement("div");
-        if(i >= 128)
+        document.getElementById("circles" + i - (i % 32) + 2).appendChild(circles[i])
+        /*if(i >= 128)
         {
           document.getElementById("circles6").appendChild(circles[i]);
         }
@@ -75,7 +76,7 @@
         else
         {
           document.getElementById("circles").appendChild(circles[i]);
-        }
+        }*/
       }
       var H2 = document.getElementById("H2");
       var u = 1; //used for loop that cycles through different bases
