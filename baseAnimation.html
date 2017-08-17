@@ -89,34 +89,22 @@
       {
         if(counting)
         {
-          if(x == 0 )//&& !reset)
+          x ++; //counts
+          H2.innerHTML = x; //displays number in decimal
+          for(u = 2; u < 7; u++)
           {
-            for(v = 0; v < 160; v++)
+            z = 0;//resetting z
+            for(y = 1; y < (u**32); y *= u) //cycle through circles
             {
-              lightOff(circles[v]);
-            }
-            x = 1;
-            reset = true;
-          }
-          else
-          {
-            x ++; //counts
-            H2.innerHTML = x; //displays number in decimal
-            for(u = 2; u < 7; u++)
-            {
-              z = 0;//resetting z
-              for(y = 1; y < (u**32); y *= u) //cycle through circles
+              /*if((x - x % y) % (y * u) != 0) //if the closest number <= x && that % y = 0, isn't divisible by y*u
+              {*/
+                circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
+              /*}
+              else
               {
-                /*if((x - x % y) % (y * u) != 0) //if the closest number <= x && that % y = 0, isn't divisible by y*u
-                {*/
-                  circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
-                /*}
-                else
-                {
-                  circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";//resets the background of a circle 
-                }*/
-                z ++;
-              }
+                circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";//resets the background of a circle 
+              }*/
+              z ++;
             }
           }  
           if(x < (2**32-1)) //runs the function until x is equal to 4294967295
