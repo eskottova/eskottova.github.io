@@ -56,7 +56,8 @@
     <script>
       for(i = 2; i < 7; i++)
       {
-        document.getElementById("circles").appendChild(document.createElement("div").id = "circles" + i);
+        document.createElement("div").id = "circles" + i;
+        document.getElementById("circles").appendChild("circles" + i);
       }
       var circles = [];
       for(i = 159; i >= 0; i--)//creates circles
