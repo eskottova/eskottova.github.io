@@ -56,7 +56,7 @@
       for(i = 0; i < 160; i++)
       {
         circles[i] = document.createElement("div");
-        document.getElementById("circles" + '"' + (i - (i % 32)) + 2 + '"').appendChild(circles[i]);
+        document.getElementById("circles" + (i - i % 32 + 2).appendChild(circles[i]);
         /*if(i >= 128)
         {
           document.getElementById("circles6").appendChild(circles[i]);
