@@ -50,7 +50,7 @@
     <div id="circles6">
       Base 6:<br>
     </div>
-    <button onclick="countInBinary();" >Click to start</button>
+    <button onclick="count();" >Click to start</button>
     <script>
       var circles = [];
       for(i = 159; i >= 0; i--)
@@ -79,15 +79,13 @@
       }
       var H2 = document.getElementById("countInBinaryH2");
       var u = 1; //used for loop that cycles through different bases
-      var v = 0; //used for a loop wich turns lights off 
-      var w = 0; //checks if x is divisible by y
+      var v = 0; //used for a loop that resets all the circles
       var x = 0; //number which should be displayed
-      var y = 0; //value of the pin
-      var z = 0; //pin number
-      var colors = ["rgb(255, 255, 155)","rgb(255, 155, 0)","rgb(255, 0, 0)","rgb(255, 100, 255)","rgb(80, 180, 255)"];
-      var reset = true;
+      var y = 0; //circle value
+      var z = 0; //circle number
+      var colors = ["rgb(0, 0, 0)", "rgb(255, 255, 155)","rgb(255, 155, 0)","rgb(255, 0, 0)","rgb(255, 100, 255)","rgb(80, 180, 255)"];
       var counting = true; //checks if the prgram is allowed to count
-      var countInBinary = function()
+      var count = function()
       {
         if(counting)
         {
@@ -103,21 +101,20 @@
           else
           {
             x ++; //counts
-            H2.innerHTML = x; //displays the binary number in decimal
+            H2.innerHTML = x; //displays number in decimal
             for(u = 2; u < 7; u++)
             {
               z = 0;//resetting z
-              for(y = 1; y < (u**32); y *= u) //cycle through pins by using multiples of 2 (binary!)
+              for(y = 1; y < (u**32); y *= u) //cycle through circles
               {
-                w = x % y; //setting w to the remainder of x / y
-                if((x - w) % (y * u) != 0) //complicated condition
-                {
-                  circles[z + (u - 2) * 32].style.background = colors[(x - w) % (u * y) / y - 1];
-                }
+                /*if((x - x % y) % (y * u) != 0) //if the closest number <= x && that % y = 0, isn't divisible by y*u
+                {*/
+                  circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
+                /*}
                 else
                 {
-                  circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";
-                }
+                  circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";//resets the background of a circle 
+                }*/
                 z ++;
               }
             }
