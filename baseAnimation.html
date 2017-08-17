@@ -35,7 +35,7 @@
   <body>
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
-    <div class="circles">
+    <div id="circles">
       <!--<div id="circles2">  
         Binary:<br>
       </div>
@@ -54,6 +54,10 @@
     </div>
     <button onclick="count();" >Click to start</button>
     <script>
+      for(i = 2; i < 7; i++)
+      {
+        document.getElementById("circles").appendChild(document.createElement("div").id = "circles" + i);
+      }
       var circles = [];
       for(i = 159; i >= 0; i--)//creates circles
       {
@@ -75,14 +79,7 @@
           z = 0;//resetting z
           for(y = 1; y < (u**32); y *= u) //cycle through circles
           {
-            /*if((x - x % y) % (y * u) != 0) //if the closest number <= x && that % y = 0, isn't divisible by y*u
-            {*/
-              circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
-            /*}
-            else
-            {
-              circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";//resets the background of a circle 
-            }*/
+            circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
             z ++;
           }
         }  
