@@ -55,7 +55,7 @@
     <button onclick="count();" >Click to start</button>
     <script>
       var circles = [];
-      for(i = 0; i < 160; i++)
+      for(i = 159; i >= 0; i--)
       {
         circles[i] = document.createElement("div");
         document.getElementById("circles" + ((i - i % 32) / 32 + 2)).appendChild(circles[i]);
