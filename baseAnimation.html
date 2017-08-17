@@ -55,77 +55,39 @@
     <button onclick="count();" >Click to start</button>
     <script>
       var circles = [];
-      for(i = 159; i >= 0; i--)
+      for(i = 159; i >= 0; i--)//creates circles
       {
         circles[i] = document.createElement("div");
         document.getElementById("circles" + ((i - i % 32) / 32 + 2)).appendChild(circles[i]);
-        /*if(i >= 128)
-        {
-          document.getElementById("circles6").appendChild(circles[i]);
-        }
-        else if(i >= 96)
-        {
-          document.getElementById("circles5").appendChild(circles[i]);
-        }
-        else if(i >= 64)
-        {
-          document.getElementById("circles4").appendChild(circles[i]);
-        }
-        else if(i >= 32)
-        {
-          document.getElementById("circles3").appendChild(circles[i]);
-        }
-        else
-        {
-          document.getElementById("circles").appendChild(circles[i]);
-        }*/
       }
       var H2 = document.getElementById("H2");
       var u = 1; //used for loop that cycles through different bases
-      var v = 0; //used for a loop that resets all the circles
       var x = 0; //number which should be displayed
       var y = 0; //circle value
       var z = 0; //circle number
       var colors = ["rgb(0, 0, 0)", "rgb(255, 255, 155)","rgb(255, 155, 0)","rgb(255, 0, 0)","rgb(255, 100, 255)","rgb(80, 180, 255)"];
-      var counting = true; //checks if the prgram is allowed to count
       var count = function()
       {
-        if(counting)
+        x ++; //counts
+        H2.innerHTML = x; //displays number in decimal
+        for(u = 2; u < 7; u++)
         {
-          x ++; //counts
-          H2.innerHTML = x; //displays number in decimal
-          for(u = 2; u < 7; u++)
+          z = 0;//resetting z
+          for(y = 1; y < (u**32); y *= u) //cycle through circles
           {
-            z = 0;//resetting z
-            for(y = 1; y < (u**32); y *= u) //cycle through circles
+            /*if((x - x % y) % (y * u) != 0) //if the closest number <= x && that % y = 0, isn't divisible by y*u
+            {*/
+              circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
+            /*}
+            else
             {
-              /*if((x - x % y) % (y * u) != 0) //if the closest number <= x && that % y = 0, isn't divisible by y*u
-              {*/
-                circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
-              /*}
-              else
-              {
-                circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";//resets the background of a circle 
-              }*/
-              z ++;
-            }
-          }  
-          if(x < (2**32-1)) //runs the function until x is equal to 4294967295
-          {
-            setTimeout(count, 300); //wait 300 milliseconds until next number
+              circles[z + (u - 2) * 32].style.background = "rgb(0, 0, 0)";//resets the background of a circle 
+            }*/
+            z ++;
           }
-          else
-          {
-            counting = false; //the program will stop counting
-            setTimeout(allowToCount, 2000); //waits a 2 seconds before it allows to start again
-          }
-        }
-      }  
-      var allowToCount = function()
-      {
-        counting = true;
-        x = 0;
-      }
+        }  
+        setTimeout(count, 300); //wait 300 milliseconds until next number
+      } 
     </script>
   </body>
 </html>
