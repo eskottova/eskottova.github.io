@@ -51,8 +51,6 @@
         circles[i] = document.createElement("div");
         document.getElementById("circles" + ((i - i % 32) / 32 + 2)).appendChild(circles[i]);
       }
-      var H2 = document.getElementById("H2");
-      var u = 1; //used for loop that cycles through different bases
       var x = 0; //number which should be displayed
       var y = 0; //circle value
       var z = 0; //circle number
@@ -60,8 +58,8 @@
       var count = function()
       {
         x ++; //counts
-        H2.innerHTML = x; //displays number in decimal
-        for(u = 2; u < 7; u++)
+        document.getElementById("H2").innerHTML = x; //displays number in decimal
+        for(u = 2; u < 7; u++)//cycle through bases
         {
           z = 0;//resetting z
           for(y = 1; y < (u**32); y *= u) //cycle through circles
