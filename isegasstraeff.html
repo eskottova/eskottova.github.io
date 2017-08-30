@@ -23,6 +23,7 @@
         border: 2px solid #aaaaaa;
         padding:3px;
         font-family:serif;
+        visibility:hidden;
       }
       #svg{
         right:10px;
@@ -72,6 +73,7 @@
     <script>
       var runProgram = function()
       {
+        document.getElementById("displayDiv").visibility = "visible";
         document.getElementById("displayDiv").innerHTML = document.getElementById("userCodeInput").value;
       };
     </script>
@@ -102,7 +104,7 @@
     </div><br><br>
     <div class="chapter" id="html">
       <h3>HTML</h3>
-      <p>Wir werden heute in der Programmiersprache <span class="code">HTML</span>
+      <p>Wir werden in der Programmiersprache <span class="code">HTML</span>
       (<b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage) programmieren.</p><br><br>
     </div>  
     <div class="chapter" id="elements">
@@ -151,11 +153,11 @@
     <div class="chapter" id="hyperlink">
       <h3>Links</h3>
       <p>Viele Webseiten würden ohne Links gar nicht mehr funktionieren. Wenn man bei Google ein Suchergebnis auswählt, oder ein 
-      Youtube Video anklickt, benutzt man auf einen Link. Links werden nich mit L oder H (<em>hyperlink</em>) abgekürzt. Man verwendet
+      Youtube Video anklickt, benutzt man auf einen Link. Links werden nicht mit L oder H (<em>hyperlink</em>) abgekürzt. Man verwendet
       ein 'a'. Dort wo wir bisher den Text hingeschrieben haben, kommt jetzt das hin, was angezeigt werden soll. Wir müssen aber noch
         angeben, wo der Link hingehen soll. Dafür benutzt man HREF (<b>H</b>yperlink <b>REF</b>erence). Beispiel:</p>
       <p class="code">
-        &lt;a href="http://eskottova.github.io/isegasstraeff.html"&gt; Dieser Link führt hier hin. &lt;/a&gt;
+        &lt;a href="http://eskottova.github.io/isegasstraeff.html"&gt; Dieser Link führt zur Startseite. &lt;/a&gt;
       </p><br>
       <p class="example">
         <a href="http://eskottova.github.io">Dieser Link führt hier hin.</a>
@@ -180,7 +182,7 @@
     </div>
     <div class="chapter" id="styles">
       <h3>Style</h3>
-      <p>Bei den Links stand etwas <em>im</em> Anfangstag und nicht <em>zwischen</em> dem Anfangs- und Endtag. Das macht man immer, wenn
+      <p>Bei den Links stand etwas <em>im</em> Anfangstag und nicht nur <em>zwischen</em> dem Anfangs- und Endtag. Das macht man immer, wenn
         man etwas schreiben will, das nicht als Text gesehen werden soll. Oft macht man das auch mit Farben. Es macht ja keinen Sinn, 
         wenn man in den Text schreibt: "Meine Überschrift (eigentlich sollte sie rot sein)". 
       </p>
