@@ -2,7 +2,7 @@
 <html>
   <head>
     <style>
-      #userCodeInput{
+      #userCodeInput, userScriptInput{
         background:#eeeeee;
         border: 2px solid #dddddd;
         padding:3px;
@@ -21,14 +21,22 @@
     </style>
   </head>
   <body>
-    <textarea id="userCodeInput" spellcheck="false"></textarea>
+    HTML:<textarea id="userCodeInput" spellcheck="false"></textarea><br/>
+    SCRPIT:<textarea id="userScriptInput" spelcheck="false/>
     <button onclick="runProgram()">Bestätigen</button><br>
     <div id="displayDiv"></div>
     <script>
+      var script;
       var runProgram = function()
       {
         document.getElementById("displayDiv").style.visibility = "visible";
         document.getElementById("displayDiv").innerHTML = document.getElementById("userCodeInput").value;
+        if (script) {
+          document.removeChild(script);
+        }
+        script = document.createElement("script");
+        script.innerHTML = document.getElementById("userScriptInput").value;
+        document.head.appendChild(script);
       };
     </script>
   </body>
