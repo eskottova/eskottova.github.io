@@ -21,9 +21,16 @@
     </style>
   </head>
   <body>
-    HTML:<textarea id="userCodeInput" spellcheck="false"></textarea><br/>
-    SCRPIT:<textarea id="userScriptInput" spelcheck="false"></textarea><br
-</textarea>    <button onclick="runProgram()">Bestätigen</button><br>
+    HTML:<textarea id="userCodeInput" spellcheck="false">
+Press this button
+<input type="button" value="Test" onClick="testFunction();"/>
+    </textarea><br/>
+    SCRPIT:<textarea id="userScriptInput" spelcheck="false">
+testFunction(){
+   alert("Test");
+}
+    </textarea><br
+<button onclick="runProgram()">Bestätigen</button><br>
     <div id="displayDiv"></div>
     <script>
       var script;
@@ -32,7 +39,7 @@
         document.getElementById("displayDiv").style.visibility = "visible";
         document.getElementById("displayDiv").innerHTML = document.getElementById("userCodeInput").value;
         if (script) {
-          document.removeChild(script);
+          document.head.removeChild(script);
         }
         script = document.createElement("script");
         script.innerHTML = document.getElementById("userScriptInput").value;
