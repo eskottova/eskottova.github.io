@@ -10,7 +10,6 @@
         font-size:1.3em;
         height:200px;
         width:90%;
-        spellcheck:false;
       }
       #displayDiv{
         visibility:hidden;
@@ -22,11 +21,11 @@
     </style>
   </head>
   <body>
-    HTML:<textarea id="userCodeInput">
+    HTML:<textarea id="userCodeInput" spellcheck="false">
 Press this button
 <input type="button" value="Emicka's Test" onclick="testFunction();"/>
     </textarea><br/>
-    SCRPIT:<textarea id="userScriptInput">
+    SCRPIT:<textarea id="userScriptInput" spellcheck="false">
 var testFunction = function(){
    alert("Test4EmickaOpickaCHaCHaCha");
 }
