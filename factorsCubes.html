@@ -4,6 +4,28 @@
     <title>Factors and Cubes</title>
   </head>
   <body>
-  
+    <input type="text" id="input1"/>
+    <input type="button" value="Test" onclick="f();"/>
+    <div id="outputDiv"></div>
+    <script>
+      var f = function ()
+      {
+        var primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41];
+        var divs = []
+        var div = document.getElementById("outputDiv");
+        for(i = 1; i < primes.length; i++)
+        {
+          divs[i] = document.createElement("div");
+          div.appendChild(divs[i]);
+          divs[i].innerHTML = primes[i] * 4;
+        }
+        for(i = 0; i < primes.length; i++)
+        {
+          divs[i] = document.createElement("div");
+          div.appendChild(divs[i]);
+          divs[i].innerHTML = primes[i] ** 5;
+        }
+      }
+    </script>
   </body>
 </html>
