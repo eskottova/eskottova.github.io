@@ -16,12 +16,8 @@
       {
         i ++;
         h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!";
+        body.style.backgroundColor = "rgb(" + Math.random()*255 + ", " + Math.random()*255 + ", " + Math.random()*255 + ")";
       }
-      var showResults = function ()
-      {
-        alert("Deine Klickgeschwindigkeit ist "+i+" Klicks pro Minute");
-      }
-      timer();
     </script>
   </body>
 </html>
