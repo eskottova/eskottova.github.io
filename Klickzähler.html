@@ -16,7 +16,11 @@
       {
         i ++;
         h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!"; 
-        document.body.style.backgroundColor = "rgb(" + Math.random()*255 + ", " + Math.random()*255 + ", " + Math.random()*255 + ")";
+        var r = Math.floor(Math.random()*255);
+        var g = Math.floor(Math.random()*255);
+        var b = Math.floor(Math.random()*255);
+        document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+        h.style.color = "rgb(" + 255 - r + ", " + 255 - g + ", " + 255 - b + ")";
       }
     </script>
   </body>
