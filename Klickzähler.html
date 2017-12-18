@@ -27,6 +27,23 @@
         b2 = 255 - b;
         document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
         h.style.color = "rgb(" + r2 + ", " + g2 + ", " + b2 + ")";
+        if(i % 50 == 0)
+        {
+           if(i < 200)
+           {
+            alert("Super! Du hast es geschafft " + i + "x auf den Knopf zu klicken!!!");
+           }
+           if(i == 200)
+           {
+            alert("Vielleicht solltest du dir ein Hobby suchen... Du hast bereits 200x geklickt...);
+           }
+           if(i > 200)
+           {
+            alert("Such dir ein Hobby!");
+            document.body.innerHTML += '<p>Falls du Englisch sprichst, wäre <a href"https://en.wikipedia.org/wiki/List_of_hobbies">hier</a> eine Auswahl an Hobbies.'+ 
+                                        'Falls nicht, lerne Englisch! :P</p>'
+           }
+        }
       }
     </script>
   </body>
