@@ -17,16 +17,6 @@
       }
       var count = function()
       {
-        i ++;
-        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!"; 
-        r = Math.floor(Math.random()*255);
-        g = Math.floor(Math.random()*255);
-        b = Math.floor(Math.random()*255);
-        r2 = 255 - r;
-        g2 = 255 - g;
-        b2 = 255 - b;
-        document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
-        h.style.color = "rgb(" + r2 + ", " + g2 + ", " + b2 + ")";
         if(i % 50 == 0)
         {
            if(i < 200)
@@ -40,10 +30,20 @@
            if(i > 200)
            {
             alert("Such dir ein Hobby!");
-            document.body.innerHTML += '<p>Falls du Englisch sprichst, wäre <a href"https://en.wikipedia.org/wiki/List_of_hobbies">hier</a> eine Auswahl an Hobbies.'+ 
+            document.body.innerHTML += '<p>Falls du Englisch sprichst, wäre <a href="https://en.wikipedia.org/wiki/List_of_hobbies">hier</a> eine Auswahl an Hobbies. '+ 
                                         'Falls nicht, lerne Englisch! :P</p>'
            }
         }
+        i ++;
+        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!"; 
+        r = Math.floor(Math.random()*255);
+        g = Math.floor(Math.random()*255);
+        b = Math.floor(Math.random()*255);
+        r2 = 255 - r;
+        g2 = 255 - g;
+        b2 = 255 - b;
+        document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+        h.style.color = "rgb(" + r2 + ", " + g2 + ", " + b2 + ")";
       }
     </script>
   </body>
