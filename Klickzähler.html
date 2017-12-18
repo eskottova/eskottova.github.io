@@ -2,7 +2,7 @@
 <html>
   <head><link rel="stylesheet" type="text/css" href="eskottova.github.io/style.css">
   </head>
-  <body>
+  <body id="body">
     <button onclick="count()">Klicken</button>
     <h1 id="heading"></h1>
     <script>
@@ -16,7 +16,7 @@
       {
         i ++;
         h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!";
-        body.style.backgroundColor = "rgb(" + Math.random()*255 + ", " + Math.random()*255 + ", " + Math.random()*255 + ")";
+        document.getElementById("body").style.backgroundColor = "rgb(" + Math.random()*255 + ", " + Math.random()*255 + ", " + Math.random()*255 + ")";
       }
     </script>
   </body>
