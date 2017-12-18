@@ -17,6 +17,16 @@
       }
       var count = function()
       {
+        i ++;
+        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!"; 
+        r = Math.floor(Math.random()*255);
+        g = Math.floor(Math.random()*255);
+        b = Math.floor(Math.random()*255);
+        r2 = 255 - r;
+        g2 = 255 - g;
+        b2 = 255 - b;
+        document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+        h.style.color = "rgb(" + r2 + ", " + g2 + ", " + b2 + ")";
         if(i % 50 == 0)
         {
            if(i < 200)
@@ -34,16 +44,6 @@
                                         'Falls nicht, lerne Englisch! :P</p>'
            }
         }
-        i ++;
-        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!"; 
-        r = Math.floor(Math.random()*255);
-        g = Math.floor(Math.random()*255);
-        b = Math.floor(Math.random()*255);
-        r2 = 255 - r;
-        g2 = 255 - g;
-        b2 = 255 - b;
-        document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
-        h.style.color = "rgb(" + r2 + ", " + g2 + ", " + b2 + ")";
       }
     </script>
   </body>
