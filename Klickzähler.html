@@ -18,7 +18,11 @@
       var count = function()
       {
         i ++;
-        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!"; 
+        h.innerHTML = "Du hast " + i + "x auf den Knopf geklickt!";  
+        setTimeout(count2, 10);
+      }
+      var count2 = function()
+      {
         r = Math.floor(Math.random()*255);
         g = Math.floor(Math.random()*255);
         b = Math.floor(Math.random()*255);
