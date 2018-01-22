@@ -106,7 +106,7 @@
         stars[i].style.top = Math.random() * 98 * yCoordinateFactor + "%";
         document.body.appendChild(stars[i]);
         stars[i].speed = Math.random() + 0.8;
-        stars[i].style.zIndex = Math.floor(stars[i].speed * 2000);
+        stars[i].style.zIndex = Math.floor(stars[i].speed * 200);
       }
     }
     createStars(100, 1);
@@ -121,9 +121,9 @@
         if(stars[i] == false)
         {
         }
-        else if(parseFloat(stars[i].style.top) < 98)
+        else if(parseFloat(stars[i].style.top) < 100)
         {
-        stars[i].style.top = stars[i].speed / 10 + parseFloat(stars[i].style.top) + "%";
+          stars[i].style.top = stars[i].speed / 10 + parseFloat(stars[i].style.top) + "%";
         }
         else
         {
