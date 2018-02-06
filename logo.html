@@ -19,12 +19,14 @@
       svg = document.getElementById("svg");
       var xmlns = "http://www.w3.org/2000/svg";
       test = [];
+      colors = ["0, 100, 200", "255, 255, 0", "255, 177, 0"]
       for(i = 0; i < 36; i++)
       {
         test[i] = document.createElementNS(xmlns, "polygon");
         svg.appendChild(test[i]);
-        test[i].setAttribute("points", 100 * i + ",100 " + 100 * i + 100 + ",200 "100 * i + ", 200");
-      } 
+        test[i].setAttribute("points", 100 * (i % 12) + "," + 100 * (i - i % 12)/12 + " " + (100 * (i % 12) + 100) + "," + (100 + 100 * (i - i % 12)/12) + " " + 100 * (i % 12) + "," + (100 + 100 * (i - i % 12)/12));
+        test[i].style.fill = "rgb(" + colors[i % 3] + ")";
+       }
     </script>
   </body>
 </html>
