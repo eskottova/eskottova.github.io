@@ -21,7 +21,7 @@
         font-family:sans-serif;
         font-size:2em;
       }
-      button 
+      button, input
       {
         background:rgb(200, 200, 200);
         border:1px solid rgb(50, 50, 50);
@@ -34,7 +34,11 @@
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
     <div id="circles"></div>
-    <button id="button1" onclick="startStop();" >Click to start</button>
+    <button id="button1" onclick="startStop();" >Click to start</button><br>
+    Speed: <input id="speedInput" value="10" ><br>
+    <button id="button2" onclick="changeSpeed();" >Change speed</button><br>
+    Go to: <input id="xInput" ><br>
+    <button id="button3" onclick="changeX();" >Go to entered number</button><br>
     <script>
       for(i = 2; i < 7; i++)
       {
@@ -53,9 +57,11 @@
       var y = 0; //circle value
       var z = 0; //circle number
       var speed = 10;
-      var allowedToCount = true;
+      var allowedToCount = false;
       var colors = ["rgb(200, 200, 200)", "rgb(80, 150, 255)","rgb(0, 200, 80)","rgb(255, 255, 135)","rgb(255, 170, 35)","rgb(255, 80, 80)"];
       var button1 = document.getElementById("button1");
+      var sInput = document.getElementById("speedInput");
+      var xInput = document.getElementById("xInput");
       var startStop = function()
       {
         if(allowedToCount == true)
@@ -69,6 +75,14 @@
           button1.innerHTML = "Stop";
           count();
         }
+      }
+      var changeSpeed = function()
+      {
+        speed = parseFloat(sInput.value);
+      }
+      var changeX = function()
+      {
+        x = floor(parseFloat(xInput.value));
       }
       var count = function()
       {
