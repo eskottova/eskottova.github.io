@@ -26,7 +26,6 @@
         background:rgb(200, 200, 200);
         border:1px solid rgb(50, 50, 50);
         color:rgb(50, 50, 50);
-        font-size:2em;
       }
     </style>
   </head>
@@ -34,11 +33,11 @@
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
     <div id="circles"></div>
-    <button id="button1" onclick="startStop();" >Click to start</button><br>
+    <button id="button1" onclick="startStop();" >Click to start</button><br><br>
     Speed: <input id="speedInput" value="10" ><br>
-    <button id="button2" onclick="changeSpeed();" >Change speed</button><br>
+    <button id="button2" onclick="changeSpeed();" >Change speed</button><br><br>
     Go to: <input id="xInput" ><br>
-    <button id="button3" onclick="changeX();" >Go to entered number</button><br>
+    <button id="button3" onclick="changeX();" >Go to entered number</button><br><br>
     <script>
       for(i = 2; i < 7; i++)
       {
@@ -82,7 +81,8 @@
       }
       var changeX = function()
       {
-        x = floor(parseFloat(xInput.value));
+        x = Math.floor(parseFloat(xInput.value));
+        document.getElementById("H2").innerHTML = x;
       }
       var count = function()
       {
