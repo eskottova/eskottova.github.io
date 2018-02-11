@@ -28,6 +28,9 @@
         color:rgb(50, 50, 50);
         font-size:2em;
       }
+      button2{
+        visibility:hidden;
+      }
     </style>
   </head>
   <body>
@@ -69,10 +72,13 @@
         {
           allowedToCount = true;
           button2.innerHTML = "Stop";
+          count();
         }
       }
       var count = function()
       {
+        button1.style.visibility = "hidden";
+        button2.style.visibility = "visible";
         x ++;
         document.getElementById("H2").innerHTML = x; //displays number in decimal
         for(u = 2; u < 7; u++)//cycle through bases
