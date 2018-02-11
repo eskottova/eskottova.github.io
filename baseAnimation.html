@@ -28,17 +28,13 @@
         color:rgb(50, 50, 50);
         font-size:2em;
       }
-      #button2{
-        visibility:hidden;
-      }
     </style>
   </head>
   <body>
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
     <div id="circles"></div>
-    <button id="button1" onclick="count();" >Click to start</button>
-    <button id="button2" onclick="stopRestart();" >Stop</button>
+    <button id="button1" onclick="startStop();" >Click to start</button>
     <script>
       for(i = 2; i < 7; i++)
       {
@@ -60,18 +56,17 @@
       var allowedToCount = true;
       var colors = ["rgb(200, 200, 200)", "rgb(80, 150, 255)","rgb(0, 200, 80)","rgb(255, 255, 135)","rgb(255, 170, 35)","rgb(255, 80, 80)"];
       var button1 = document.getElementById("button1");
-      var button2 = document.getElementById("button2");
-      var stopRestart = function()
+      var startStop = function()
       {
-        if(allowedToCount)
+        if(allowedToCount == true)
         {
           allowedToCount = false;
-          button2.innerHTML = "Restart";
+          button1.innerHTML = "Continue";
         }
         else 
         {
           allowedToCount = true;
-          button2.innerHTML = "Stop";
+          button1.innerHTML = "Stop";
           count();
         }
       }
@@ -81,8 +76,6 @@
         {
              x = 0;
         }
-        button1.style.visibility = "hidden";
-        button2.style.visibility = "visible";
         x ++;
         document.getElementById("H2").innerHTML = x; //displays number in decimal
         for(u = 2; u < 7; u++)//cycle through bases
