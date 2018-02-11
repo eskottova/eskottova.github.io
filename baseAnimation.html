@@ -34,7 +34,8 @@
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
     <div id="circles"></div>
-    <button onclick="count();" >Click to start</button>
+    <button id="button1" onclick="count();" >Click to start</button>
+    <button id="button2" onclick="stopRestart();" >Stop</button>
     <script>
       for(i = 2; i < 7; i++)
       {
@@ -52,7 +53,24 @@
       var x = 0; //number which should be displayed
       var y = 0; //circle value
       var z = 0; //circle number
+      var speed = 10;
+      var allowedToCount = true;
       var colors = ["rgb(200, 200, 200)", "rgb(80, 150, 255)","rgb(0, 200, 80)","rgb(255, 255, 135)","rgb(255, 170, 35)","rgb(255, 80, 80)"];
+      var button1 = document.getElementById("button1");
+      var button2 = document.getElementById("button2");
+      var stopRestart()
+      {
+        if(allowedToCount)
+        {
+          allowedToCount = false;
+          button2.innerHTML = "Restart";
+        }
+        else 
+        {
+          allowedToCount = true;
+          button2.innerHTML = "Stop";
+        }
+      }
       var count = function()
       {
         x ++;
@@ -60,15 +78,18 @@
         for(u = 2; u < 7; u++)//cycle through bases
         {
           z = 0;
-          for(y = 1; y < (u**32); y *= u) //cycle through circles
+          for(y = 1; y < (u**32); y *= u) //cycle through circles/digits
           {
             circles[z + (u - 2) * 32].style.background = colors[(x - x % y) % (u * y) / y];//sets the background color of a circle
-            circles[z + (u - 2) * 32].innerHTML = (x - x % y) % (u * y) / y;
+            circles[z + (u - 2) * 32].innerHTML = (x - x % y) % (u * y) / y;//sets the value of a digit
             z ++;
           }
         }  
-        setTimeout(count, 300);      
-      }  
+        if(allowedToCount)
+        {
+        setTimeout(count, (3000/speed));      
+        }  
+      }
     </script>
   </body>
 </html>
