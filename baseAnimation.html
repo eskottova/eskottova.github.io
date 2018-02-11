@@ -28,7 +28,7 @@
         color:rgb(50, 50, 50);
         font-size:2em;
       }
-      button2{
+      #button2{
         visibility:hidden;
       }
     </style>
@@ -77,6 +77,10 @@
       }
       var count = function()
       {
+        if(x > 2**32)
+        {
+             x = 0;
+        }
         button1.style.visibility = "hidden";
         button2.style.visibility = "visible";
         x ++;
