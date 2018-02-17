@@ -19,21 +19,24 @@
         background:rgb(200, 200, 200);
         color:rgb(50, 50, 50);
         font-family:sans-serif;
-        font-size:2em;
+        font-size:30px;
+      }
+      input{
+        width:80px;
       }
       button, input
       {
         background:rgb(200, 200, 200);
         border:1px solid rgb(50, 50, 50);
         color:rgb(50, 50, 50);
-        font-size:1.05em;
+        font-size:30px;
       }
     </style>
   </head>
   <body>
     <h1>BASE ANIMATION</h1>
     <h2 id="H2"></h2>
-    <div id="circles"></div>
+    <div id="circles"></div><br><br>
     <button id="button1" onclick="startStop();" >Click to start</button><br><br>
     Speed: <input id="speedInput" value="10" ><br>
     <button id="button2" onclick="changeSpeed();" >Change speed</button><br><br>
@@ -52,6 +55,10 @@
       {
         circles[i] = document.createElement("div");
         document.getElementById("circles" + ((i - i % 32) / 32 + 2)).appendChild(circles[i]);
+        if(i % 32 == 31)
+        {
+          "circles" + ((i - i % 32) / 32 + 2)).innerHTML += "<br>";
+        }
       }
       var x = 0; //number which should be displayed
       var y = 0; //circle value
