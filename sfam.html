@@ -8,7 +8,7 @@
       {
         var ia1a1 = Number(document.getElementById("ia1a1").value);
         var ia1a2 = Number(document.getElementById("ia1a2").value);
-        document.getElementById("a1a").innerHTML += "<br>" + (100 * ia1a2 / ia1a1);
+        document.getElementById("pa1a").innerHTML = (100 * ia1a2 / ia1a1);
       }
     </script>
     <h1>SF AM</h1>
@@ -16,7 +16,8 @@
       <h2>Aufgabe 1a</h2>
       Anzahl gefahrener Kilometer:<input id="ia1a1"><br>
       Anzahl verbrauchter Liter Benzin:<input id="ia1a2"><br>
-      <button id="ba1a" onclick="fa1a()" >Bestätigen</button>
+      <button id="ba1a" onclick="fa1a()" >Bestätigen</button><br>
+      <p id="pa1a"> </p>
     </div>
     <div id="a1b">
       <h2>Aufgabe 1b</h2>
