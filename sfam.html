@@ -15,14 +15,14 @@
         var ia1a2 = Number(document.getElementById("ia1a2").value);
         document.getElementById("pa1a").innerHTML = "Im Durchschnitt wurden " + (100 * ia1a2 / ia1a1) + "Liter pro 100 Kilometer verwendet.";
       }
-      var fa1ab = function ()
+      var fa1b = function ()
       {
         var ia1b = Number(document.getElementById("ia1b").value);
         if(ia1b < 0)
         {
           ia1b = -ia1b;
         }
-        document.getElementById("pa1a").innerHTML = ia1b;
+        document.getElementById("pa1b").innerHTML = ia1b;
       }
     </script>
     <h1>SF AM</h1>
@@ -36,7 +36,8 @@
     <div id="a1b">
       <h2>Aufgabe 1b</h2>
       Zahl:<input id="ia1b" ><br>
-      <button id="ba1b">Bestätigen</button>
+      <button id="ba1b" onclick="fa1b()">Bestätigen</button>
+      <p id="pa1b"> </p>
     </div>
     <div id="a1c">
       <h2>Aufgabe 1c</h2>
