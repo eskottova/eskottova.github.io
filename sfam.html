@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      body{
+        font-family:sans-serif;
+      }
+    </style>
   </head>
   <body>
     <script>
@@ -8,7 +13,16 @@
       {
         var ia1a1 = Number(document.getElementById("ia1a1").value);
         var ia1a2 = Number(document.getElementById("ia1a2").value);
-        document.getElementById("pa1a").innerHTML = (100 * ia1a2 / ia1a1);
+        document.getElementById("pa1a").innerHTML = "Im Durchschnitt wurden " + (100 * ia1a2 / ia1a1) + "Liter pro 100 Kilometer verwendet.";
+      }
+      var fa1ab = function ()
+      {
+        var ia1b = Number(document.getElementById("ia1b").value);
+        if(ia1b < 0)
+        {
+          ia1b = -ia1b;
+        }
+        document.getElementById("pa1a").innerHTML = ia1b;
       }
     </script>
     <h1>SF AM</h1>
