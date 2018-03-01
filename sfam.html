@@ -22,7 +22,21 @@
         {
           ia1b = -ia1b;
         }
-        document.getElementById("pa1b").innerHTML = ia1b;
+        document.getElementById("pa1b").innerHTML = "Der Betrag der eingegebenen Zahl ist " + ia1b + ".";
+      }
+      var fa1c = function ()
+      {
+        var ia1c = Number(document.getElementById("ia1c").value);
+        if(ia1c < 0)
+        {
+          ia1c = -1;
+        }
+        else if(ia1c == 0)
+        {
+          ia1c = 0;
+        }
+        else ia1c = 1;
+        document.getElementById("pa1c").innerHTML = ia1c;
       }
     </script>
     <h1>SF AM</h1>
@@ -42,7 +56,8 @@
     <div id="a1c">
       <h2>Aufgabe 1c</h2>
       Zahl:<input id="ia1c" ><br>
-      <button id="ba1c">Bestätigen</button>
+      <button id="ba1c" onclick="fa1c()">Bestätigen</button>
+      <p id="pa1c"> </p>
     </div>
     <div id="a2ac">
       <h2>Aufgaben 2a und 2c</h2>
