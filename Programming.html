@@ -3,42 +3,92 @@
     <head>
         <meta charset="utf-8">
         <style>
-            h1 {
-                color:rgb(235, 235, 0);
-            }
-            
-            body {
-                background-color:rgb(12, 107, 209);
-                font-family:monospace;
-                font-size:2em;
-                margin:30px;
-            }
-            
-            h2{
-                color:rgb(78, 189, 70);
-            }
-            
-            h3{
-                color:rgb(235, 179, 38);
-            }
+           <title>Programmieren</title>
+    <style>
+      a[target="_blank" ]{
+       color:red; 
+      }
+      body{
+      font-family:sans-serif;
+      }
+      .code{
+      font-family:monospace;
+      background:#dddddd;
+      font-size:1.3em;
+      }
+      p.code{
+        background:#eeeeee;
+        border: 2px solid #dddddd;
+        padding:3px;
+      }
+      .example{
+        border: 2px solid #aaaaaa;
+        padding:3px;
+        font-family:serif;
+      }
+      #contents{
+        width:23%;
+        background:#eeeeee;
+        border: 2px solid #dddddd;
+        padding:3px;
+        right:10px;
+        top:170px;
+        position:fixed;
+      }
+      .chapter{
+        border:2px solid #efefef;
+        padding:5px;
+        margin:10px;
+        width:73%;
+      }
+      #userCodeInput{
+        background:#eeeeee;
+        border: 2px solid #dddddd;
+        padding:3px;
+        font-family:monospace;
+        font-size:1.3em;
+        height:200px;
+        width:90%;
+      }
+      #displayDiv{
+        visibility:hidden;
+        margin:10px;
+        width:73%;
+        border:2px solid #efefef;
+        padding:5px;
+      }
         </style>
     </head>
     <body>
-
-        <h1>Programming</h1>
-        <h2>
-        Some reasons why you should start right now:
-        </h2>
-        <h3>
-            <ul>
-                <li> "The programmers of tomorrov are the wizards of the future. <br>
+    <script>
+      var runProgram = function()
+      {
+        document.getElementById("displayDiv").style.visibility = "visible";
+        document.getElementById("displayDiv").innerHTML = document.getElementById("userCodeInput").value;
+      };
+    </script>
+  <h1>Einfache Website selber programmieren</h1>
+    <div id="contents">
+      <a href="#html">HTML</a><br>
+      <a href="#elements">HTML Elemente</a><br>
+      <a href="#aufbau">Aufbau eines HTML Programms</a><br>
+      <a href="#heading">H Elemente</a><br>
+      <a href="#paragraph">P Element</a><br>
+      <a href="#hyperlink">Links</a><br>
+      <a href="#styles">Style</a><br>
+      <a href="#task">Auftrag</a><br>
+      <a href="#coolWebsites">Weiter lernen</a>
+    </div><br><br>
+    <h3>
+        <ul>
+            <li> "The programmers of tomorrov are the wizards of the future. <br>
         You know, you're gonna look like you have magic powers compared to anybody else." <br>
         -Gabe Newell </li>
         
-                <li> "It's amazing, I think it's the closest thing we have to a ... superpower." <br>
+            <li> "It's amazing, I think it's the closest thing we have to a ... superpower." <br>
         -Drew Houston </li>  
         
-               <li>"Everybody in this country should learn how to program a computer... <br>
+            <li>"Everybody in this country should learn how to program a computer... <br>
         because it teaches you how to think." <br>
             -Steve Jobs </li>
             <li>"Whether you're trying to make a lot of money or whether you just want to change the world, <br>
@@ -52,6 +102,126 @@
             <li>"Great coders are today's Rock Stars"<br>
             -will.i.am </li>
             </ul>
-        </h3>    
+    </h3>
+    <div class="chapter" id="html">
+      <h3>HTML</h3>
+      <p>Wir werden in der Programmiersprache <span class="code">HTML</span>
+      (<b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage) programmieren.</p><br><br>
+    </div>  
+    <div class="chapter" id="elements">
+      <h3>HTML Elemente</h3>
+      <p>Elemente fangen mit einem Anfangstag an und hören meistens mit einem Endtag auf. 
+      <span class="code">&lt;Beispiel&gt;Text&lt;Beispiel/&gt;</span></p><br><br>
+    </div>
+    <div class="chapter" id="aufbau">
+      <h3>Aufbau eines HTML Programms</h3>
+      <p class="code">
+      &lt;!DOCTYPE html&gt;<br>
+      &lt;html&gt;<br>
+        &ensp;&lt;body&gt;<br>
+        &ensp;&lt;/body&gt;<br>
+      &lt;/html&gt;<br>
+      </p><br>
+      <p>Diesen Teil kann man als Anfänger eifach kopieren oder abtippen. Alles, was wir jetzt lernen werden, kommt 
+      zwischen <span class="code">&lt;body&gt;</span> und <span class="code">&lt;/body&gt;. </span></p><br><br>
+    </div>
+    <div class="chapter" id="heading">
+      <h3>H Elemente</h3>
+      <p>H ist die Abkürzung des englischen Wortes <em>heading</em> (Überschrift). Es gibt sechs verschiedene Grössen von Überschriften.
+        Beispiel:</p><br>
+      <p class="code" > 
+        &lt;h1&gt;Das ist die grösste Überschrift&lt;/h1&gt;<br>
+        &lt;h6&gt;Das ist die kleinste Überschrift&lt;/h6&gt;
+      </p><br>
+      <p>Auf einer Website sähe das so aus:</p><br>
+      <div class="example">
+        <h1>Das ist die grösste Überschrift</h1>
+        <h6>Das ist die kleinste Überschrift</h6>
+      </div><br><br>
+    </div>
+    <div class="chapter" id="paragraph"> 
+      <h3>P Elemente</h3>   
+      <p>P ist die Abkürzung des englischen Wortes <em>paragraph</em> (Abschnitt/Absatz). Ps werden für alle Arten von Texen verwendet.
+        Dieser Text ist auch in einem P Element. Beispiel:</p><br>
+      <p class="code" > 
+        &lt;p&gt;Das ist ein Absatz.&lt;/p&gt;
+      </p><br>
+      <p>Auf einer Website sähe das so aus:</p><br>
+      <div class="example">
+        <p>Das ist ein Absatz.</p>
+      </div><br><br>
+    </div>
+    <div class="chapter" id="hyperlink">
+      <h3>Links</h3>
+      <p>Viele Webseiten würden ohne Links gar nicht mehr funktionieren. Wenn man bei Google ein Suchergebnis auswählt, oder ein 
+      Youtube Video anklickt, benutzt man einen Link. Links werden nicht mit L oder H (<em>hyperlink</em>) abgekürzt. Man verwendet
+      ein 'a'. Dort wo wir bisher den Text hingeschrieben haben, kommt jetzt das hin, was angezeigt werden soll. Wir müssen aber noch
+        angeben, wo der Link hingehen soll. Dafür benutzt man HREF (<b>H</b>yperlink <b>REF</b>erence). Beispiel:</p>
+      <p class="code">
+        &lt;a href="http://eskottova.github.io"&gt; Dieser Link führt zur Startseite. &lt;/a&gt;
+      </p><br>
+      <p class="example">
+        <a href="http://eskottova.github.io">Dieser Link führt zur Startseite.</a>
+      </p><br>
+      <p>Links können auch in anderen Elementen sein:</p><br>
+      <p class="code">
+        &lt;h4&gt;Dieser <br>
+          &ensp;&lt;a href="http://eskottova.github.io"&gt; Link &lt;/a&gt; <br>
+        ist in einer Überschrift. &lt;/h4&gt;<br>  
+        &lt;p&gt;Dieser <br>
+          &ensp;&lt;a href="http://eskottova.github.io"&gt; Link &lt;/a&gt; <br>
+        ist in einem Absatz.&lt;/p&gt;  
+      </p><br>
+      <div class="example">
+        <h4>Dieser 
+          <a href="http://eskottova.github.io">Link</a>
+        ist in einer Überschrift.</h4>  
+        <p>Dieser 
+          <a href="http://eskottova.github.io">Link</a>
+        ist in einem Absatz.</p>
+      </div>
+    </div>
+    <div class="chapter" id="styles">
+      <h3>Style</h3>
+      <p>Bei den Links stand etwas <em>im</em> Anfangstag und nicht nur <em>zwischen</em> dem Anfangs- und Endtag. Das macht man immer, wenn
+        man etwas schreiben will, das nicht als Text gesehen werden soll. Oft macht man das auch mit Farben. Es macht ja keinen Sinn, 
+        wenn man in den Text schreibt: "Meine Überschrift (eigentlich sollte sie rot sein)". 
+      </p>
+      <p class="code">
+        &lt;p style="color:white;background-color:midnightblue;"&gt;Mein farbiger Absatz&lt;/p&gt;
+      </p><br>
+      <div class="example">
+        <p style="color:white;background-color:midnightblue;">Mein farbiger Absatz</p>
+      </div>
+      <p>Um eine Farbe anzugeben, schreibt man entweder die hexadezimale oder rgb Zahl hin. Falls du diese noch nicht kennst, 
+        solltest du einfach den englischen Namen der Farbe ausschreiben.</p><br>
+      <a href="https://www.w3schools.com/cssref/css_colors.asp">Hier ist eine Liste mit <em>vielen</em> Farbennamen</a>
+    </div>
+    <div class="chapter" id="task">
+      <h3>Auftrag</h3>
+      <p>Hier kannst du zeigen, was du gelernt hast!</p>
+      <p>Alles, was du hier hinschreibst, ist automatisch im <span class="code">body</span>.</p>
+      <p>Wenn du auf "Bestätigen" klickst, wird die Website unter dem Eingabefeld angezeigt.</p>
+      <br><div>Um einen Stempel zu erhalten, brauchst du mindestens:
+        <ul>
+          <li>2 Überschriften mit unterschiedlichen Grössen</li>
+          <li>3 Abschnitte</li>
+          <li>1 Link</li>
+          <li>3 farbige Elemente</li>
+        </ul>
+      </div><br>
+      <textarea id="userCodeInput" spellcheck="false"></textarea>
+      <button onclick="runProgram()">Bestätigen</button><br>
+    </div>
+    <div class="example" id="displayDiv"></div>
+    <div class="chapter" id="coolWebsites">
+      <h3>Weiter lernen</h3>
+      <p>Programmieren lernen ist eigentlich einfach, man muss nur wissen wo. Hier sind einige Websites, die mir geholfen haben.</p>
+      <a href="https://de.khanacademy.org/">Khanacademy</a>
+      <a href="https://www.w3schools.com/">w3schools</a>
+      <a href="https://code.org/">code.org</a>
+      <a href="https://www.codecademy.com/">codecademy</a>
+      <a href="https://www.coursera.org/">coursera</a>
+    </div>    
     </body>
 </html>
