@@ -3,10 +3,23 @@
   <head>
     <title>Collatz Conjecture</title>
     <style>
+      body{
+        font-family:sans-serif;
+      }
     </style>
   </head>
   <body>
+    <div id="contentDiv"></div>
     <script>
+      var oddNumbers = []
+      var evenNumbers = []
+      for(var i = 0; i < 40; i++)
+      {
+        oddNumbers[i] = document.createElement('div')
+        document.body.appendChild(oddNumbers[i])
+        oddNumbers[i].style.left = i * 100 + "px"
+        oddNumbers[i].innerHTML = 2 * i + 1
+      }
     </script>
   </body>
 </html>
