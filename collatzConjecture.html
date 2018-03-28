@@ -43,6 +43,10 @@
           evenNumbers[j].style.top = (z + z2) * 20 + 80 + 'px'
           evenNumbers[j].innerHTML = x
           evenNumbers[j].className = 'evenNumbers numbers'
+          if(x = 4)
+          {
+            x = 16 //prevents program from going back to 1 all the time     
+          }
           if(x % 3 == 1)
           {
             newOdd = true
