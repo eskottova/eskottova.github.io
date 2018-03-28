@@ -22,6 +22,8 @@
     <script>
       var oddNumbers = []
       var evenNumbers = []
+      var j = 0
+      var z = 0
       for(var i = 0; i < 40; i++)//loop that creates odd numbers
       {
         oddNumbers[i] = document.createElement('div')
@@ -30,6 +32,21 @@
         oddNumbers[i].innerHTML = 2 * i + 1
         oddNumbers[i].classList.add("oddNumbers")
         oddNumbers[i].classList.add("numbers")
+        z = 0
+        x = i*2 
+        while(nEven < 4 && !newOdd)
+        {
+          evenNumbers[j] = document.createElement('div')
+          document.body.appendChild(evenNumbers[j])
+          evenNumbers[j].style.left = i * 100 + "px"
+          evenNumbers[j].style.top = z * 20 + 80 + "px"
+          evenNumbers[j].innerHTML = x
+          evenNumbers[j].classList.add("evenNumbers")
+          evenNumbers[j].classList.add("numbers")
+          j ++
+          x *= 2
+          z ++
+        }
       }
     </script>
   </body>
