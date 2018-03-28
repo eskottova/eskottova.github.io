@@ -22,12 +22,14 @@
     <script>
       var oddNumbers = []
       var evenNumbers = []
-      for(var i = 0; i < 40; i++)
+      for(var i = 0; i < 40; i++)//loop that creates odd numbers
       {
         oddNumbers[i] = document.createElement('div')
         document.body.appendChild(oddNumbers[i])
         oddNumbers[i].style.left = i * 100 + "px"
         oddNumbers[i].innerHTML = 2 * i + 1
+        oddNumbers[i].className = "oddNumbers"
+        oddNumbers[i].className = "numbers"
       }
     </script>
   </body>
