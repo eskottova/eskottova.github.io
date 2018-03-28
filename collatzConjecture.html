@@ -23,16 +23,18 @@
       var oddNumbers = []
       var evenNumbers = []
       var j = 0
+      var y = 1
       for(var i = 0; i < 40; i++)//loop that creates odd numbers
       {
         oddNumbers[i] = document.createElement('div')
         document.body.appendChild(oddNumbers[i])
         oddNumbers[i].style.left = i * 100 + "px"
-        oddNumbers[i].innerHTML = 2 * i + 1
+        oddNumbers[i].innerHTML = y
         oddNumbers[i].classList.add("oddNumbers")
         oddNumbers[i].classList.add("numbers")
         var z = 0
         x = i*2 
+        var newOdd = false
         while(z < 3 && !newOdd)
         {
           evenNumbers[j] = document.createElement('div')
@@ -44,6 +46,7 @@
           if(x % 3 == 1)
           {
             newOdd = true
+            y = x / 3 + 1
           }
           j ++
           x *= 2
