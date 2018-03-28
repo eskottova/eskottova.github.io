@@ -33,13 +33,13 @@
         oddNumbers[i].className = 'evenNumbers numbers'
         var z = 0 //counts even numbers per odd one
         var x = y*2 //current even number value
+        var z2 = 0 //makes sure the positions of numbers are correct after resetting z
         var newOdd = false //true if a new odd number can be created out of the current even onumber
         while(z < 5 && !newOdd) //creates up to 5 even numbers
         {
           evenNumbers[j] = document.createElement('div')
           document.body.appendChild(evenNumbers[j])
           evenNumbers[j].style.left = i * 100 + 'px'
-          var z2 = 0 //makes sure the positions of numbers are correct after resetting z
           evenNumbers[j].style.top = (z + z2) * 20 + 80 + 'px'
           evenNumbers[j].innerHTML = x
           evenNumbers[j].className = 'evenNumbers numbers'
